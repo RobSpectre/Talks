@@ -1,0 +1,72 @@
+{
+  "name": "hack-party",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
+    "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore --fix ./",
+    "test": "jest --maxWorkers=2",
+    "test:inspect": "node --inspect-brk node_modules/.bin/jest --runInBand"
+  },
+  "engines": {
+    "node": "18.7.0",
+    "npm": "8.15.0"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^1.0.5",
+    "animate.css": "^4.1.0",
+    "axios": "^1.6.8",
+    "gsap": "^3.10.2",
+    "jest-websocket-mock": "^2.4.0",
+    "mock-socket": "^9.1.5",
+    "pinia": "^2.0.13",
+    "pinia-plugin-persistedstate": "^1.5.1",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.0.0",
+    "reveal.js": "^4.3.0",
+    "uuid": "^8.3.2",
+    "vue": "^3.2.31",
+    "vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/next",
+    "vue-router": "^4.0.13",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue-tweet": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@pinia/testing": "^0.0.11",
+    "@vitejs/plugin-vue": "^2.3.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "@vue/vue3-jest": "^27.0.0-alpha.4",
+    "autoprefixer": "^10.4.4",
+    "dexie": "^3.2.2",
+    "eslint": "^8.12.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "fake-indexeddb": "^3.1.7",
+    "flush-promises": "^1.0.2",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "node-fetch": "^2.6.6",
+    "postcss": "^8.4.12",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.49.9",
+    "tailwindcss": "^3.1.2",
+    "vite": "^2.9.15",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "npm run lint"
+    ]
+  }
+}
