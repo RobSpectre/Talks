@@ -6,8 +6,8 @@ import FieldOfDreams from '@/views/FieldOfDreams.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'The Field of Dreams Got Clear Cut: Finding Your Audience in 2024',
+    component: FieldOfDreams
   },
   {
     path: '/finding-your-audience-2024',
