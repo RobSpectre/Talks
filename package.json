@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && echo 'talks.robspectre.com' > dist/CNAME",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore --fix ./",
     "test": "jest --maxWorkers=2",
-    "test:inspect": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test:inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "engines": {
     "node": "18.7.0",
