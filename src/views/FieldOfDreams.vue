@@ -9,6 +9,8 @@ Reveal
     VideoSlide(src="/video/finding-your-audience-in-2024/shutup.mp4")
       h1 This is over
     Slide(class='green')
+      p.text-white.text-7xl.uppercase.font-semibold "If you build it, they will come."
+    Slide(class='darkgray')
       p.text-white.text-7xl.uppercase.font-semibold "We haven't spent a dollar in marketing yet."
     Slide(class='darkgray')
       p.text-white.text-7xl.uppercase.font-semibold Inferior products with better Name ID
