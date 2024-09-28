@@ -1,6 +1,7 @@
 @import 'reveal_mixins';
 @import 'reveal_settings';
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -211,4 +212,20 @@ html.img-top div.slide-background.present {
 .primary-button:active, .primary-button:focus, .secondary-button:active,
 .secondary-button:focus {
   @apply border-none;
+}
+
+.slide-headline {
+  font-family: 'Roboto', sans-serif;
+  @apply text-6xl text-white tracking-tight uppercase #{!important};
+}
+
+.footer {
+  font-family: 'Cutive Mono', monospace;
+  @apply text-4xl text-white tracking-tighter text-shadow-sm shadow-black
+  lowercase absolute inset-x-0 bottom-0 mb-4 ml-4 #{!important};
+}
+
+.slide-headline {
+  font-family: 'Roboto', sans-serif;
+  @apply text-6xl text-white tracking-tight uppercase #{!important};
 }

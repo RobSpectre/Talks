@@ -1,18 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
 
 import FieldOfDreams from '@/views/FieldOfDreams.vue'
+import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: FieldOfDreams
+    component: Home
   },
   {
     path: '/finding-your-audience-2024',
     name: 'The Field of Dreams Got Clear Cut: Finding Your Audience in 2024',
     component: FieldOfDreams
+  },
+  {
+    path: '/childsafe-ai-assets',
+    name: 'childsafe.ai Asset Sale',
+    component: childsafeaiAssets
   }
 ]
 
