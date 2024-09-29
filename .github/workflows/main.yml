@@ -10,5 +10,5 @@ jobs:
       uses: xRealNeon/VuePagesAction@1.0.1
       with:
         username: 'RobSpectre'
-        reponame: 'f1bingo.com'
+        reponame: 'Talks'
         token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
