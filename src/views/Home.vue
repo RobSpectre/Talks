@@ -4,7 +4,9 @@ Reveal
     Slide(class="darkgray")
       .nintendo Rob's Talks
       ul
-        li a(href="/finding-your-audience-2024") The Field of Dreams Got Clear Cut
+        li
+          a(href="/finding-your-audience-2024")
+            | The Field of Dreams Got Clear Cut
 </template>
 
 <script>

@@ -24,7 +24,7 @@ Reveal
       h1 Mission
     Slide(class='darkgray')
       .slide-headline Origins
-    ImageSlide(src='/images/childsafeai-assets/rob_and_ada.gif')
+    VideoSlide(src='/images/childsafeai-assets/congressional_briefing_cut.mp4')
       h1 Founder and CEO
     ImageSlide(src='/images/childsafeai-assets/polaris_map.jpg')
       h1 BEFREE / Polaris
@@ -127,6 +127,11 @@ Reveal
         span.text-green 7
         |  combinations
       .slide-headline
+        span.text-green 62k
+        |  unlabeled set
+      h1 Training Set
+    Slide(class='darkgray')
+      .slide-headline
         span.text-green Real
         |  buyers
       .slide-headline
@@ -135,10 +140,7 @@ Reveal
       .slide-headline
         span.text-green Real
         |  annotators
-      .slide-headline
-        span.text-green 62k
-        |  unlabeled set
-      h1 Training Set
+      h1 Provenance
     Slide(class='darkgray')
       .slide-headline
         span.text-green 280k+
@@ -157,6 +159,17 @@ Reveal
       .slide-headline Annotation pipeline
       .slide-headline Research
       h1 Miscellaneous
+    Slide(class='darkgray')
+      .slide-headline Content
+        span.text-green  Moderation
+      .slide-headline Harm
+        span.text-green  Reduction
+      .slide-headline Risk
+        span.text-green  Management
+      .slide-headline Safety
+        span.text-green  evals
+      .slide-headline
+      h1 Use Cases
     Slide(class='darkgray')
       .slide-headline
         a(href="/images/childsafeai-assets/njsi_winter_2020.pdf")
