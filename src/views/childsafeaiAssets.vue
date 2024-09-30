@@ -244,7 +244,7 @@ export default {
         .then(data => {
           // Log the data and set it to connected
           console.log(data)
-          this.connected = data
+          this.connected = data.result
         })
         .catch(error => {
           // Handle errors
@@ -289,6 +289,6 @@ export default {
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 
 html {
-  font-size: 36px;
+  @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl;
 }
 </style>
