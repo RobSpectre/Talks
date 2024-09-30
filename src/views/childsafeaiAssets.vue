@@ -93,36 +93,10 @@ Reveal
     Slide(class='darkgray')
       .slide-headline Core Technology
     Slide(class='darkgray')
-      .slide-headline Classifier models
       .slide-headline Training set
+      .slide-headline Classifier models
       .slide-headline Data set (no PII)
       h1 Core Technology
-    Slide(class='darkgray')
-      .slide-headline
-        span.text-green 8
-        |  convolutional networks
-      .slide-headline
-        span.text-green 23
-        |  classes
-      .slide-headline
-        span.text-green 1
-        |  encoder only transformer
-      h1 Classifier Models
-    Slide(class='darkgray' v-if='connected')
-      .slide-headline Demo
-      label.text-sm.font-medium.leading-5.text-gray-700(for='text')
-      .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
-        .relative.flex-grow(class='focus-within:z-10')
-          input.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' placeholder='Message' v-model='text' v-on:keydown.enter='submit(text)')
-      .slide-headline(
-        v-if="Object.keys(classifiedList).length > 0"
-        v-for="(value, key) in classifiedList"
-      )
-        | Class:
-        span.text-green  {{ key }}
-        |  - Confidence:
-        span.text-green  {{ (value * 100).toFixed(2) }}%
-      h1(v-if="error") {{ error }}
     Slide(class='darkgray')
       .slide-headline
         span.text-green 75k
@@ -157,6 +131,32 @@ Reveal
         span.text-green Real
         |  annotators
       h1 Provenance
+    Slide(class='darkgray')
+      .slide-headline
+        span.text-green 8
+        |  convolutional networks
+      .slide-headline
+        span.text-green 23
+        |  classes
+      .slide-headline
+        span.text-green 1
+        |  encoder only transformer
+      h1 Classifier Models
+    Slide(class='darkgray' v-if='connected')
+      .slide-headline Demo
+      label.text-sm.font-medium.leading-5.text-gray-700(for='text')
+      .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
+        .relative.flex-grow(class='focus-within:z-10')
+          input.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' placeholder='Message' v-model='text' v-on:keydown.enter='submit(text)')
+      .slide-headline(
+        v-if="Object.keys(classifiedList).length > 0"
+        v-for="(value, key) in classifiedList"
+      )
+        | Class:
+        span.text-green  {{ key }}
+        |  - Confidence:
+        span.text-green  {{ (value * 100).toFixed(2) }}%
+      h1(v-if="error") {{ error }}
     Slide(class='darkgray')
       .slide-headline
         span.text-green 280k+

@@ -79,7 +79,7 @@ html {
 .reveal h1 {
     background: $childsafeGreen;
     color: #fff;
-    @apply absolute inset-x-0 bottom-0 text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl;
+    @apply absolute inset-x-0 bottom-0 text-6xl;
     margin-bottom: 0;
 }
 
