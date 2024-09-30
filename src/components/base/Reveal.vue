@@ -50,7 +50,8 @@ export default {
           76: null,
           78: null,
           79: null,
-          80: null
+          80: null,
+          191: null
         }
       })
 
@@ -58,6 +59,9 @@ export default {
         this.deck.layout()
         this.$emit('reveal-rendered', this.deck)
         window.deck = this.deck
+
+        this.deck.removeKeyBinding(191)
+
         this.setShortcuts(window.deck.getCurrentSlide())
         this.setShortcutListener()
       })

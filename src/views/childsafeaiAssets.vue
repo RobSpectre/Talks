@@ -108,7 +108,7 @@ Reveal
       .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
         .relative.flex-grow(class='focus-within:z-10')
           input.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' placeholder='Message' v-model='text' v-on:keydown.enter='submit(text)')
-      .slide-headline {{ classifiedList }}
+      .slide-headline(v-if="Object.keys(classifiedList).length > 0") {{ classifiedList }}
       h1(v-if="error") {{ error }}
     Slide(class='darkgray')
       .slide-headline
@@ -226,6 +226,9 @@ export default {
       try {
         const response = await fetch('http://localhost:8000/classify', {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({ text: this.text })
         })
 
@@ -234,7 +237,8 @@ export default {
         }
 
         const data = await response.json()
-        this.classifiedList = data.result || []
+
+        this.classifiedList = data || []
       } catch (error) {
         this.error = error.messag
       }
