@@ -16,6 +16,11 @@ const routes = [
     component: FieldOfDreams
   },
   {
+    path: '/childsafe-ai-tech',
+    name: 'childsafe.ai Core Technology',
+    component: childsafeaiAssets
+  },
+  {
     path: '/childsafe-ai-assets',
     name: 'childsafe.ai Asset Sale',
     component: childsafeaiAssets

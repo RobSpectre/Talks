@@ -5,7 +5,7 @@ Reveal
       img(src='/images/childsafeai-assets/childsafeai/png/green_and_white/childsafe-logo-gw-h@HD.png')
       .footer
         ul.list-outside(style='list-style-type: none;')
-          li Introduction to Assets
+          li Introduction to Core Technology
           li Rob Spectre
           li rob@childsafe.ai
     Slide(class='darkgray')
@@ -23,6 +23,27 @@ Reveal
         span.text-green  exploitation
       h1 Mission
     Slide(class='darkgray')
+      .slide-headline
+        | Launched in
+        span.text-green  2018
+      .slide-headline
+        span.text-green 10
+        |  law enforcement agencies
+      .slide-headline
+        span.text-green 5
+        |  National Operations
+      .slide-headline
+        | Deterred
+        span.text-green  60k+
+        |  buyers
+      .slide-headline
+        span.text-green 12%
+        |  reoffense rate
+      .slide-headline
+        span.text-green 2k+
+        |  arrests
+      h1 Results
+    Slide(class='darkgray')
       .slide-headline Origins
     VideoSlide(src='/images/childsafeai-assets/congressional_briefing_cut.mp4')
       h1 Founder and CEO
@@ -35,24 +56,6 @@ Reveal
       h1 First Product
     VideoSlide(src='/images/childsafeai-assets/deterrence_demo.mp4' :muted='false')
       h1 First Product
-    Slide(class='darkgray')
-      .slide-headline
-        | Launched in
-        span.text-green  2018
-      .slide-headline
-        span.text-green 10
-        |  LE agencies
-      .slide-headline
-        span.text-green 5
-        |  National Operations
-      .slide-headline
-        | Deterred
-        span.text-green  60k+
-        |  buyers
-      .slide-headline
-        span.text-green 12%
-        |  reoffense rate
-      h1 Tale of the Tape
     ImageSlide(src='/images/childsafeai-assets/point_cloud_deterrence.png')
       h1 National Reach
     Slide(class='darkgray')
@@ -85,12 +88,12 @@ Reveal
           | ZDNET
       h1 Coverage
     Slide(class='darkgray')
-      .slide-headline Assets
+      .slide-headline Core Technology
     Slide(class='darkgray')
       .slide-headline Classifier models
       .slide-headline Training set
       .slide-headline Data set (no PII)
-      h1 Assets
+      h1 Core Technology
     Slide(class='darkgray')
       .slide-headline
         span.text-green 8
@@ -102,13 +105,20 @@ Reveal
         span.text-green 1
         |  encoder only transformer
       h1 Classifier Models
-    Slide(class='darkgray')
+    Slide(class='darkgray' v-if='connected')
       .slide-headline Demo
       label.text-sm.font-medium.leading-5.text-gray-700(for='text')
       .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
         .relative.flex-grow(class='focus-within:z-10')
           input.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' placeholder='Message' v-model='text' v-on:keydown.enter='submit(text)')
-      .slide-headline(v-if="Object.keys(classifiedList).length > 0") {{ classifiedList }}
+      .slide-headline(
+        v-if="Object.keys(classifiedList).length > 0"
+        v-for="(value, key) in classifiedList"
+      )
+        | Class:
+        span.text-green  {{ key }}
+        |  - Confidence:
+        span.text-green  {{ (value * 100).toFixed(2) }}%
       h1(v-if="error") {{ error }}
     Slide(class='darkgray')
       .slide-headline
@@ -183,6 +193,9 @@ Reveal
       .slide-headline
         a(href="https://vimeo.com/386533750")
           | Congressional briefing from 2020
+      .slide-headline
+        a(href="https://www.gao.gov/assets/gao-21-385.pdf")
+          | Government Accountability Office Study from 2021
       h1 Resources
     VideoSlide(src='/images/childsafeai-assets/intro.webm')
       img(src='/images/childsafeai-assets/childsafeai/png/green_and_white/childsafe-logo-gw-h@HD.png')
@@ -213,7 +226,32 @@ export default {
     return {
       text: '',
       classifiedList: [],
-      error: null
+      error: null,
+      connected: false
+    }
+  },
+  mounted () {
+    try {
+      fetch('http://localhost:8000/test')
+        .then(response => {
+          if (!response.ok) {
+            // If the response is not okay, we throw an error
+            throw new Error('Failed to classify text.')
+          }
+          // Parse the JSON response
+          return response.json()
+        })
+        .then(data => {
+          // Log the data and set it to connected
+          console.log(data)
+          this.connected = data
+        })
+        .catch(error => {
+          // Handle errors
+          this.error = error.message
+        })
+    } catch (error) {
+      this.error = error.message
     }
   },
   methods: {
