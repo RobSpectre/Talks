@@ -152,7 +152,7 @@ Reveal
         |  ads
       .slide-headline
         span.text-green Real
-        | websites
+        |  websites
       .slide-headline
         span.text-green Real
         |  annotators
