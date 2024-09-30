@@ -27,7 +27,7 @@ Reveal
         | Launched in
         span.text-green  2018
       .slide-headline
-        span.text-green 10
+        span.text-green 14
         |  law enforcement agencies
       .slide-headline
         span.text-green 5
@@ -67,7 +67,7 @@ Reveal
           | Reuters
       .slide-headline
         a(href="https://www.wsj.com/articles/after-backpage-u-s-investigates-massage-escort-websites-that-now-dominate-market-11568548800")
-          | WSJ
+          | Wall Street Journal
       .slide-headline
         a(href="https://www.kiro7.com/news/local/this-is-not-a-setup-bellevue-police-join-prostitution-chat-forum-to-help-sex-workers/1005848591/")
           | ABC
@@ -77,6 +77,9 @@ Reveal
       .slide-headline
         a(href="https://chicago.suntimes.com/crime/2019/7/31/20748945/sex-trafficking-national-johns-suppression-initiative-ai-childsafe")
           | Chicago Sun-Times
+      .slide-headline
+        a(href="https://nypost.com/2018/04/03/nypd-sends-warning-texts-to-creeps-looking-for-prostitutes/")
+          | New York Post
       .slide-headline
         a(href="https://www.vice.com/en/article/a-sex-trafficking-law-is-fundamentally-changing-the-internet/")
           | Vice
@@ -147,6 +150,9 @@ Reveal
       .slide-headline
         span.text-green Real
         |  ads
+      .slide-headline
+        span.text-green Real
+        | websites
       .slide-headline
         span.text-green Real
         |  annotators
@@ -288,7 +294,4 @@ export default {
 <style lang='scss'>
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 
-html {
-  @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl;
-}
 </style>

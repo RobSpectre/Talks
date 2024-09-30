@@ -22,7 +22,7 @@ $backgroundColor: $childsafeWhite;
 $mainColor: $childsafeBlack;
 $headingColor: $childsafeBlack;
 
-$mainFontSize: 38px;
+//$mainFontSize: 38px;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
@@ -33,12 +33,16 @@ $linkColor: $childsafeBlue;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
-$heading1Size: 2.3em;
-$heading2Size: 2.3em;
-$heading3Size: 1.9em;
-$heading4Size: 1.0em;
+// $heading1Size: 2.3em;
+// $heading2Size: 2.3em;
+// $heading3Size: 1.9em;
+// $heading4Size: 1.0em;
 
 @import 'reveal_base';
+
+html {
+  @apply text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-5xl;
+}
 
 .reveal .green {
     background-color: $childsafeGreen;
@@ -75,7 +79,7 @@ $heading4Size: 1.0em;
 .reveal h1 {
     background: $childsafeGreen;
     color: #fff;
-    @apply absolute inset-x-0 bottom-0;
+    @apply absolute inset-x-0 bottom-0 text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl;
     margin-bottom: 0;
 }
 
