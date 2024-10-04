@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 
 import FieldOfDreams from '@/views/FieldOfDreams.vue'
 import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
+import CustomerMoat from '@/views/CustomerMoat.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/childsafe-ai-assets',
     name: 'childsafe.ai Asset Sale',
     component: childsafeaiAssets
+  },
+  {
+    path: '/building-your-customer-moat',
+    name: 'Building Your Customer Moat',
+    component: CustomerMoat
   }
 ]
 

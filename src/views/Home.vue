@@ -7,6 +7,9 @@ Reveal
         li
           a(href="/finding-your-audience-2024")
             | The Field of Dreams Got Clear Cut
+        li
+          a(href="/building-your-customer-moat")
+            | Building Your Customer Moat
 </template>
 
 <script>
@@ -33,10 +36,11 @@ export default {
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-12 text-9xl text-white #{!important};
+  @apply text-9xl text-white #{!important};
 }
 
-html {
-  font-size: 36px;
+.reveal li {
+  list-style: none;
 }
+
 </style>
