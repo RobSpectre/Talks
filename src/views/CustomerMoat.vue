@@ -262,32 +262,7 @@ export default {
 <style lang='scss'>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 
-.nintendo {
-  font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
-}
-
-.title {
-  font-family: 'Titan One', cursive;
-  @apply text-8xl text-white tracking-tight skew-y-12 text-shadow shadow-black #{!important};
-}
-
-.footer {
-  font-family: 'Cutive Mono', monospace;
-  @apply text-4xl text-white tracking-tighter text-shadow-sm shadow-black
-  lowercase absolute inset-x-0 bottom-0 mb-4 ml-4 #{!important};
-}
-
-.slide-headline {
-  font-family: 'Roboto', sans-serif;
-  @apply text-6xl text-white tracking-tight uppercase #{!important};
-}
-
 .zuck {
   background-image: url('/images/building-your-customer-moat/mark-zuckerberg-adjust.gif');
-}
-
-html {
-  font-size: 36px;
 }
 </style>
