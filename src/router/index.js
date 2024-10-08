@@ -9,26 +9,33 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    private: true
   },
   {
     path: '/finding-your-audience-2024',
     name: 'The Field of Dreams Got Clear Cut: Finding Your Audience in 2024',
-    component: FieldOfDreams
+    description: 'A talk highlighting the difficulty in growing name ID in the current market and what to do about it.',
+    component: FieldOfDreams,
+    img: '/images/finding-your-audience-in-2024/search_graph.png'
   },
   {
     path: '/childsafe-ai-tech',
     name: 'childsafe.ai Core Technology',
-    component: childsafeaiAssets
+    component: childsafeaiAssets,
+    private: true
   },
   {
     path: '/childsafe-ai-assets',
     name: 'childsafe.ai Asset Sale',
-    component: childsafeaiAssets
+    component: childsafeaiAssets,
+    private: true
   },
   {
     path: '/building-your-customer-moat',
     name: 'Building Your Customer Moat',
+    description: 'Building a defensible moat is tough in this market - this talk explores how to make one out of an enthusiastic critical mass of customers.',
+    img: '/images/building-your-customer-moat/crowd.gif',
     component: CustomerMoat
   }
 ]

@@ -233,3 +233,11 @@ html.img-top div.slide-background.present {
   font-family: 'Roboto', sans-serif;
   @apply text-6xl text-white tracking-tight uppercase #{!important};
 }
+
+a {
+  @apply text-sky-600;
+}
+
+a:hover {
+  @apply text-sky-400;
+}
