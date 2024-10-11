@@ -41,7 +41,7 @@ $selectionBackgroundColor: lighten( $linkColor, 25% );
 @import 'reveal_base';
 
 html {
-  @apply text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-5xl;
+  @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-4xl;
 }
 
 .reveal .green {
