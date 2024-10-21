@@ -137,13 +137,33 @@ Reveal
         |  convolutional networks
       .slide-headline
         span.text-green 23
-        |  classes
+        |  classes of
+        span.text-green  buyer intent
       .slide-headline
-        span.text-green 1
-        |  encoder only transformer
+        |  transformer
+        span.text-green  classifier
       h1 Classifier Models
+    Slide(class='darkgray' v-if='false')
+      .slide-headline Classifier Demo
+      label.text-sm.font-medium.leading-5.text-gray-700(for='text')
+      .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
+        .relative.flex-grow(class='focus-within:z-10')
+          textarea.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(
+            class='sm:text-sm sm:leading-5'
+            placeholder='Conversation'
+            v-model='conversation'
+            v-on:keydown.enter='submitConversation(text)')
+      .slide-headline(
+        v-if="Object.keys(conversationList).length > 0"
+        v-for="(value, key) in conversationList"
+      )
+        | Class:
+        span.text-green  {{ key }}
+        |  - Confidence:
+        span.text-green  {{ (value * 100).toFixed(2) }}%
+      h1(v-if="error") {{ error }}
     Slide(class='darkgray' v-if='connected')
-      .slide-headline Demo
+      .slide-headline Buyer Intent Demo
       label.text-sm.font-medium.leading-5.text-gray-700(for='text')
       .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
         .relative.flex-grow(class='focus-within:z-10')
@@ -231,7 +251,9 @@ export default {
   data () {
     return {
       text: '',
+      conversation: '',
       classifiedList: [],
+      conversationList: [],
       error: null,
       connected: false
     }
@@ -284,7 +306,33 @@ export default {
 
         this.classifiedList = data || []
       } catch (error) {
-        this.error = error.messag
+        this.error = error.message
+      }
+    },
+    async submitConversation () {
+      if (!this.conversation) {
+        this.error = 'Please input a message'
+        return
+      }
+
+      try {
+        const response = await fetch('http://localhost:8000/classify_conversation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ text: this.conversation })
+        })
+
+        if (!response.ok) {
+          this.error('Failed to classify text.')
+        }
+
+        const data = await response.json()
+
+        this.conversationList = data || []
+      } catch (error) {
+        this.error = error.message
       }
     }
   }

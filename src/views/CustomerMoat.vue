@@ -128,6 +128,9 @@ Reveal
       .slide-headline
         span.text-black Google Analytics 4 360
         |  (Best Training)
+      .slide-headline
+        span.text-black Statsig
+        |  (Everything-in-one)
     ImageSlide(src='/images/building-your-customer-moat/build.gif')
     Slide(class='darkgray')
       .slide-headline
