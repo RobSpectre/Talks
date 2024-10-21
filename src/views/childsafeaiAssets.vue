@@ -58,7 +58,7 @@ Reveal
       h1 First Product
     ImageSlide(src='/images/childsafeai-assets/point_cloud_deterrence.png')
       h1 National Reach
-    Slide(class='darkgray')
+    Slide(class='darkgray xl:text-xl 2xl:text-2xl')
       .slide-headline
         a(href="https://www.nytimes.com/2019/04/09/opinion/ai-joins-the-campaign-against-sex-trafficking.html")
           | New York Times
