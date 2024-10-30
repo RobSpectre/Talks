@@ -234,6 +234,15 @@ html.img-top div.slide-background.present {
   @apply text-6xl text-white tracking-tight uppercase #{!important};
 }
 
+.slide-headline-black {
+  font-family: 'Roboto', sans-serif;
+  @apply text-6xl text-black tracking-tight uppercase #{!important};
+}
+
+.outline-text {
+  @apply text-shadow shadow-black #{!important};
+}
+
 a {
   @apply text-sky-600;
 }

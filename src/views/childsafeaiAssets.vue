@@ -46,15 +46,31 @@ Reveal
     Slide(class='darkgray')
       .slide-headline Origins
     VideoSlide(src='/images/childsafeai-assets/congressional_briefing_cut.mp4')
+      div(v-if="!connected")
+        .slide-headline.outline-text Rob Spectre
+        .slide-headline.outline-text Technical leader
+        .slide-headline.outline-text 22 years in startups
+        .slide-headline.outline-text Twilio
+        .slide-headline.outline-text Boxee
       h1 Founder and CEO
     ImageSlide(src='/images/childsafeai-assets/polaris_map.jpg')
+      div(v-if="!connected")
+        .slide-headline.outline-text Worked with Polaris Project
+        .slide-headline.outline-text Built BEFREE shortcode
+        .slide-headline.outline-text National Impact
+        .slide-headline.outline-text A weekend of work
       h1 BEFREE / Polaris
     Slide
+      div(v-if="!connected")
+        h2 Spent a year learning problem domain
+        h2 Worked with a number of institutions
+        h2 Built a lot of small tools
+        h2 Found an opportunity for disruption
       img(src='/images/childsafeai-assets/agencies.png')
       h1 Consulting
-    VideoSlide(src='/images/childsafeai-assets/deterrence_demo.mp4')
+    VideoSlide(v-if='connected' src='/images/childsafeai-assets/deterrence_demo.mp4')
       h1 First Product
-    VideoSlide(src='/images/childsafeai-assets/deterrence_demo.mp4' :muted='false')
+    VideoSlide(src='/images/childsafeai-assets/deterrence_demo_unmuted.mp4' :muted='false')
       h1 First Product
     ImageSlide(src='/images/childsafeai-assets/point_cloud_deterrence.png')
       h1 National Reach
@@ -143,7 +159,7 @@ Reveal
         |  transformer
         span.text-green  classifier
       h1 Classifier Models
-    Slide(class='darkgray' v-if='false')
+    Slide(class='darkgray' v-if='connected')
       .slide-headline Classifier Demo
       label.text-sm.font-medium.leading-5.text-gray-700(for='text')
       .my-2.bg-white.flex.rounded-md.shadow-sm.mx-20
