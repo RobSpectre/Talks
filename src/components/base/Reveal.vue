@@ -41,6 +41,7 @@ export default {
         margin: 0,
         width: '100%',
         height: '100%',
+        scrollActivationWidth: null,
         keyboard: {
           32: null,
           66: null,

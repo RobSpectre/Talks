@@ -61,11 +61,6 @@ Reveal
         .slide-headline.outline-text A weekend of work
       h1 BEFREE / Polaris
     Slide
-      div(v-if="!connected")
-        h2 Spent a year learning problem domain
-        h2 Worked with a number of institutions
-        h2 Built a lot of small tools
-        h2 Found an opportunity for disruption
       img(src='/images/childsafeai-assets/agencies.png')
       h1 Consulting
     VideoSlide(v-if='connected' src='/images/childsafeai-assets/deterrence_demo.mp4')
