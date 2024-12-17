@@ -63,7 +63,7 @@ Reveal
     Slide
       img(src='/images/childsafeai-assets/agencies.png')
       h1 Consulting
-    VideoSlide(v-if='connected' src='/images/childsafeai-assets/deterrence_demo.mp4')
+    VideoSlide(src='/images/childsafeai-assets/deterrence_demo.mp4')
       h1 First Product
     VideoSlide(src='/images/childsafeai-assets/deterrence_demo_unmuted.mp4' :muted='false')
       h1 First Product

@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import FieldOfDreams from '@/views/FieldOfDreams.vue'
 import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
 import CustomerMoat from '@/views/CustomerMoat.vue'
+import LaunchDarklyQuickstart from '@/views/LaunchDarklyQuickstart.vue'
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
     description: 'Building a defensible moat is tough in this market - this talk explores how to make one out of an enthusiastic critical mass of customers.',
     img: '/images/building-your-customer-moat/crowd.gif',
     component: CustomerMoat
+  },
+  {
+    path: '/launchdarkly-quickstart',
+    name: 'LaunchDarkly Quickstart Engagement Wrap',
+    component: LaunchDarklyQuickstart,
+    private: true
   }
 ]
 
