@@ -1,0 +1,344 @@
+<svg version="1.1" id="logo-d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+    <style>
+	    @-webkit-keyframes bodyScale_Animation{
+        0%{
+					-webkit-transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+        }
+        15%{
+        	-webkit-transform: translate(50px, 100px) scale(0.8, 1.5) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(0.8, 1.5) translate(-50px, -100px);
+        }
+        25%{
+        	-webkit-transform: translate(50px, 100px) scale(1.5, 0.5) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(1.5, 0.5) translate(-50px, -100px);
+        }
+        31%{
+					-webkit-transform: translate(50px, 100px) scale(0.9, 1.25) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(0.9, 1.25) translate(-50px, -100px);
+        }
+        38%{
+					-webkit-transform: translate(50px, 100px) scale(1.1, 0.75) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(1.1, 0.75) translate(-50px, -100px);
+        }
+        45%{
+					-webkit-transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+		      transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+        }
+        100%{
+					-webkit-transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+        	transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+        }
+      }
+	    @keyframes bodyScale_Animation{
+        0%{
+					-webkit-transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+				}
+				15%{
+					-webkit-transform: translate(50px, 100px) scale(0.8, 1.5) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(0.8, 1.5) translate(-50px, -100px);
+				}
+				25%{
+					-webkit-transform: translate(50px, 100px) scale(1.5, 0.5) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(1.5, 0.5) translate(-50px, -100px);
+				}
+				31%{
+					-webkit-transform: translate(50px, 100px) scale(0.9, 1.25) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(0.9, 1.25) translate(-50px, -100px);
+				}
+				38%{
+					-webkit-transform: translate(50px, 100px) scale(1.1, 0.75) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(1.1, 0.75) translate(-50px, -100px);
+				}
+				45%{
+					-webkit-transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+					}
+				100%{
+					-webkit-transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+					transform: translate(50px, 100px) scale(1, 1) translate(-50px, -100px);
+				}
+			}
+			@-webkit-keyframes headScale_Animation{
+				0%{
+					-webkit-transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+				}
+				7%{
+					-webkit-transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+				}
+				12%{
+					-webkit-transform: translate(50px, 50px) scale(0.5, 0.75) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.5, 0.75) translate(-50px, -50px);
+				}
+				17%{
+					-webkit-transform: translate(50px, 50px) scale(0.75, 0.5) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.75, 0.5) translate(-50px, -50px);
+					}
+				22%{
+					-webkit-transform: translate(50px, 50px) scale(0.65, 0.9) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.65, 0.9) translate(-50px, -50px);
+				}
+				27%{
+					-webkit-transform: translate(50px, 50px) scale(1, 0.8) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 0.8) translate(-50px, -50px);
+				}
+				33.33%{
+					-webkit-transform: translate(50px, 50px) scale(0.9, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.9, 1) translate(-50px, -50px);
+					}
+				40%{
+					-webkit-transform: translate(50px, 50px) scale(1, 0.95) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 0.95) translate(-50px, -50px);
+				}
+				47%{
+					-webkit-transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+					}
+				100%{
+					-webkit-transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+				}
+			}
+			@keyframes headScale_Animation{
+				0%{
+					-webkit-transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+				}
+				7%{
+					-webkit-transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+				}
+				12%{
+					-webkit-transform: translate(50px, 50px) scale(0.5, 0.75) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.5, 0.75) translate(-50px, -50px);
+				}
+				17%{
+					-webkit-transform: translate(50px, 50px) scale(0.75, 0.5) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.75, 0.5) translate(-50px, -50px);
+				}
+				22%{
+					-webkit-transform: translate(50px, 50px) scale(0.65, 0.9) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.65, 0.9) translate(-50px, -50px);
+				}
+				27%{
+					-webkit-transform: translate(50px, 50px) scale(1, 0.8) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 0.8) translate(-50px, -50px);
+				}
+				33.33%{
+					-webkit-transform: translate(50px, 50px) scale(0.9, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(0.9, 1) translate(-50px, -50px);
+				}
+				40%{
+					-webkit-transform: translate(50px, 50px) scale(1, 0.95) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 0.95) translate(-50px, -50px);
+				}
+				47%{
+					-webkit-transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+				}
+				100%{
+					-webkit-transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);
+					transform: translate(50px, 50px) scale(1, 1) translate(-50px, -50px);}
+				}
+			@-webkit-keyframes head_Animation{
+				0%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+				}
+				7%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+				}
+				12%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				17%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -20px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -20px);
+				}
+				22%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				27%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 10px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 10px);
+				}
+				33.33%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -5px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -5px);
+				}
+				40%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 2px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 2px);
+				}
+				47%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				100%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					}
+			}
+			@keyframes head_Animation{
+				0%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+				}
+				7%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+				}
+				12%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				17%{
+				-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -20px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -20px);
+					}
+				22%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				27%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 10px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 10px);
+				}
+				33.33%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -5px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, -5px);
+				}
+				40%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 2px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 2px);
+				}
+				47%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+				100%{
+					-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+					transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 0px);
+				}
+			}
+			@-webkit-keyframes ringFill{
+				0%{
+					stroke-dashoffset: 1000;
+				}
+				50%{
+					stroke-dashoffset: 0;
+				}
+				100%{
+					stroke-dashoffset: 0;
+				}
+			}
+			@keyframes ringFill{
+				0%{
+					stroke-dashoffset: 1000;
+				}
+				50%{
+					stroke-dashoffset: 0;
+				}
+				100%{
+					stroke-dashoffset: 0;
+				}
+			}
+
+			#logo-d *{
+				-webkit-animation-duration: 2s;
+				animation-duration: 2s;
+
+				animation-fill-mode: forwards;
+			}
+			#head_fill, #body_fill{
+				fill: #00BC70;
+			}
+			#head{
+				-webkit-animation-name: head_Animation;
+				animation-name: head_Animation;
+				-webkit-animation-timing-function: ease-out;
+				animation-timing-function: ease-out;
+				-webkit-transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+				transform: translate(50px, 50px) translate(-50px, -50px) translate(0px, 50px);
+			}
+			#head_scale{
+				-webkit-animation-name: headScale_Animation;
+				animation-name: headScale_Animation;
+				-webkit-animation-timing-function: ease-out;
+				animation-timing-function: ease-out;
+				-webkit-transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+				transform: translate(50px, 50px) scale(0, 0) translate(-50px, -50px);
+			}
+			#body{
+				-webkit-animation-name: bodyScale_Animation;
+				animation-name: bodyScale_Animation;
+				-webkit-animation-timing-function: ease-out;
+				animation-timing-function: ease-out;
+				-webkit-transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+				transform: translate(50px, 100px) scale(2, 0) translate(-50px, -100px);
+			}
+			#ring-1l, #ring-1r{
+				animation-delay: .4s;
+			}
+			#ring-2l, #ring-2r{
+				animation-delay: .5s;
+			}
+			#ring-3l, #ring-3r{
+				animation-delay: .6s;
+			}
+			.ringStyle{
+				-webkit-animation-name: ringFill;
+				animation-name: ringFill;
+				-webkit-animation-timing-function: ease-in;
+				animation-timing-function: ease-in;
+				fill:none;
+				stroke:#00BC70;
+				stroke-width:5.2;
+				stroke-miterlimit:10;
+				stroke-dashoffset: 1000;
+				stroke-dasharray: 1000;
+        clip-path: url(#mask-shape);
+			}
+      .ringStyle, #head_scale, #body_scale, #body, #head{
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+</style>
+<g id="logo-animated">
+  <g id="head">
+    <g id="head_scale">
+      <circle id="head_fill" cx="50" cy="50" r="20"/>
+    </g>
+  </g>
+  <g id="body">
+    <g id="body_scale">
+      <path id="body_fill" d="M56.2,100H43.8c-2.1,0-3.7-1.7-3.7-3.8c0-0.6,0.2-1.3,0.5-1.8l6.2-11.2c1-1.8,3.3-2.5,5.1-1.5
+      c0.6,0.3,1.1,0.9,1.5,1.5l6.2,11.2c1,1.8,0.3,4.1-1.5,5.1C57.4,99.8,56.8,100,56.2,100z"/>
+    </g>
+  </g>
+  <g id="shield-ring">
+    <defs>
+      <clipPath id="mask-shape">
+        <path id="shield" d="M50,0C22.4,0,0,22.4,0,50c0,16.8,8.4,32.4,22.4,41.7c1.7,1.2,4.1,0.7,5.2-1c0.1-0.1,0.1-0.2,0.2-0.3l3.6-6.6
+  c0.9-1.7,0.5-3.8-1.1-4.9c-16-10.9-20.1-32.7-9.2-48.6C27.6,20.7,38.4,15,50,15c21,0,35,17.4,35,35c0,11.6-5.7,22.4-15.3,28.9
+  c-1.6,1.1-2.1,3.2-1.1,4.9l3.6,6.6c1,1.8,3.3,2.5,5.1,1.5c0.1-0.1,0.2-0.1,0.3-0.2c23-15.3,29.3-46.3,14-69.3
+  C82.4,8.4,66.8,0,50,0z"/>
+      </clipPath>
+    </defs>
+    <g id="fill-rings">
+      <path id="ring-1l" class="ringStyle" stroke-linecap="round" d="M50.05,2.55a47.5,47.5,0,0,0,0,95"/>
+      <path id="ring-1r" class="ringStyle" stroke-linecap="round" d="M50.05,2.55a47.5,47.5,0,0,1,0,95"/>
+      <path id="ring-2l" class="ringStyle" stroke-linecap="round" d="M50.05,7.55a42.5,42.5,0,0,0,0,85"/>
+      <path id="ring-2r" class="ringStyle" stroke-linecap="round" d="M50.05,7.55a42.5,42.5,0,0,1,0,85"/>
+      <path id="ring-3l" class="ringStyle" stroke-linecap="round" d="M50.05,12.55a37.5,37.5,0,0,0,0,75"/>
+      <path id="ring-3r" class="ringStyle" stroke-linecap="round" d="M50.05,12.55a37.5,37.5,0,0,1,0,75"/>
+    </g>
+  </g>
+</g>
+</svg>
