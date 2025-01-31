@@ -8,6 +8,26 @@ Reveal
           li Rob Spectre
           li rob@brooklynhacker.com
     Slide(class='darkgray')
+      h2.text-white
+        span.text-green 5x
+        |  traffic to quickstart
+      h2.text-white
+        span.text-green 2x
+        |  signups
+      h2.text-white
+        span.text-green 52%
+        |  more flags created
+      h2.text-white
+        span.text-green 47%
+        |  more flags toggled
+      h2.text-white
+        span.text-green -60%
+        |  elapsed time to create flag
+      h2.text-white
+        span.text-green -27%
+        |  elapsed time to flag toggle
+      h1 Summary
+    Slide(class='darkgray')
       h2.text-white Results
     Slide
       h2 New quickstart launched 20 Dec 2024
