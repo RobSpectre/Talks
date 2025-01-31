@@ -6,20 +6,20 @@ Slide(class='darkgray text-white flex flex-col')
         TableRow
           TableHead(
             v-for='header in headers'
-            class='uppercase text-white text-7xl'
+            class='uppercase text-white text-4xl'
           ) {{ header }}
       TableBody
         TableRow(
           v-for='key in Object.keys(data)'
-          class='text-7xl'
         )
-          TableCell(class='uppercase font-medium') {{ key }}
+          TableCell(class='uppercase font-medium text-2xl') {{ key }}
           TableCell(
             v-for='(value, index) in Object.values(data[key])'
+            class='text-2xl'
           )
             span(
               v-if="isLastColumnPercentChanged && index === Object.values(data[key]).length - 1 && typeof value === 'number'"
-              :class="{ 'text-green': value > 0, 'text-red-800': value < 0 }"
+              :class="{ 'text-green': value > 0, 'text-red-700': value < 0 }"
             ) {{ value }}
             span(v-else) {{ value }}
     h1 {{ title }}
