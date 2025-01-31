@@ -5,6 +5,7 @@ import FieldOfDreams from '@/views/FieldOfDreams.vue'
 import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
 import CustomerMoat from '@/views/CustomerMoat.vue'
 import LaunchDarklyQuickstart from '@/views/LaunchDarklyQuickstart.vue'
+import LaunchDarklyQuickstartAnalysis from '@/views/LaunchDarklyQuickstartAnalysis.vue'
 
 const routes = [
   {
@@ -43,6 +44,12 @@ const routes = [
     path: '/launchdarkly-quickstart',
     name: 'LaunchDarkly Quickstart Engagement Wrap',
     component: LaunchDarklyQuickstart,
+    private: true
+  },
+  {
+    path: '/launchdarkly-quickstart-analysis',
+    name: 'LaunchDarkly Quickstart Analysis',
+    component: LaunchDarklyQuickstartAnalysis,
     private: true
   }
 ]
