@@ -41,12 +41,12 @@ Reveal
     Slide
       h2 All Users
       h4 Overall site performance
+      h2 FTU Users (No Quickstart)
+      h4 All users that used the console first time use experience but did not view the quickstart
       h2 Quickstart Users
       h4 All users that viewed the quickstart
       h2 Quickstart Users (No FTU)
       h4 All users that view the quickstart and opted out of the console first time use experience
-      h2 FTU Users (No Quickstart)
-      h4 All users that used the console first time use experience but did not view the quickstart
       h1 Segments
     TableSlide(
       title='Session Started',
