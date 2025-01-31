@@ -78,6 +78,17 @@ Reveal
       :data='featureFlagToggled'
       :isLastColumnPercentChanged='true'
     )
+    Slide(class='darkgray')
+      h2.text-white Raw Data
+    Slide
+      img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
+      h1 Old Quickstart: 09 Nov - 19 Dec
+    Slide
+      img(src='/images/launchdarkly-quickstart-analysis/new_quickstart.png')
+      h1 New Quickstart: 21 Nov - 29 Jan
+    Slide
+      img(src='/images/launchdarkly-quickstart-analysis/quickstart_pct_change.png')
+      h1 % Change From Old To New
     VideoSlide(src='/video/launchdarkly-quickstart/intro.mp4')
       .footer
         ul.list-outside(style='list-style-type: none;')
