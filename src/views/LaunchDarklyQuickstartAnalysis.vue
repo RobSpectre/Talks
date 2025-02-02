@@ -48,6 +48,8 @@ Reveal
       h2 Quickstart Users (No FTU)
       h4 All users that view the quickstart and opted out of the console first time use experience
       h1 Segments
+    FunnelSlide(title='New Quickstart' :data='funnel')
+      h1 Funnel
     TableSlide(
       title='Session Started',
       :headers="['Segment', 'Old Quickstart', 'New Quickstart', '% Change']"
@@ -81,13 +83,16 @@ Reveal
     Slide(class='darkgray')
       h2.text-white Raw Data
     Slide
-      img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
+      div(class='w-3/5')
+        img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
       h1 Old Quickstart: 09 Nov - 19 Dec
     Slide
-      img(src='/images/launchdarkly-quickstart-analysis/new_quickstart.png')
+      div(class='w-3/5')
+        img(src='/images/launchdarkly-quickstart-analysis/new_quickstart.png')
       h1 New Quickstart: 21 Nov - 29 Jan
     Slide
-      img(src='/images/launchdarkly-quickstart-analysis/quickstart_pct_change.png')
+      div(class='w-3/5')
+        img(src='/images/launchdarkly-quickstart-analysis/quickstart_pct_change.png')
       h1 % Change From Old To New
     VideoSlide(src='/video/launchdarkly-quickstart/intro.mp4')
       .footer
@@ -104,6 +109,7 @@ import Title from '@/components/base/Title.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import TableSlide from '@/components/data/TableSlide.vue'
+import FunnelSlide from '@/components/charts/FunnelSlide.vue'
 
 import sessionStarted from '@/assets/data/launchdarkly-quickstart-analysis/users_session_started.json'
 import signupCompleted from '@/assets/data/launchdarkly-quickstart-analysis/users_signup_completed.json'
@@ -119,7 +125,8 @@ export default {
     Reveal,
     ImageSlide,
     VideoSlide,
-    TableSlide
+    TableSlide,
+    FunnelSlide
   },
   data () {
     return {
@@ -127,7 +134,17 @@ export default {
       signupCompleted: signupCompleted,
       newFlagClicked: newFlagClicked,
       newFlagSubmitted: newFlagSubmitted,
-      featureFlagToggled: featureFlagToggled
+      featureFlagToggled: featureFlagToggled,
+      funnel: [{
+        name: 'Funnel Series',
+        data: [
+          { x: 'Session Started', y: 3699 },
+          { x: 'Signup Completed', y: 284 },
+          { x: 'Create New Flag Clicked', y: 121 },
+          { x: 'Create New Flag Submitted', y: 93 },
+          { x: 'Feature Flag Toggled', y: 75 }
+        ]
+      }]
     }
   }
 }
