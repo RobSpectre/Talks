@@ -2,6 +2,7 @@
 @import 'reveal_settings';
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -23,8 +24,8 @@ $mainColor: $childsafeBlack;
 $headingColor: $childsafeBlack;
 
 //$mainFontSize: 38px;
-$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
-$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$mainFont: 'Inter Tight', Helvetica, sans-serif;
+$headingFont: 'Inter Tight', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
@@ -40,8 +41,12 @@ $selectionBackgroundColor: lighten( $linkColor, 25% );
 
 @import 'reveal_base';
 
+@mixin inter-tight($weight: 400) {
+  font-weight: $weight;
+}
+
 html {
-  @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl;
+  @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl;
 }
 
 .reveal .green {
@@ -218,11 +223,6 @@ html.img-top div.slide-background.present {
   @apply border-none;
 }
 
-.slide-headline {
-  font-family: 'Roboto', sans-serif;
-  @apply text-6xl text-white tracking-tight uppercase #{!important};
-}
-
 .footer {
   font-family: 'Cutive Mono', monospace;
   @apply text-4xl text-white tracking-tighter text-shadow-sm shadow-black
@@ -237,6 +237,16 @@ html.img-top div.slide-background.present {
 .slide-headline-black {
   font-family: 'Roboto', sans-serif;
   @apply text-6xl text-black tracking-tight uppercase #{!important};
+}
+
+.slide-subheadline {
+  font-family: 'Roboto', sans-serif;
+  @apply text-3xl text-white tracking-tight uppercase #{!important};
+}
+
+.slide-subheadline-black {
+  font-family: 'Roboto', sans-serif;
+  @apply text-3xl text-black tracking-tight uppercase #{!important};
 }
 
 .outline-text {

@@ -1,16 +1,15 @@
 <template lang='pug'>
-Slide(class='darkgray')
-  apexchart(
-    type='bar',
-    :options='chartOptions',
-    :series='data',
-    width='600'
-    height='800'
-  )
+Slide
+  div(:id='id')
   slot
 </template>
 
 <script>
+import { ref } from 'vue'
+
+import bb, { funnel } from 'billboard.js'
+import 'billboard.js/dist/billboard.css'
+
 import Slide from '@/components/base/Slide.vue'
 
 export default {
@@ -24,30 +23,77 @@ export default {
   },
   data () {
     return {
-      chartOptions: {
-        plotOptions: {
-          bar: {
-            borderRadius: 0,
-            horizontal: true,
-            barHeight: '80%',
-            isFunnel: true
-          }
-        },
-        dataLabels: {
-          enabled: true,
-          formatter: function (val, opt) {
-            return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
-          },
-          dropShadow: {
-            enabled: true
-          }
-        },
-        title: {
-          text: this.title,
-          align: 'middle'
-        }
+      width: ref(window.innerWidth),
+      height: ref(window.innerHeight),
+      chart: null
+    }
+  },
+  computed: {
+    calculatedWindowWidth () {
+      return this.width * 0.75
+    },
+    calculatedWindowHeight () {
+      return this.height * 0.65
+    }
+  },
+  beforeUnmount () {
+    window.removeEventListener('resize', this.updateWindowSize)
+  },
+  methods: {
+    updateWindowSize () {
+      this.width = window.innerWidth
+      this.height = window.innerHeight
+
+      if (this.chart) {
+        this.chart.resize({
+          width: this.calculatedWindowWidth,
+          height: this.calculatedWindowHeight
+        })
       }
     }
+  },
+  mounted () {
+    this.updateWindowSize()
+    window.addEventListener('resize', this.updateWindowSize)
+
+    this.chart = bb.generate({
+      data: {
+        columns: this.data,
+        type: funnel(),
+        order: 'desc',
+        labels: {
+          format: function (v, id, i, texts) {
+            return id
+          }
+        }
+      },
+      bindto: '#' + this.id,
+      size: {
+        width: this.calculatedWindowWidth,
+        height: this.calculatedWindowHeight
+      },
+      funnel: {
+        neck: {
+          width: {
+            ratio: 0.7
+          },
+          height: {
+            ratio: 0.6
+          }
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
   }
 }
 </script>
+
+<style lang='sass' scoped>
+.--bb-chart-texts
+  font-family: 'Inter Tight', serif
+  font-optical-sizing: auto
+  font-style: normal
+  @apply text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl p-0 m-0
+</style>

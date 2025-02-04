@@ -8,47 +8,47 @@ Reveal
           li Rob Spectre
           li rob@brooklynhacker.com
     Slide(class='darkgray')
-      h2.text-white
+      .slide-headline.text-white
         span.text-green 5x
         |  traffic to quickstart
-      h2.text-white
+      .slide-headline.text-white
         span.text-green 2x
         |  signups
-      h2.text-white
+      .slide-headline.text-white
         span.text-green 52%
         |  more flags created
-      h2.text-white
+      .slide-headline.text-white
         span.text-green 47%
         |  more flags toggled
-      h2.text-white
+      .slide-headline.text-white
         span.text-green -60%
         |  elapsed time to create flag
-      h2.text-white
+      .slide-headline.text-white
         span.text-green -27%
         |  elapsed time to flag toggle
       h1 Summary
     Slide(class='darkgray')
-      h2.text-white Results
+      .slide-headline.text-white Results
     Slide
-      h2 New quickstart launched 20 Dec 2024
-      h2 Comparison
-      h3 40 days before, 40 days after
-      h2 Old Quickstart
-      h3 09 Nov - 19 Dec 2024
-      h2 New Quickstart
-      h3 21 Dec 2024 - 29 Jan 2025
+      .slide-headline-black New quickstart launched 20 Dec 2024
+      .slide-headline-black Comparison
+      .slide-subheadline-black 40 days before, 40 days after
+      .slide-headline-black Old Quickstart
+      .slide-subheadline-black 09 Nov - 19 Dec 2024
+      .slide-headline-black New Quickstart
+      .slide-subheadline-black 21 Dec 2024 - 29 Jan 2025
       h1 Tale of the Tape
     Slide
-      h2 All Users
-      h4 Overall site performance
-      h2 FTU Users (No Quickstart)
-      h4 All users that used the console first time use experience but did not view the quickstart
-      h2 Quickstart Users
-      h4 All users that viewed the quickstart
-      h2 Quickstart Users (No FTU)
-      h4 All users that view the quickstart and opted out of the console first time use experience
+      .slide-headline-black All Users
+      .text-xl.uppercase Overall site performance
+      .slide-headline-black FTU Users (No Quickstart)
+      .text-xl.uppercase All users that used the console first time use experience but did not view the quickstart
+      .slide-headline-black Quickstart Users
+      .text-xl.uppercase All users that viewed the quickstart
+      .slide-headline-black Quickstart Users (No FTU)
+      .text-xl.uppercase All users that view the quickstart and opted out of the console first time use experience
       h1 Segments
-    FunnelSlide(title='New Quickstart' :data='funnel')
+    FunnelSlide(id='funnel' :data='funnel')
       h1 Funnel
     TableSlide(
       title='Session Started',
@@ -81,7 +81,7 @@ Reveal
       :isLastColumnPercentChanged='true'
     )
     Slide(class='darkgray')
-      h2.text-white Raw Data
+      .slide-headline.text-white Raw Data
     Slide
       div(class='w-3/5')
         img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
@@ -135,16 +135,13 @@ export default {
       newFlagClicked: newFlagClicked,
       newFlagSubmitted: newFlagSubmitted,
       featureFlagToggled: featureFlagToggled,
-      funnel: [{
-        name: 'Funnel Series',
-        data: [
-          { x: 'Session Started', y: 3699 },
-          { x: 'Signup Completed', y: 284 },
-          { x: 'Create New Flag Clicked', y: 121 },
-          { x: 'Create New Flag Submitted', y: 93 },
-          { x: 'Feature Flag Toggled', y: 75 }
-        ]
-      }]
+      funnel: [
+        ['Session Started: 3699', 500],
+        ['Signup Completed: 284', 284],
+        ['Create New Flag Clicked: 121', 121],
+        ['Create New Flag Submitted: 93', 93],
+        ['Flag Toggled: 72', 72]
+      ]
     }
   }
 }
