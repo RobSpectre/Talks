@@ -1,6 +1,6 @@
 <template lang='pug'>
 Slide
-  div(:id='id')
+  div.chart(:id='id')
   slot
 </template>
 
@@ -33,7 +33,7 @@ export default {
       return this.width * 0.75
     },
     calculatedWindowHeight () {
-      return this.height * 0.65
+      return this.height * 0.75
     }
   },
   beforeUnmount () {
@@ -90,10 +90,8 @@ export default {
 }
 </script>
 
-<style lang='sass' scoped>
-.--bb-chart-texts
+<style lang='sass'>
+.bb text, .bb svg, .bb-text
   font-family: 'Inter Tight', serif
-  font-optical-sizing: auto
-  font-style: normal
-  @apply text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl p-0 m-0
+  @apply uppercase text-base sm:text-lg md:text-lg lg:text-base xl:text-lg 2xl:text-xl #{!important}
 </style>

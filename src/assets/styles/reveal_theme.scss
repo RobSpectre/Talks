@@ -46,7 +46,7 @@ $selectionBackgroundColor: lighten( $linkColor, 25% );
 }
 
 html {
-  @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl;
+  @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl hd:text-4xl 4k:text-6xl 8k:text-8xl;
 }
 
 .reveal .green {
@@ -231,12 +231,12 @@ html.img-top div.slide-background.present {
 
 .slide-headline {
   font-family: 'Roboto', sans-serif;
-  @apply text-6xl text-white tracking-tight uppercase #{!important};
+  @apply text-5xl text-white tracking-tight uppercase #{!important};
 }
 
 .slide-headline-black {
   font-family: 'Roboto', sans-serif;
-  @apply text-6xl text-black tracking-tight uppercase #{!important};
+  @apply text-5xl text-black tracking-tight uppercase #{!important};
 }
 
 .slide-subheadline {

@@ -1,6 +1,6 @@
 <template lang="pug">
 section(:class='classes')
-  div(class='flex flex-col items-center justify-center h-full')
+  div(class='flex flex-col items-center justify-center h-5/6')
     slot
   h1(v-if='heading') {{ heading }}
 </template>

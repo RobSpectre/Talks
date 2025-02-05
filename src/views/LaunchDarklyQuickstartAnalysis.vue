@@ -30,7 +30,8 @@ Reveal
     Slide(class='darkgray')
       .slide-headline.text-white Results
     Slide
-      .slide-headline-black New quickstart launched 20 Dec 2024
+      .slide-headline-black New quickstart
+      .slide-subheadline-black launched 20 Dec 2024
       .slide-headline-black Comparison
       .slide-subheadline-black 40 days before, 40 days after
       .slide-headline-black Old Quickstart
@@ -83,16 +84,13 @@ Reveal
     Slide(class='darkgray')
       .slide-headline.text-white Raw Data
     Slide
-      div(class='w-3/5')
-        img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
+      img(src='/images/launchdarkly-quickstart-analysis/old_quickstart.png')
       h1 Old Quickstart: 09 Nov - 19 Dec
     Slide
-      div(class='w-3/5')
-        img(src='/images/launchdarkly-quickstart-analysis/new_quickstart.png')
+      img(src='/images/launchdarkly-quickstart-analysis/new_quickstart.png')
       h1 New Quickstart: 21 Nov - 29 Jan
     Slide
-      div(class='w-3/5')
-        img(src='/images/launchdarkly-quickstart-analysis/quickstart_pct_change.png')
+      img(src='/images/launchdarkly-quickstart-analysis/quickstart_pct_change.png')
       h1 % Change From Old To New
     VideoSlide(src='/video/launchdarkly-quickstart/intro.mp4')
       .footer

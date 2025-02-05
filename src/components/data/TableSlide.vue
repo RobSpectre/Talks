@@ -6,21 +6,22 @@ Slide(class='darkgray text-white flex flex-col')
         TableRow
           TableHead(
             v-for='header in headers'
-            class='uppercase text-white'
+            class='uppercase text-white font-medium text-xl'
           ) {{ header }}
       TableBody
         TableRow(
           v-for='key in Object.keys(data)'
         )
-          TableCell(class='uppercase font-medium') {{ key }}
+          TableCell(class='uppercase font-medium text-xl') {{ key }}
           TableCell(
             v-for='(value, index) in Object.values(data[key])'
           )
             span(
               v-if="isLastColumnPercentChanged && index === Object.values(data[key]).length - 1 && typeof value === 'number'"
+              class='text-xl'
               :class="{ 'text-green': value > 0, 'text-red-700': value < 0 }"
             ) {{ value }}
-            span(v-else) {{ value }}
+            span.text-xl(v-else) {{ value }}
     h1 {{ title }}
 </template>
 
