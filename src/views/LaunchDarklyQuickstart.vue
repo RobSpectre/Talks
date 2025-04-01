@@ -78,31 +78,31 @@ Reveal
     VideoSlide(src='/video/launchdarkly-quickstart/counting.mp4')
       h1 Crunch the Numbers
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img.object-cover(src='/images/launchdarkly-quickstart/docs_vs_overall_traffic.png')
       h1 22% of traffic to docs
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/docs_conversion_twice.png')
       h1 Converts to signup at twice of non-docs
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/quickstart_conversion.png')
       h1 Quickstart primary driver - converting 14x
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/docs_flat_growth.png')
       h1 Flat growth
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/venn_docs_vs_ftu.png')
       h1 Docs vs. FTU users
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/ftu_vs_quickstart_flag_creation.png')
       h1 Quickstart converts to flag creation at 2x FTU
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/ftu_vs_quickstart_flag_toggled.png')
       h1 Quickstart converts to flag toggle at 2x FTU
     Slide(class='green')
@@ -129,7 +129,7 @@ Reveal
     VideoSlide(src='/video/launchdarkly-quickstart/authentication_keys.mp4')
       h1 Authorization
     Slide
-      .max-w-7xl
+      div(class='w-3/4')
         img(src='/images/launchdarkly-quickstart/fullstory_funnel.png')
       h1 Quickstart Funnel in Fullstory
     Slide
