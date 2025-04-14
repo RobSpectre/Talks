@@ -1,5 +1,10 @@
-@import 'reveal_mixins';
-@import 'reveal_settings';
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+// Use @use for reveal.js files, and give them a namespace
+@import '/node_modules/reveal.js/css/theme/template/mixins';
+@import '/node_modules/reveal.js/css/theme/template/settings';
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
@@ -21,25 +26,25 @@ $childsafeBlack: #232323;
 $backgroundColor: $childsafeWhite;
 
 $mainColor: $childsafeBlack;
-$headingColor: $childsafeBlack;
+// $headingColor: $childsafeBlack;
 
 //$mainFontSize: 38px;
-$mainFont: 'Inter Tight', Helvetica, sans-serif;
+$mainFont: 'Roboto', Helvetica, sans-serif;
 $headingFont: 'Inter Tight', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: $childsafeBlue;
-$linkColorHover: lighten( $linkColor, 15% );
-$selectionBackgroundColor: lighten( $linkColor, 25% );
+$linkColorHover: color.scale($linkColor, $lightness: 15%);  // Use color.scale
+$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%); // Use color.scale
+$blockMargin: 0;
+$headingMargin: 0;
 
-// $heading1Size: 2.3em;
-// $heading2Size: 2.3em;
-// $heading3Size: 1.9em;
-// $heading4Size: 1.0em;
-
-@import 'reveal_base';
+//$heading1Size: 2.3em;
+//$heading2Size: 2.1em;
+//$heading3Size: 1.9em;
+//$heading4Size: 1.0em;
 
 @mixin inter-tight($weight: 400) {
   font-weight: $weight;
@@ -83,8 +88,7 @@ html {
 
 .reveal h1 {
     background: $childsafeGreen;
-    color: #fff;
-    @apply absolute inset-x-0 bottom-0 text-6xl;
+    @apply text-white absolute inset-x-0 bottom-0 text-6xl #{!important};
     margin-bottom: 0;
 }
 
@@ -225,8 +229,7 @@ html.img-top div.slide-background.present {
 
 .footer {
   font-family: 'Cutive Mono', monospace;
-  @apply text-4xl text-white tracking-tighter text-shadow-sm shadow-black
-  lowercase absolute inset-x-0 bottom-0 mb-4 ml-4 #{!important};
+  @apply text-4xl text-white tracking-tighter text-left text-shadow shadow-black lowercase absolute inset-x-0 bottom-0 mb-4 ml-4 #{!important};
 }
 
 .slide-headline {
@@ -293,3 +296,5 @@ a:hover {
     --ring: 24 5.7% 82.9%;
   }
 }
+
+@import '/node_modules/reveal.js/css/theme/template/theme';

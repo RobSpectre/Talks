@@ -6,6 +6,7 @@ import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
 import CustomerMoat from '@/views/CustomerMoat.vue'
 import LaunchDarklyQuickstart from '@/views/LaunchDarklyQuickstart.vue'
 import LaunchDarklyQuickstartAnalysis from '@/views/LaunchDarklyQuickstartAnalysis.vue'
+import OsoDiscovery from '@/views/OsoDiscovery.vue'
 
 const routes = [
   {
@@ -50,6 +51,12 @@ const routes = [
     path: '/launchdarkly-quickstart-analysis',
     name: 'LaunchDarkly Quickstart Analysis',
     component: LaunchDarklyQuickstartAnalysis,
+    private: true
+  },
+  {
+    path: '/oso-discovery',
+    name: 'Oso Discovery Wrap',
+    component: OsoDiscovery,
     private: true
   }
 ]

@@ -11,6 +11,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src/')
     }
   },
+  css: {
+    preprocesserOptions: {
+      scss: {
+        quietDeps: true
+      }
+    }
+  },
   plugins: [vue({
     template: {
       preprocessOptions: {
