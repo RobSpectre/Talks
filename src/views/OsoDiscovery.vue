@@ -558,7 +558,7 @@ Reveal
     Slide
       .slide-headline.text-black
         a(href='https://www.notion.so/osohq/Discovery-Wrap-1cf9f1471f2b806eb2c7e7fe57aae25a?pvs=4')
-          | Discoveyr Wrap 
+          | Discovery Wrap 
       .slide-headline.text-black
         a(href='https://www.notion.so/osohq/Rob-s-Discovery-Notebook-1bb9f1471f2b804abfe6d14179a75d61?pvs=4')
           | Discovery Phase Notebook
