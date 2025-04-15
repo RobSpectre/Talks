@@ -20,7 +20,7 @@ Reveal
       h1 Phases
     Slide(class='darkgray')
       .slide-headline Workstreams
-      .slide-headline Worked / !Worked
+      .slide-headline Assessment 
       .slide-headline Recommendations 
       h1 Discovery Wrap
     VideoSlide(src='/oso_discovery/dog_food.mp4') 
@@ -79,7 +79,7 @@ Reveal
         |  delta 
       .slide-headline
         span.text-green Low
-        | visibility 
+        |  visibility 
       .slide-headline
         span.text-green Low
         |  literacy
@@ -107,6 +107,7 @@ Reveal
       class='darkgray',
       src='/oso_discovery/data/traffic_sources.json'
     )
+      h1 Traffic by Source
     Slide(class='darkgray')
       img(src='/oso_discovery/organic_decline.png')
       h1 13% Search Decline
@@ -120,7 +121,7 @@ Reveal
       class='darkgray'
       src='/oso_discovery/data/signups_12_month.json'
     )
-      h1 Signups 12M
+      h1 Signups Last Year 
     Slide(class='darkgray')
       .flex.flex-row(class='w-11/12')
         div(class='w-1/3')
@@ -211,6 +212,15 @@ Reveal
       src='/oso_discovery/data/assessment_radar.json'
     )
       h1 Rob's Assessment
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/assessment_radar_graham.json'
+    )
+      h1 Graham's Assessment
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/assessment_radar_combined.json'
+    )
     Slide(class='green')
       .slide-headline Recommendations
     Slide(class='darkgray')
@@ -275,7 +285,7 @@ Reveal
           video.w-full.h-full(autoplay muted loop)
             source(src='/oso_discovery/jaguar.mp4')
         div(class='w-2/3')
-          ul.list-inside.fragment.fade-left
+          ul.list-inside.fragment.fade-left.text-xl
             li.slide-headline Source Talent
             li.slide-headline Brand Guide
             li.slide-headline Creative Building Blocks
@@ -353,6 +363,9 @@ Reveal
       img(src='/oso_discovery/the_best_model.png')
       h1 Flexibility
     Slide
+      img(src='/oso_discovery/glove.png')
+      h1 Flexibility
+    Slide
       img(src='/oso_discovery/youbac.png')
       h1 Flexibility
     Slide(class='darkgray')
@@ -395,6 +408,164 @@ Reveal
             li.slide-headline Use Cases -> Solutions
             li.slide-headline Solutions campaigns
       h1 GTM Transformation
+    VideoSlide(src='/oso_discovery/homers_cut.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Grow The Audience 
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/all_time_traffic.json'
+    )
+      h1 All Time Traffic
+    Slide
+      img(src='/oso_discovery/content_miss.png')
+      h1 Misalignment
+    Slide(class='black')
+      .slide-headline We need more plate appearances
+    Slide(class='darkgray')
+      .flex.flex-row(class='w-11/12')
+        div(class='w-1/3')
+          video.w-full.h-full(autoplay muted loop)
+            source(src='/oso_discovery/homers_cut.mp4')
+        div(class='w-2/3')
+          ul.list-inside.fragment.fade-left
+            li.slide-headline Authz Falsehoods
+            li.slide-headline Syncing Authz Data 
+            li.slide-headline Authz Nightmares 
+            li.slide-headline Middleware Guide 
+            li.slide-headline Authz for FastAPI 
+            li.slide-headline Oso MCP Server 
+            li.slide-headline Tool for PydanticAI
+            li.slide-headline Recipes
+      h1 Grow the Audience
+    VideoSlide(src='/oso_discovery/polar_bear_waiter.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Upgrade Developer Experience 
+    VideoSlide(src='/oso_discovery/tools_cut.webm')
+      h1 Basic Tooling
+    Slide
+      img(src='/oso_discovery/php_frameworks.png')
+      h1 PHP support
+    VideoSlide(src='/oso_discovery/huracan_cut.mp4')
+      h1 Velocity Upgrade
+    Slide(class='darkgray')
+      .flex.flex-row(class='w-11/12')
+        div(class='w-1/3')
+          video.w-full.h-full(autoplay muted loop)
+            source(src='/oso_discovery/polar_bear_waiter.mp4')
+        div(class='w-2/3')
+          ul.list-inside.fragment.fade-left
+            li.slide-headline Code Picker
+            li.slide-headline PHP SDK
+            li.slide-headline Lightbox
+            li.slide-headline Diagramming
+            li.slide-headline CI for code
+            li.slide-headline CI for style
+            li.slide-headline Login / signup
+            li.slide-headline Open source docs
+      h1 Upgrade DevX 
+    VideoSlide(src='/oso_discovery/superhero.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Docs Transformation 
+    Slide(class='darkgray')
+      .slide-headline
+        span.text-green 171 
+        | pages
+      .slide-headline
+        span.text-green 854 
+        | code snippets
+      .slide-headline
+        span.text-green 241 
+        | polar snippets
+      .slide-headline
+        span.text-green 3.5k 
+        | uniques (!)
+      h1 Docs
+    Slide(class='black')
+      .slide-headline More traffic
+      .slide-headline More illustration
+      .slide-headline Easier discovery
+    Slide(class='darkgray')
+      img(src='/oso_discovery/docs.png')
+      h1 Unoptimized
+    Slide
+      img(src='/oso_discovery/docs_journey.png')
+      h1 Developer Orientation
+    Slide
+      img(src='/oso_discovery/broken_code.png')
+      h1 Broken Code
+    Slide(class='darkgray')
+      .flex.flex-row(class='w-11/12')
+        div(class='w-1/3')
+          video.w-full.h-full(autoplay muted loop)
+            source(src='/oso_discovery/superhero.mp4')
+        div(class='w-2/3')
+          ul.list-inside.fragment.fade-left
+            li.slide-headline Code Audit 
+            li.slide-headline Top Navigation
+            li.slide-headline Landing pages
+            li.slide-headline Refresh Style
+            li.slide-headline Info Hierarchy 
+            li.slide-headline Prune
+            li.slide-headline Reference
+            li.slide-headline Survey
+      h1 Docs Transformation 
+    Slide(class='green')
+      .slide-headline Conclusions
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/assessment_radar_combined.json'
+    )
+      h1 Combined 
+    Slide
+      img(src='/oso_discovery/uptime.png')
+      h1 Some 
+    Slide
+      img(src='/oso_discovery/performance.png')
+      h1 Bits 
+    Slide
+      img(src='/oso_discovery/oso_academy.png')
+      h1 Are Strong
+    Slide(class='darkgray')
+      img(src='/oso_discovery/organic_decline.png')
+      h1 Some 
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/oso_funnel.json'
+    )
+      h1 Bits 
+    Slide
+      img(src="/oso_discovery/oso_home_page.png")
+      h1 Are Weak
+    VideoSlide(src='/oso_discovery/transformer_cut.mp4')
+      .h-full.flex.items-center.justify-center
+        .grid
+          .slide-headline.outline-text Go-To-Market 
+          .slide-headline.outline-text Transformation 
+    VideoSlide(src='/oso_discovery/homers_cut.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Grow The Audience 
+    VideoSlide(src='/oso_discovery/polar_bear_waiter.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Upgrade Developer Experience 
+    VideoSlide(src='/oso_discovery/superhero.mp4')
+      .h-full.flex.items-center.justify-center
+        .slide-headline.outline-text Docs Transformation 
+    Slide(class='green')
+      .slide-headline GTM Transformation
+      .slide-headline Grow the Audience
+      .slide-headline Upgrade DevX
+      .slide-headline Docs Transformation
+    Slide
+      .slide-headline.text-black
+        a(href='https://www.notion.so/osohq/Discovery-Wrap-1cf9f1471f2b806eb2c7e7fe57aae25a?pvs=4')
+          | Discoveyr Wrap 
+      .slide-headline.text-black
+        a(href='https://www.notion.so/osohq/Rob-s-Discovery-Notebook-1bb9f1471f2b804abfe6d14179a75d61?pvs=4')
+          | Discovery Phase Notebook
+      .slide-headline.text-black
+        a(href='https://www.notion.so/osohq/Acceleration-Phase-1c29f1471f2b8064863bccbede16c6ab?pvs=4')
+          | Acceleration Kanban
+      h1 Resources
 </template>
 
 <script>

@@ -53,9 +53,9 @@ export default {
         { key: 'lg', breakpoint: 1024, fontSize: 18},
         { key: 'xl', breakpoint: 1280, fontSize: 20},
         { key: '2xl', breakpoint: 1536, fontSize: 24},
-        { key: 'hd', breakpoint: 1920, fontSize: 32},
-        { key: '4k', breakpoint: 3840, fontSize: 72},
-        { key: '8k', breakpoint: 7680, fontSize: 88}
+        { key: 'hd', breakpoint: 1920, fontSize: 28},
+        { key: '4k', breakpoint: 3840, fontSize: 48},
+        { key: '8k', breakpoint: 7680, fontSize: 72}
       ] 
 
       const foundBreakpoint = breakpoints.find(breakpoint => {
@@ -106,7 +106,7 @@ export default {
 
           if (this.chart.getOption().calendar) {
             this.chart.setOption({ calendar: { cellSize:
-              this.currentBreakpoint.fontSize * 1.3 } } )
+              this.currentBreakpoint.fontSize * 1.2 } } )
             this.chart.setOption({ calendar: { monthLabel: { fontSize: this.currentBreakpoint.fontSize } } } )
           }
 
@@ -120,7 +120,8 @@ export default {
             }
 
             if (this.chart.getOption().calendar) {
-              this.chart.setOption({ calendar: { cellSize: this.currentBreakpoint.fontSize * 1.3 } } )
+              this.chart.setOption({ calendar: { cellSize:
+                this.currentBreakpoint.fontSize * 1.2 } } )
               this.chart.setOption({ calendar: { monthLabel: { fontSize: this.currentBreakpoint.fontSize } } } )
             }
           })
