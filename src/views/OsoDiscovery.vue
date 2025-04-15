@@ -111,6 +111,9 @@ Reveal
     Slide(class='darkgray')
       img(src='/oso_discovery/organic_decline.png')
       h1 13% Search Decline
+    Slide(class='darkgray')
+      img(src='/oso_discovery/organic_social.png')
+      h1 12% Social Decline 
     Slide
       img(src='/oso_discovery/google_ctr.webp')
       h1 Current reality
@@ -121,7 +124,11 @@ Reveal
       class='darkgray'
       src='/oso_discovery/data/signups_12_month.json'
     )
-      h1 Signups Last Year 
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/oso_funnel_last_30.json'
+    )
+      h1 Funnel Last 30 Days 
     Slide(class='darkgray')
       .flex.flex-row(class='w-11/12')
         div(class='w-1/3')
@@ -212,6 +219,11 @@ Reveal
       src='/oso_discovery/data/assessment_radar.json'
     )
       h1 Rob's Assessment
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/assessment_radar_meghan.json'
+    )
+      h1 Meghan's Assessment
     ChartSlide(
       class='darkgray'
       src='/oso_discovery/data/assessment_radar_graham.json'
