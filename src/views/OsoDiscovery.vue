@@ -221,6 +221,11 @@ Reveal
       h1 Rob's Assessment
     ChartSlide(
       class='darkgray'
+      src='/oso_discovery/data/assessment_radar_jerome.json'
+    )
+      h1 Jerome's Assessment
+    ChartSlide(
+      class='darkgray'
       src='/oso_discovery/data/assessment_radar_meghan.json'
     )
       h1 Meghan's Assessment

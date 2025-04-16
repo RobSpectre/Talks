@@ -15,6 +15,7 @@
       "bottom": 5,
       "data": [
         "Rob",
+        "Jerome",
         "Meghan",
         "Graham"
       ],
@@ -37,6 +38,19 @@
       },
       "data": [
         [ 7, 8, 10, 3, 5, 8, 2 ]
+      ]
+    },
+    {
+      "name": "Jerome",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#f49f42"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 8, 7, 7, 6, 7, 8, 4 ]
       ]
     },
     {
