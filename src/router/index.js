@@ -7,6 +7,7 @@ import CustomerMoat from '@/views/CustomerMoat.vue'
 import LaunchDarklyQuickstart from '@/views/LaunchDarklyQuickstart.vue'
 import LaunchDarklyQuickstartAnalysis from '@/views/LaunchDarklyQuickstartAnalysis.vue'
 import OsoDiscovery from '@/views/OsoDiscovery.vue'
+import OsoIntroduction from '@/views/OsoIntroduction.vue'
 
 const routes = [
   {
@@ -57,6 +58,12 @@ const routes = [
     path: '/oso-discovery',
     name: 'Oso Discovery Wrap',
     component: OsoDiscovery,
+    private: true
+  },
+  {
+    path: '/oso-introduction',
+    name: 'Oso Introduction',
+    component: OsoIntroduction,
     private: true
   }
 ]
