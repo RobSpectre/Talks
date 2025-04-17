@@ -167,9 +167,6 @@ Reveal
       img(src='/oso_discovery/working_code.png')
       h1 Working Code! 
     Slide
-      img(src='/oso_discovery/diagram.webp')
-      h1 Illustration!
-    Slide
       img(src='/oso_discovery/click_path.webp')
       h1 Guided Path!
     Slide
@@ -178,6 +175,11 @@ Reveal
     Slide
       img(src='/oso_discovery/java.png')
       h1 Java!
+    Slide(class='green')
+      .slide-headline Hazal to the rescue!
+    Slide
+      img(src='/oso_discovery/diagram.webp')
+      h1 Illustration!
     Slide
       .slide-headline.text-black
         a(href='https://www.notion.so/osohq/Draft-Quickstart-Outline-1bb9f1471f2b80828130f6318b3a5229?pvs=4')
