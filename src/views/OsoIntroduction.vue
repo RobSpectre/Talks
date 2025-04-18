@@ -135,6 +135,8 @@ Reveal
     Slide(class='black')
       .slide-headline You have to buy audiences in 2025
       h1 The new normal
+    Slide(class='green')
+      .slide-headline Ege to the rescue!
     ChartSlide(
       class='darkgray'
       src='/oso_discovery/data/signups_12_month.json'
@@ -144,8 +146,6 @@ Reveal
       src='/oso_discovery/data/oso_funnel_last_30.json'
     )
       h1 Funnel Last 30 Days
-    Slide(class='green')
-      .slide-headline Ege to the rescue!
     Slide
       .slide-headline.text-black
         a(href='https://www.notion.so/osohq/Analytics-Implementation-Audit-1bb9f1471f2b802c9e5ad66a5dbe3507?pvs=4')
@@ -248,6 +248,12 @@ Reveal
     Slide(class='green')
       .slide-headline prall.jacob@gmail.com
       h1 Welcome Wagon
+    Slide(class='darkgray')
+      .slide-headline "I heard your prezo was awesome"
+      .slide-headline "Can't wait to work with you"
+      .slide-headline "So excited you're joining us"
+    Slide(class='green')
+      .slide-headline Thank You!
 </template>
 
 <script>
