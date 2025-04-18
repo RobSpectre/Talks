@@ -103,7 +103,7 @@ Reveal
     Slide(class='darkgray')
       .slide-headline 2x web traffic (526k)
       .slide-headline 185 meetings with ideal customers
-      h1 2025 Fiscal Goals
+      h1 FY 2026 Goals
     VideoSlide(src='/oso_discovery/gymkhana_cut.mp4')
       h1 Big gap
     ChartSlide(
@@ -231,7 +231,7 @@ Reveal
     Slide(class='darkgray')
       .slide-headline 2x web traffic (526k)
       .slide-headline 185 meetings with ideal customers
-      h1 2025 Fiscal Goals
+      h1 FY 2026 Goals
     Slide
       .slide-headline.text-black
         a(href='https://www.notion.so/osohq/Discovery-Wrap-1cf9f1471f2b806eb2c7e7fe57aae25a?pvs=4')
@@ -243,6 +243,11 @@ Reveal
         a(href='https://www.notion.so/osohq/Acceleration-Phase-1c29f1471f2b8064863bccbede16c6ab?pvs=4')
           | Acceleration Kanban
       h1 Resources
+    Slide(class='darkgray')
+      .slide-headline Quick ask
+    Slide(class='green')
+      .slide-headline prall.jacob@gmail.com
+      h1 Welcome Wagon
 </template>
 
 <script>
