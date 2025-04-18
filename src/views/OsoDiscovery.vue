@@ -583,6 +583,24 @@ Reveal
         a(href='https://www.notion.so/osohq/Acceleration-Phase-1c29f1471f2b8064863bccbede16c6ab?pvs=4')
           | Acceleration Kanban
       h1 Resources
+    Slide(class='green')
+      .slide-headline Addendum
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/stories_by_epic.json'
+    )
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/effort_by_epic.json'
+    )
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/impact_by_epic.json'
+    )
+    ChartSlide(
+      class='darkgray'
+      src='/oso_discovery/data/story_scatterplot.json'
+    )
 </template>
 
 <script>

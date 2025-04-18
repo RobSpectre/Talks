@@ -1,0 +1,61 @@
+{
+  "tooltip": {
+    "trigger": "item",
+    "formatter": "{b} - Effort/Impact: {c}"
+  },
+  "xAxis": { "name": "Effort" },
+  "yAxis": { "name": "Impact"},
+  "series": [
+    {
+      "symbolSize": 20,
+      "data": [
+            {"name": "Falsehoods Programmers Believe About Authorization", "value": [4, 7]},
+            {"name": "Script Explainer Video", "value": [7, 9]},
+            {"name": "Authorization tool for PydanticAI", "value": [5, 6]},
+            {"name": "Syncing Authorization Data", "value": [4, 8]},
+            {"name": "Authorization Nightmares", "value": [5, 7]},
+            {"name": "Middleware integration guide", "value": [6, 9]},
+            {"name": "Create authorization middleware for FastAPI", "value": [7, 7]},
+            {"name": "Model Context Protocol server for Oso", "value": [0, 9]},
+            {"name": "Fix code picker", "value": [4, 7]},
+            {"name": "PHP SDK", "value": [6, 9]},
+            {"name": "Refresh SEO performance", "value": [9, 9]},
+            {"name": "Add diagramming to Docs", "value": [7, 9]},
+            {"name": "CI for code", "value": [2, 7]},
+            {"name": "CI for style", "value": [3, 5]},
+            {"name": "Update Login / Signup", "value": [2, 9]},
+            {"name": "Open source docs", "value": [9, 8]},
+            {"name": "Code audit", "value": [8, 9]},
+            {"name": "Update top navigation to drive /docs traffic", "value": [1, 6]},
+            {"name": "Landing pages", "value": [2, 7]},
+            {"name": "Refresh style guide", "value": [1, 6]},
+            {"name": "Rearchitect information hierarchy", "value": [3, 9]},
+            {"name": "Prune poor performing content", "value": [2, 5]},
+            {"name": "Add reference docs", "value": [7, 8]},
+            {"name": "NPS Survey", "value": [1, 4]},
+            {"name": "Source talent", "value": [8, 9]},
+            {"name": "Brand guide", "value": [6, 8]},
+            {"name": "Creative building blocks", "value": [9, 9]},
+            {"name": "Explainer video", "value": [9, 9]},
+            {"name": "Diagram framework", "value": [8, 8]},
+            {"name": "Self serve tool", "value": [2, 7]},
+            {"name": "Product heroes", "value": [5, 7]},
+            {"name": "Motion branding", "value": [6, 8]},
+            {"name": "Define positioning", "value": [9, 9]},
+            {"name": "Messaging revamp", "value": [2, 9]},
+            {"name": "Messaging audit", "value": [5, 7]},
+            {"name": "3 Leg landing pages", "value": [4, 8]},
+            {"name": "3 leg campaigns", "value": [3, 9]},
+            {"name": "Parallelize website", "value": [2, 9]},
+            {"name": "New demo", "value": [7, 9]},
+            {"name": "Sales enablement", "value": [8, 8]},
+            {"name": "Agentic prospect finder", "value": [5, 0]},
+            {"name": "Sales outreach diagnosis", "value": [3, 6]},
+            {"name": "TCO Calculator", "value": [2, 5]},
+            {"name": "Use Cases -> Solutions", "value": [5, 6]},
+            {"name": "Solutions campaigns", "value": [5, 7]}
+      ],
+      "type": "scatter"
+    }
+  ]
+}

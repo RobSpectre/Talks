@@ -1,0 +1,54 @@
+{
+  "title": {
+    "text": "Stories by Epic",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "item",
+    "formatter": "{c} ({d}%)"
+  },
+  "legend": {
+    "orient": "vertical",
+    "left": "left"
+  },
+  "series": [
+    {
+      "name": "Count",
+      "type": "pie",
+      "radius": "50%",
+      "data": [
+        {
+          "value": 8,
+          "name": "Audience Growth"
+        },
+        {
+          "value": 8,
+          "name": "Developer Experience"
+        },
+        {
+          "value": 8,
+          "name": "Docs Transformation"
+        },
+        {
+          "value": 8,
+          "name": "Find the Ideal Customer"
+        },
+        {
+          "value": 8,
+          "name": "Rebear"
+        },
+        {
+          "value": 8,
+          "name": "Reposition the Product"
+        }
+      ],
+      "emphasis": {
+        "itemStyle": {
+          "shadowBlur": 10,
+          "shadowOffsetX": 0,
+          "shadowColor": "rgba(0, 0, 0, 0.5)"
+        }
+      }
+    }
+  ]
+}
