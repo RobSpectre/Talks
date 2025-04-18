@@ -1,0 +1,65 @@
+{
+  "textStyle": {
+    "fontSize": 12 
+  },
+  "legend": {
+    "padding": 7,
+    "data": [
+      "Viewed Any Page",
+      "Click Signup",
+      "Signup",
+      "Any Policy Change Event",
+      "Any Fact Change Event",
+      "Authorize"
+    ]
+  },
+  "series": [
+    {
+      "name": "Absolute",
+      "type": "funnel",
+      "left": "10%",
+      "width": "80%",
+      "label": {
+        "formatter": "{b}: {c}"
+      },
+      "labelLine": {
+        "show": false
+      },
+      "itemStyle": {
+        "opacity": 0.7
+      },
+      "emphasis": {
+        "label": {
+          "position": "outside",
+          "formatter": "{b}: {c}"
+        }
+      },
+      "data": [
+        {
+          "value": 21920,
+          "name": "Viewed Any Page"
+        },
+        {
+          "value": 542,
+          "name": "Click Signup (2.47%)"
+        },
+        {
+          "value": 184,
+          "name": "Signup (33.95%)"
+        },
+        {
+          "value": 93,
+          "name": "Any Policy Change Event (50.54%)"
+        },
+        {
+          "value": 50,
+          "name": "Any Fact Change Event (53.76%)"
+        },
+        {
+          "value": 15,
+          "name": "Authorize (30%)"
+        }
+      ]
+    }
+  ]
+}

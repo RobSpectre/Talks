@@ -1,0 +1,56 @@
+{
+  "tooltip": {},
+  "calendar": {
+    "top": "middle",
+    "left": "center",
+    "orient": "vertical",
+    "cellSize": 100,
+    "dayLabel": {
+      "firstDay": 0,
+      "nameMap": "us"
+    },
+    "monthLabel": {
+      "nameMap": "cn",
+      "margin": 15,
+      "fontSize": 20,
+      "color": "#999"
+    },
+    "range": [
+      "2025-01",
+      "2025-03-31"
+    ]
+  },
+  "series": [
+    {
+      "type": "graph",
+      "edgeSymbol": [
+        "none",
+        "arrow"
+      ],
+      "coordinateSystem": "calendar",
+      "symbolSize": 15,
+      "calendarIndex": 0,
+      "itemStyle": {
+        "color": "yellow",
+        "shadowBlur": 9,
+        "shadowOffsetX": 1.5,
+        "shadowOffsetY": 3,
+        "shadowColor": "#555"
+      },
+      "lineStyle": {
+        "color": "#D10E00",
+        "width": 3,
+        "opacity": 1
+      },
+      "z": 20,
+      "data": [
+        [ "2025-01-01", 0 ],
+        [ "2025-01-16", 15.6 ],
+        [ "2025-01-29", 12.6 ],
+        [ "2025-02-05", 7 ],
+        [ "2025-02-10", 4.6 ],
+        [ "2025-03-24", 41.6 ]
+      ]
+    }
+  ]
+}

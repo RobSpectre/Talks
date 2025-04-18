@@ -1,0 +1,83 @@
+{
+  "tooltip": {},
+  "radar": {
+    "indicator": [
+      { "name": "Talent", "max": 10 },
+      { "name": "Product", "max": 10 },
+      { "name": "Pain", "max": 10 },
+      { "name": "First Time Use", "max": 10 },
+      { "name": "Docs", "max": 10 },
+      { "name": "Support", "max": 10 },
+      { "name": "Brand", "max": 10 }
+    ]
+  },
+  "legend": {
+      "bottom": 5,
+      "data": [
+        "Rob",
+        "Jerome",
+        "Meghan",
+        "Graham"
+      ],
+      "itemGap": 20,
+      "textStyle": {
+        "color": "#fff",
+        "fontSize": 14
+      },
+      "selectedMode": "multiple"
+  },
+  "series": [
+    {
+      "name": "Rob",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#F9713C"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 7, 8, 10, 3, 5, 8, 2 ]
+      ]
+    },
+    {
+      "name": "Jerome",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#f49f42"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 8, 7, 7, 6, 7, 8, 4 ]
+      ]
+    },
+    {
+      "name": "Meghan",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#e69d87"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 6, 8, 10, 6, 5, 0, 7 ]
+      ]
+    },
+    {
+      "name": "Graham",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#759aa0"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 7, 6, 7, 5, 7, 9, 6 ]
+      ]
+    }
+  ]
+}
