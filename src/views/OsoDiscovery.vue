@@ -589,14 +589,17 @@ Reveal
       class='darkgray'
       src='/oso_discovery/data/stories_by_epic.json'
     )
+      h1 Stories by Epic
     ChartSlide(
       class='darkgray'
       src='/oso_discovery/data/effort_by_epic.json'
     )
+      h1 Effort by Epic
     ChartSlide(
       class='darkgray'
       src='/oso_discovery/data/impact_by_epic.json'
     )
+      h1 Impact by Epic
     ChartSlide(
       class='darkgray'
       src='/oso_discovery/data/story_scatterplot.json'
