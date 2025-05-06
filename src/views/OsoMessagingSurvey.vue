@@ -74,6 +74,7 @@ Reveal
       class='darkgray'
       src='/oso_messaging_survey/data/alignment_radar.json'
     )
+      h1 Alignment
 </template>
 
 <script>
