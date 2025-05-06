@@ -1,0 +1,34 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "Scaleups",
+      "Developers",
+      "B2B SaaS"
+    ]
+  },
+  "series": [
+    {
+      "name": "Oso Is For...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        3,
+        3,
+        4 
+      ]
+    }
+  ]
+}

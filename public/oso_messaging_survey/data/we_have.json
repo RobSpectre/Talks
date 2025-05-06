@@ -1,0 +1,38 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "Custom modeling / DSL",
+      "Reliability",
+      "Migration Support / Tools",
+      "Local Authz",
+      "Docs"
+    ]
+  },
+  "series": [
+    {
+      "name": "We have...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        6,
+        4,
+        3,
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -4,10 +4,13 @@ import Home from '@/views/Home.vue'
 import FieldOfDreams from '@/views/FieldOfDreams.vue'
 import childsafeaiAssets from '@/views/childsafeaiAssets.vue'
 import CustomerMoat from '@/views/CustomerMoat.vue'
+
 import LaunchDarklyQuickstart from '@/views/LaunchDarklyQuickstart.vue'
 import LaunchDarklyQuickstartAnalysis from '@/views/LaunchDarklyQuickstartAnalysis.vue'
+
 import OsoDiscovery from '@/views/OsoDiscovery.vue'
 import OsoIntroduction from '@/views/OsoIntroduction.vue'
+import OsoMessagingSurvey from '@/views/OsoMessagingSurvey.vue'
 
 const routes = [
   {
@@ -58,6 +61,12 @@ const routes = [
     path: '/oso-discovery',
     name: 'Oso Discovery Wrap',
     component: OsoDiscovery,
+    private: true
+  },
+  {
+    path: '/oso-messaging-survey',
+    name: 'Oso Messaging Survey',
+    component: OsoMessagingSurvey,
     private: true
   },
   {

@@ -1,0 +1,34 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "DIY",
+      "OPA",
+      "Zanzibar clone"
+    ]
+  },
+  "series": [
+    {
+      "name": "Unlike...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        7,
+        1,
+        3
+      ]
+    }
+  ]
+}

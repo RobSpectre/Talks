@@ -1,0 +1,42 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "Authz",
+      "Custom modeling",
+      "Performance",
+      "Reliability",
+      "Local authz",
+      "Centralized authz",
+      "Support"
+    ]
+  },
+  "series": [
+    {
+      "name": "That provides...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        7,
+        3,
+        2,
+        3,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}
