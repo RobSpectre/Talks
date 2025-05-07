@@ -1,0 +1,28 @@
+{
+  "tooltip": {},
+  "radar": {
+    "indicator": [
+      { "name": "Oso Is For", "max": 13 },
+      { "name": "Who Must", "max": 13 },
+      { "name": "Our Product Is", "max": 13 },
+      { "name": "That Provides", "max": 13 },
+      { "name": "Unlike", "max": 13 },
+      { "name": "We Have", "max": 13 }
+    ]
+  },
+  "series": [
+    {
+      "name": "Question Alignment",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#F9713C"
+      },
+      "areaStyle": {
+        "opacity": 0.3
+      },
+      "data": [
+        [ 3, 12, 10, 3.3, 10, 7.8 ] 
+      ]
+    }
+  ]
+}
