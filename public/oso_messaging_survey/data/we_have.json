@@ -16,7 +16,8 @@
       "Reliability",
       "Migration Support / Tools",
       "Local Authz",
-      "Docs"
+      "Docs",
+      "Performance"
     ]
   },
   "series": [
@@ -27,9 +28,10 @@
         "focus": "series"
       },
       "data": [
-        6,
-        4,
+        8,
+        5,
         3,
+        2,
         1,
         1
       ]

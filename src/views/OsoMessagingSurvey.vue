@@ -13,9 +13,9 @@ Reveal
       h1 Company Survey 
     Slide(class='darkgray')
       .slide-headline
-        span.text-green 7 
+        span.text-green 9 
         |  responses
-      h1 Low Response Rate
+      h1 Response Rate
     ChartSlide(
       class='darkgray'
       src='/oso_messaging_survey/data/oso_is_for.json'
@@ -70,6 +70,8 @@ Reveal
       :headers="['#', 'Response']"
       :data='we_have'
     )
+    Slide(class='darkgray')
+      .slide-headline been doing this longer than anyone else, and have built a carefully crafted product which: 1. supercharges development through our core engine, Polar, that is opinionated enough to simplify the most common use cases, but flexible enough to meet the most unique requirements 2. empowers you to control how much data to centralize or not, fine-tuning it to your needs 3. offers best-in-class robustness and performance for one of the most critical areas of any app.
     ChartSlide(
       class='darkgray'
       src='/oso_messaging_survey/data/alignment_radar.json'
@@ -106,7 +108,9 @@ export default {
         4: { response: 'B2B software companies scaling their platforms and teams' },
         5: { response: 'developers' },
         6: { response: 'B2B SaaS Companies' },
-        7: { response: 'Platform engineering teams at B2B SaaS midmarket companies ' }
+        7: { response: 'Platform engineering teams at B2B SaaS midmarket companies ' },
+        8: { response: 'software engineering teams' },
+        9: { response: 'Mid-market B2B SaaS companies' }
       },
       who_must: {
         1: { response: 'Solve authorization to grow scalably.' },
@@ -115,7 +119,9 @@ export default {
         4: { response: 'are evolving their access control to match growing complexity and scale' },
         5: { response: 'control who can access what in their application' },
         6: { response: 'Ship fine-grained authorization in microservices apps' },
-        7: { response: 'add fine grained permissions to their application' }
+        7: { response: 'add fine grained permissions to their application' },
+        8: { response: 'built enterprise-grade access control features quickly, without sacrificing future scalability' },
+        9: { response: 'Apply access control across their entire system' }
       },
       our_product_is: {
         1: { response: 'Authorization-as-a-service platform' },
@@ -124,7 +130,9 @@ export default {
         4: { response: 'authorization-as-a-service platform that brings policy-as-code to modern development teams building microservices' },
         5: { response: 'coding language and infrastructure' },
         6: { response: 'authorization as a service' },
-        7: { response: 'authorization as a service' }
+        7: { response: 'authorization as a service' },
+        8: { response: 'authorization-as-a-service infrastructure solution' },
+        9: { response: 'Authorization Fabric' }
       },
       that_provides: {
         1: { response: 'Highly custom, performant and available authorization queries at large scale.' },
@@ -134,15 +142,19 @@ export default {
         5: { response: 'the tools to support any desired access pattern or use case' },
         6: { response: 'the most reliable way to deliver fine-grained authorization' },
         7: { response: 'centralized authorization in microservices without needing to sync and reconcile data ' },
+        8: { response: 'the quickest way for teams to meet their short and long-term goals at a fraction of the cost of in-house solutions' },
+        9: { response: 'a DSL for writing authorization logic once and enforcing it uniformly across applications, databases, RAG pipelines, and AI agents' }
       },
       unlike: {
         1: { response: 'Homegrown builds and OPA-based builders' },
         2: { response: 'building your own authorization logic or service' },
         3: { response: 'building this yourself' },
-        5: { response: 'custom, hardcoded authorization logic that becomes difficult to scale and audit over time,' },
-        6: { response: 'DIY or a Google Zanzibar clone' },
-        7: { response: 'DIY and Zanzibar solutions' },
-        8: { response: 'Zanzibar or DIY solutions ' },
+        4: { response: 'custom, hardcoded authorization logic that becomes difficult to scale and audit over time,' },
+        5: { response: 'DIY or a Google Zanzibar clone' },
+        6: { response: 'DIY and Zanzibar solutions' },
+        7: { response: 'Zanzibar or DIY solutions ' },
+        8: { response: 'pure policy engines and Zanzibar clones' },
+        9: { response: 'DIY or our competitors' }
       },
       we_have: {
         1: { response: 'Custom data modeling and 99.99% uptime.' },
@@ -151,7 +163,8 @@ export default {
         4: { response: "a modern authorization platform built for the speed and complexity of today’s software teams." },
         5: { response: "the flexibility for you to build RBAC, ReBAC or ABAC, without needing to centralize your data"},
         6: { response: "Flexible, reliable, best support/docs" },
-        7: { response: "scalable authorization so that you can sell to more enterprise customers & expand usage with them" }
+        7: { response: "scalable authorization so that you can sell to more enterprise customers & expand usage with them" },
+        8: { response: 'an authorization engine flexible enough to support any query and efficient enough to compute thousands of results in milliseconds' }
       }
     }
   }

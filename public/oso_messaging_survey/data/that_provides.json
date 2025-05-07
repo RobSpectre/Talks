@@ -18,7 +18,9 @@
       "Reliability",
       "Local authz",
       "Centralized authz",
-      "Support"
+      "Support",
+      "Speed",
+      "Enforcement"
     ]
   },
   "series": [
@@ -33,6 +35,8 @@
         3,
         2,
         3,
+        1,
+        1,
         1,
         1,
         1
