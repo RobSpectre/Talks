@@ -12,6 +12,8 @@ import OsoDiscovery from '@/views/OsoDiscovery.vue'
 import OsoIntroduction from '@/views/OsoIntroduction.vue'
 import OsoMessagingSurvey from '@/views/OsoMessagingSurvey.vue'
 
+import ClarifaiDiscovery from '@/views/ClarifaiDiscovery.vue'
+
 const routes = [
   {
     path: '/',
@@ -73,6 +75,12 @@ const routes = [
     path: '/oso-introduction',
     name: 'Oso Introduction',
     component: OsoIntroduction,
+    private: true
+  },
+  {
+    path: '/clarifai-discovery',
+    name: 'Clarifai Discovery',
+    component: ClarifaiDiscovery,
     private: true
   }
 ]

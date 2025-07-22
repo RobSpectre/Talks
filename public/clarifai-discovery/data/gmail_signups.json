@@ -1,0 +1,38 @@
+{
+  "title": {
+    "text": "Signups by Domain",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "item",
+    "formatter": "{c} ({d}%)"
+  },
+  "legend": {
+    "orient": "vertical",
+    "left": "left"
+  },
+  "series": [
+    {
+      "name": "Count",
+      "type": "pie",
+      "radius": "50%",
+      "data": [
+        {
+          "value": 10500,
+          "name": "gmail.com"
+        },
+        {
+          "value": 2503,
+          "name": "Other"
+        }
+      ],
+      "emphasis": {
+        "itemStyle": {
+          "shadowBlur": 10,
+          "shadowOffsetX": 0,
+          "shadowColor": "rgba(0, 0, 0, 0.5)"
+        }
+      }
+    }
+  ]
+}

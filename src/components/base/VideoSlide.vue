@@ -6,13 +6,15 @@ section(
   data-background-video-muted
   data-background-video-loop
 )
-  slot
+  div(class='flex flex-col items-center justify-center h-5/6')
+    slot
 section(
   v-else
   :data-background-video='src'
   data-background-color='#000'
 )
-  slot
+  div(class='flex flex-col items-center justify-center h-5/6')
+    slot
 </template>
 
 <script>
