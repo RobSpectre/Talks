@@ -61,6 +61,11 @@ Reveal
       h1 Funnel Since 17 March
     ChartSlide(
       class='darkgray'
+      src='/clarifai-discovery/data/traffic_sources.json'
+    )
+      h1 Traffic by Source
+    ChartSlide(
+      class='darkgray'
       src='/clarifai-discovery/data/traffic_by_source.json'
     )
       h1 Traffic by Source
@@ -79,6 +84,9 @@ Reveal
       src='/clarifai-discovery/data/gibberish_email.json'
     )
       h1 Gibberish Signups 
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/maxmind.png')
+      h1 Maxmind Risk Score Distro
     Slide(class='darkgray')
       .slide-headline We need to find out how many signups are fake
     Slide(class='darkgray')
@@ -210,6 +218,11 @@ Reveal
       src='/clarifai-discovery/data/estimated_spend.json'
     )
       h1 Demand generation 
+    ChartSlide(
+      class='darkgray'
+      src='/clarifai-discovery/data/traffic_sources.json'
+    )
+      h1 Traffic by Source
     Slide(class='darkgray')
       img(src='/clarifai-discovery/midbound.png')
       h1 Midbound
