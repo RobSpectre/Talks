@@ -174,7 +174,7 @@ Reveal
     VideoSlide(src='/clarifai-discovery/spy_photographer.mp4')
       h1 Scope the Competition
     Slide(class='darkgray')
-      .grid.grid-cols-4.gap-4.text-5xl
+      .grid.grid-cols-4.gap-4.text-responsive
         a.text-white.uppercase(href="https://www.together.ai" target="_blank") together.ai
         a.text-white.uppercase(href="https://fireworks.ai" target="_blank") fireworks.ai
         a.text-white.uppercase(href="https://www.baseten.co" target="_blank") baseten
