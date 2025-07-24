@@ -54,6 +54,10 @@ html, .text-responsive {
   @apply text-xs sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl hd:text-4xl 4k:text-6xl 8k:text-8xl;
 }
 
+.grid-responsive {
+  @apply grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
 .reveal .green {
     background-color: $childsafeGreen;
 }
