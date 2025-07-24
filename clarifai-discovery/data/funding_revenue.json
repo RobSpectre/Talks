@@ -1,0 +1,99 @@
+{
+  "title": {
+    "text": "AI Inference & Compute Companies: Funding vs Revenue",
+    "subtext": "Total funding raised and estimated annual revenue (in millions USD)"
+  },
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {
+    "data": ["Total Funding", "Estimated Revenue"]
+  },
+  "grid": {
+    "left": "3%",
+    "right": "4%",
+    "bottom": "15%",
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "Groq",
+      "Cerebras",
+      "NVIDIA Run:ai",
+      "Anyscale",
+      "Together.ai",
+      "Baseten",
+      "DigitalOcean AI",
+      "Replicate",
+      "Fireworks AI",
+      "RunPod",
+      "Modal",
+      "DeepInfra",
+      "Parasail",
+      "Hyperbolic",
+      "Cerebrium AI"
+    ],
+    "axisLabel": {
+      "rotate": 45,
+      "interval": 0
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "name": "Amount ($ millions)"
+  },
+  "series": [
+    {
+      "name": "Total Funding",
+      "data": [
+        1000,
+        750,
+        700,
+        250,
+        225,
+        115,
+        null,
+        60,
+        52,
+        20,
+        30,
+        28.6,
+        10,
+        7,
+        8.5
+      ],
+      "type": "bar",
+      "itemStyle": {
+        "color": "#5470c6"
+      }
+    },
+    {
+      "name": "Estimated Revenue",
+      "data": [
+        75,
+        136.4,
+        30,
+        45,
+        75,
+        30,
+        75,
+        22.5,
+        45,
+        40,
+        15,
+        15,
+        2,
+        10,
+        3.5
+      ],
+      "type": "bar",
+      "itemStyle": {
+        "color": "#91cc75"
+      }
+    }
+  ]
+}

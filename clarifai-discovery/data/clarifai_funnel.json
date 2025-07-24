@@ -1,0 +1,60 @@
+{
+  "textStyle": {
+    "fontSize": 12 
+  },
+  "legend": {
+    "padding": 7,
+    "data": [
+      "Viewed Any Page",
+      "Click Signup",
+      "Signup",
+      "Add Credit Card",
+      "Create Cluster"
+    ]
+  },
+  "series": [
+    {
+      "name": "Absolute",
+      "type": "funnel",
+      "left": "10%",
+      "width": "80%",
+      "label": {
+        "formatter": "{b}: {c}"
+      },
+      "labelLine": {
+        "show": false
+      },
+      "itemStyle": {
+        "opacity": 0.7
+      },
+      "emphasis": {
+        "label": {
+          "position": "outside",
+          "formatter": "{b}: {c}"
+        }
+      },
+      "data": [
+        {
+          "value": 178833,
+          "name": "Viewed Any Page"
+        },
+        {
+          "value": 9746,
+          "name": "Click Signup (5.44%)"
+        },
+        {
+          "value": 6006,
+          "name": "Signup (3.35%)"
+        },
+        {
+          "value": 0,
+          "name": "Add Credit Card (0%)"
+        },
+        {
+          "value": 0,
+          "name": "Create Cluster (0%)"
+        }
+      ]
+    }
+  ]
+}

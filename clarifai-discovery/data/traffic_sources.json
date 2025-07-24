@@ -1,0 +1,27 @@
+{
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "Direct",
+      "Organic Search",
+      "Referral",
+      "Paid Search",
+      "Other"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [
+        838,
+        379,
+        14,
+        6,
+        6
+      ],
+      "type": "bar"
+    }
+  ]
+}
