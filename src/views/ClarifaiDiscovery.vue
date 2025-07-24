@@ -9,6 +9,17 @@ Reveal
           li rob.spectre@clarifai.com
     ImageSlide(src='/images/childsafeai-assets/rob_and_ada.gif')
       h1 Hi! I'm Ada's Dad
+    Slide(class='darkgray')
+      iframe(
+        title="vimeo-player"
+        src="https://player.vimeo.com/video/176045626?h=32ce94fb13"
+        width="800"
+        height="600"
+        frameborder="0"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        allowfullscreen
+      )
     Slide(class='green')
       .slide-headline Accelerate developer adoption
       .slide-headline of compute orchestration
@@ -38,15 +49,19 @@ Reveal
     )
       h1 Definition of Done
     Slide(class='darkgray')
-      .slide-headline This developer experience is not competitive yet in today's market
+      .slide-headline
+        | This developer experience is 
+        span.text-green  not competitive yet
+        |  in today's market
     Slide(class='darkgray')
       .slide-headline.text-black 7 min to first inference (API)
       .slide-headline.text-black OpenAI compatibility 
+      .slide-headline.text-black Design is good
       h1 Worked
     Slide(class='darkgray')
-      .slide-headline.text-black Does not work
+      .slide-headline.text-black Does not work self-serve
       .slide-headline.text-black Order of operation
-      .slide-headline.text-black Too much configuration
+      .slide-headline.text-black Too much code and configuration
       .slide-headline.text-black Most of experience bugged
       .slide-headline.text-black What little that does work is not differentiated
       .slide-headline.text-black Model catalog feels outdated
@@ -90,6 +105,8 @@ Reveal
     Slide(class='darkgray')
       .slide-headline We need to find out how many signups are fake
     Slide(class='darkgray')
+      img(src='/clarifai-discovery/llm_jacking.png')
+    Slide(class='darkgray')
       img(src='/clarifai-discovery/krebs.png')
     Slide(class='darkgray')
       .slide-headline Implement Turnstile
@@ -116,7 +133,27 @@ Reveal
       h1 Where are we?
     ChartSlide(
       class='darkgray'
+      src='/clarifai-discovery/data/assessment_radar_matt.json'
+    )
+      h1 Assessment - Matt 
+    ChartSlide(
+      class='darkgray'
+      src='/clarifai-discovery/data/assessment_radar_sajai.json'
+    )
+      h1 Assessment - Sajai 
+    ChartSlide(
+      class='darkgray'
+      src='/clarifai-discovery/data/assessment_radar_doug.json'
+    )
+      h1 Assessment - Doug 
+    ChartSlide(
+      class='darkgray'
       src='/clarifai-discovery/data/assessment_radar.json'
+    )
+      h1 Assessment - Rob
+    ChartSlide(
+      class='darkgray'
+      src='/clarifai-discovery/data/assessment_radar_combined.json'
     )
       h1 Assessment
     VideoSlide(src='/clarifai-discovery/mountain.mp4')
@@ -124,7 +161,7 @@ Reveal
     VideoSlide(src='/clarifai-discovery/ship.mp4')
       .slide-headline.outline-text Charting a Course Forward
     Slide(class='darkgray')
-      .slide-headline Develop the Product
+      .slide-headline Improve the Developer Experience 
       .slide-headline Reposition the Product
       .slide-headline Fix the Fundamentals
       .slide-headline Find One Play That Works
@@ -136,6 +173,37 @@ Reveal
       h1 Dog Food Fridays
     VideoSlide(src='/clarifai-discovery/spy_photographer.mp4')
       h1 Scope the Competition
+    Slide(class='darkgray')
+      .grid.grid-cols-4.gap-4.text-5xl
+        a.text-white.uppercase(href="https://www.together.ai" target="_blank") together.ai
+        a.text-white.uppercase(href="https://fireworks.ai" target="_blank") fireworks.ai
+        a.text-white.uppercase(href="https://www.baseten.co" target="_blank") baseten
+        a.text-white.uppercase(href="https://deepinfra.com" target="_blank") deepinfra
+        a.text-white.uppercase(href="https://replicate.com" target="_blank") replicate
+        a.text-white.uppercase(href="https://modal.com" target="_blank") modal
+        a.text-white.uppercase(href="https://www.cerebrium.ai" target="_blank") cerebrium ai
+        a.text-white.uppercase(href="https://www.runpod.io" target="_blank") runpod
+        a.text-white.uppercase(href="https://parasail.io" target="_blank") parasail
+        a.text-white.uppercase(href="https://www.hyperbolic.ai" target="_blank") hyperbolic
+        a.text-white.uppercase(href="https://www.digitalocean.com" target="_blank") digitalocean
+        a.text-white.uppercase(href="https://www.anyscale.com" target="_blank") anyscale
+        a.text-white.uppercase(href="https://www.bentoml.com" target="_blank") BentoML
+        a.text-white.uppercase(href="https://novita.ai" target="_blank") Novita AI
+        a.text-white.uppercase(href="https://lambdalabs.com" target="_blank") lambda.ai
+        a.text-white.uppercase(href="https://www.chutes.ai" target="_blank") Chutes AI
+        a.text-white.uppercase(href="https://www.iguazio.com/" target="_blank") Iguazio
+        a.text-white.uppercase(href="https://mlfoundry.com/" target="_blank") ML Foundry 
+        a.text-white.uppercase(href="https://flyte.org/" target="_blank") Flyte
+        a.text-white.uppercase(href="https://www.covalent.xyz/" target="_blank") Covalent
+        a.text-white.uppercase(href="https://www.coreweave.com" target="_blank") Coreweave
+        a.text-white.uppercase(href="https://www.nvidia.com/en-us/software/run-ai/" target="_blank") NVIDIA Run:ai
+        a.text-white.uppercase(href="https://www.cerebras.ai" target="_blank") cerebras
+        a.text-white.uppercase(href="https://groq.com" target="_blank") groq
+      h1 Crowded Space
+    ChartSlide(class='darkgray' src='/clarifai-discovery/data/funding_revenue.json')
+      h1 With A Lot Of $$$
+    ChartSlide(class='darkgray' src='/clarifai-discovery/data/funding_revenue_non_hardware.json')
+      h1 $806M (minus hardware)
     VideoSlide(src='/clarifai-discovery/user_film.mp4')
       h1 Film Review
     Slide(class='darkgray')
@@ -154,11 +222,20 @@ Reveal
       img(src='/clarifai-discovery/clarifai_front_page_cost.png')
       h1 Cost
     Slide(class='darkgray')
+      img(src='/clarifai-discovery/hyperbolic.png')
+      h1 Hyperbolic
+    Slide(class='darkgray')
       img(src='/clarifai-discovery/clarifai_front_page_performance.png')
       h1 Performance
     Slide(class='darkgray')
+      img(src='/clarifai-discovery/cerebrium.png')
+      h1 Cerebrium
+    Slide(class='darkgray')
       img(src='/clarifai-discovery/clarifai_front_page_privacy.png')
       h1 Privacy
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/parasail.png')
+      h1 Parasail
     Slide(class='darkgray')
       img(src='/clarifai-discovery/ad_ideation.png')
       h1 Messaging Iteration
@@ -191,6 +268,12 @@ Reveal
       h1 SEO / SEM
     ImageSlide(src="/images/finding-your-audience-in-2024/zero_click_searches.png")
     ImageSlide(src="/images/finding-your-audience-in-2024/search_graph.png")
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/pew_research.png')
+      h1 22 July 2025
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/compute_orchestration.png')
+      h1 "Compute orchestration for AI"
     VideoSlide(src="/video/finding-your-audience-in-2024/newsroom.mp4")
       h1 Every newsroom is half the size
     VideoSlide(src="/clarifai-discovery/bar_fight_cut.mp4")
@@ -198,12 +281,21 @@ Reveal
     Slide(class='darkgray')
       img(src='/clarifai-discovery/email_list.png')
       h1 Email list is toast
+    VideoSlide(src='/clarifai-discovery/tumbleweed.webm')
+      h1 Community has not formed
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/openrouter_discord.png')
+      h1 OpenRouter Discord
+    Slide(class='darkgray')
+      img(src='/clarifai-discovery/mariokartworld.png')
+      h1 Mario Kart World Discord
     Slide(class='darkgray')
       .bullet.fragment Social
       .bullet.fragment Search
       .bullet.fragment Comms
       .bullet.fragment Content
       .bullet.fragment Email 
+      .bullet.fragment Community
       h2.text-white.fragment ???
     Slide(class='darkgray')
       video(
@@ -262,9 +354,9 @@ Reveal
       h1 This is a pivotal moment 
     ChartSlide(
       class='darkgray'
-      src='/clarifai-discovery/data/assessment_radar.json'
+      src='/clarifai-discovery/data/assessment_radar_combined.json'
     )
-      h1 Lot of work ahead
+      h1 Lot of work ahead 
     Slide(class='darkgray')
       img(src='/clarifai-discovery/fix_plan.png')
       h1 Focus on DX 

@@ -1,0 +1,83 @@
+{
+  "tooltip": {},
+  "radar": {
+    "indicator": [
+      { "name": "Talent", "max": 10 },
+      { "name": "Product", "max": 10 },
+      { "name": "Pain", "max": 10 },
+      { "name": "First Time Use", "max": 10 },
+      { "name": "Docs", "max": 10 },
+      { "name": "Support", "max": 10 },
+      { "name": "Brand", "max": 10 }
+    ]
+  },
+  "legend": {
+      "bottom": 5,
+      "data": [
+        "Rob",
+        "Matt",
+        "Sajai",
+        "Doug"
+      ],
+      "itemGap": 20,
+      "textStyle": {
+        "color": "#fff",
+        "fontSize": 14
+      },
+      "selectedMode": "multiple"
+  },
+  "series": [
+    {
+      "name": "Rob",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#F9713C"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 6, 2, 8, 0, 4, 2, 4 ]
+      ]
+    },
+    {
+      "name": "Matt",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#0C38F6"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 4, 8, 6, 5, 5, 2, 5 ]
+      ]
+    },
+    {
+      "name": "Sajai",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#3f61f4"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 7, 6, 6, 3, 4, 7, 5 ]
+      ]
+    },
+    {
+      "name": "Doug",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#7d94f6"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 6, 6, 7, 4, 5, 3, 4 ]
+      ]
+    }
+  ]
+}
