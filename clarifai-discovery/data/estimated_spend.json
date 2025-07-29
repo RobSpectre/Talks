@@ -1,0 +1,25 @@
+{
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "together.ai",
+      "Baseten",
+      "Novita AI",
+      "lambda.ai"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "data": [
+        75000,
+        15200,
+        8900,
+        127100
+      ],
+      "type": "bar"
+    }
+  ]
+}

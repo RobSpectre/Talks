@@ -1,0 +1,54 @@
+{
+  "title": {
+    "text": "Impact by Epic",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "item",
+    "formatter": "{c} ({d}%)"
+  },
+  "legend": {
+    "orient": "vertical",
+    "left": "left"
+  },
+  "series": [
+    {
+      "name": "Count",
+      "type": "pie",
+      "radius": "50%",
+      "data": [
+        {
+          "value": 62,
+          "name": "Audience Growth"
+        },
+        {
+          "value": 63,
+          "name": "Developer Experience"
+        },
+        {
+          "value": 54,
+          "name": "Docs Transformation"
+        },
+        {
+          "value": 24,
+          "name": "Find the Ideal Customer"
+        },
+        {
+          "value": 65,
+          "name": "Rebear"
+        },
+        {
+          "value": 68,
+          "name": "Reposition the Product"
+        }
+      ],
+      "emphasis": {
+        "itemStyle": {
+          "shadowBlur": 10,
+          "shadowOffsetX": 0,
+          "shadowColor": "rgba(0, 0, 0, 0.5)"
+        }
+      }
+    }
+  ]
+}

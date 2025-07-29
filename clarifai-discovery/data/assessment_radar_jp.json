@@ -1,0 +1,29 @@
+{
+  "tooltip": {},
+  "radar": {
+    "indicator": [
+      { "name": "Talent", "max": 10 },
+      { "name": "Product", "max": 10 },
+      { "name": "Pain", "max": 10 },
+      { "name": "First Time Use", "max": 10 },
+      { "name": "Docs", "max": 10 },
+      { "name": "Support", "max": 10 },
+      { "name": "Brand", "max": 10 }
+    ]
+  },
+  "series": [
+    {
+      "name": "Score",
+      "type": "radar",
+      "itemStyle": {
+        "color": "#F9713C"
+      },
+      "areaStyle": {
+        "opacity": 0.1
+      },
+      "data": [
+        [ 6, 2, 8, 0, 4, 2, 4 ]
+      ]
+    }
+  ]
+}

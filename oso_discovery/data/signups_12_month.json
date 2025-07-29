@@ -1,0 +1,80 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "grid": {
+    "left": "3%",
+    "right": "4%",
+    "bottom": "3%",
+    "containLabel": true
+  },
+  "xAxis": [
+    {
+      "type": "category",
+      "data": [
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+        "January",
+        "February",
+        "March",
+        "April"
+      ],
+      "axisTick": {
+        "alignWithLabel": true
+      }
+    }
+  ],
+  "yAxis": [
+    {
+      "type": "value"
+    }
+  ],
+  "series": [
+    {
+      "name": "Direct",
+      "type": "bar",
+      "barWidth": "60%",
+      "label": {
+        "show": true,
+        "position": "inside",
+        "color": "#ffffff"
+      },
+      "markLine": {
+        "lineStyle": {
+          "type": "dashed",
+          "color": "#f6efa6"
+        },
+        "data": [ [ { "type": "min" },
+                    { "type": "max" } ] ]
+      },
+      "data": [
+        130,
+        126,
+        135,
+        121,
+        86,
+        115,
+        113,
+        78,
+        126,
+        123,
+        206,
+        {
+          "value": 255,
+          "itemStyle": {
+            "color": "#d88273"
+          }
+        }
+      ]
+    }
+  ]
+}

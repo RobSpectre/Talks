@@ -1,0 +1,32 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "Access control",
+      "Scale"
+    ]
+  },
+  "series": [
+    {
+      "name": "Who must...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        8,
+        2
+      ]
+    }
+  ]
+}

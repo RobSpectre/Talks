@@ -1,0 +1,34 @@
+{
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {},
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "Authz as a service",
+      "API",
+      "DSL and Infra"
+    ]
+  },
+  "series": [
+    {
+      "name": "Our product is...",
+      "type": "bar",
+      "emphasis": {
+        "focus": "series"
+      },
+      "data": [
+        7,
+        1,
+        1
+      ]
+    }
+  ]
+}
