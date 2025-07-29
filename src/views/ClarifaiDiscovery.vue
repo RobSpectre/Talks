@@ -195,6 +195,9 @@ Reveal
         a.text-white.uppercase(href="https://mlfoundry.com/" target="_blank") ML Foundry 
         a.text-white.uppercase(href="https://flyte.org/" target="_blank") Flyte
         a.text-white.uppercase(href="https://www.covalent.xyz/" target="_blank") Covalent
+        a.text-white.uppercase(href="https://www.exostellar.ai" target="_blank") Exostellar
+        a.text-white.uppercase(href="https://www.siliconflow.com/" target="_blank") SiliconFlow
+        a.text-white.uppercase(href="https://sambanova.ai/" target="_blank") SambaNova
         a.text-white.uppercase(href="https://www.coreweave.com" target="_blank") Coreweave
         a.text-white.uppercase(href="https://www.nvidia.com/en-us/software/run-ai/" target="_blank") NVIDIA Run:ai
         a.text-white.uppercase(href="https://www.cerebras.ai" target="_blank") cerebras

@@ -35,7 +35,8 @@
       "DeepInfra",
       "Parasail",
       "Hyperbolic",
-      "Cerebrium AI"
+      "Cerebrium AI",
+      "Exostellar"
     ],
     "axisLabel": {
       "rotate": 45,
@@ -64,7 +65,8 @@
         28.6,
         10,
         7,
-        8.5
+        8.5,
+        30.8
       ],
       "type": "bar",
       "itemStyle": {
@@ -88,7 +90,8 @@
         15,
         2,
         10,
-        3.5
+        3.5,
+        15
       ],
       "type": "bar",
       "itemStyle": {
