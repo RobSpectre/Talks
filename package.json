@@ -16,8 +16,8 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "engines": {
-    "node": "23.3.0",
-    "npm": "10.9.0"
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",

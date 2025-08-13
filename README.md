@@ -36,8 +36,8 @@ Rob Spectre's repository of presentation slides available on the web. This Vue.j
 
 ### Prerequisites
 
-- Node.js 23.3.0+
-- npm 10.9.0+
+- Node.js 20.0.0+
+- npm 10.0.0+
 
 ### Installation
 
