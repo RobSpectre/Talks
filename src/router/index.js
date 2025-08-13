@@ -11,6 +11,7 @@ import LaunchDarklyQuickstartAnalysis from '@/views/LaunchDarklyQuickstartAnalys
 import OsoDiscovery from '@/views/OsoDiscovery.vue'
 import OsoIntroduction from '@/views/OsoIntroduction.vue'
 import OsoMessagingSurvey from '@/views/OsoMessagingSurvey.vue'
+import OsoContentPerformance from '@/views/OsoContentPerformance.vue'
 
 import ClarifaiDiscovery from '@/views/ClarifaiDiscovery.vue'
 
@@ -75,6 +76,12 @@ const routes = [
     path: '/oso-introduction',
     name: 'Oso Introduction',
     component: OsoIntroduction,
+    private: true
+  },
+  {
+    path: '/oso-content-performance',
+    name: 'Oso Content Performance',
+    component: OsoContentPerformance,
     private: true
   },
   {
