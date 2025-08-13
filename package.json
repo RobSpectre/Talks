@@ -10,6 +10,7 @@
     "lint:fix": "npx eslint . --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "test:watch": "vitest --watch",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "deploy": "git subtree push --prefix dist origin gh-pages"

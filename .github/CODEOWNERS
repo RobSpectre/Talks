@@ -1,0 +1,25 @@
+# Global ownership
+* @RobSpectre
+
+# Documentation
+*.md @RobSpectre
+CLAUDE.md @RobSpectre
+
+# Configuration files
+*.json @RobSpectre
+*.js @RobSpectre
+*.mjs @RobSpectre
+*.yml @RobSpectre
+*.yaml @RobSpectre
+
+# GitHub specific files
+.github/ @RobSpectre
+
+# Source code
+src/ @RobSpectre
+tests/ @RobSpectre
+
+# Build and deployment
+package*.json @RobSpectre
+vite.config.mjs @RobSpectre
+vitest.config.js @RobSpectre

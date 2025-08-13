@@ -6,6 +6,15 @@ import path from 'path'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default [
+  // Global ignores
+  {
+    ignores: [
+      'coverage/**/*',
+      'dist/**/*',
+      'node_modules/**/*',
+      '**/*.min.js'
+    ]
+  },
   // Base config for non-Vue files
   {
     files: ['**/*.js'],
