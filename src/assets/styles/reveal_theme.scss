@@ -1,8 +1,4 @@
-@use "sass:color";
-@use "sass:map";
-@use "sass:math";
-
-// Use @use for reveal.js files, and give them a namespace
+// Import reveal.js template files
 @import '/node_modules/reveal.js/css/theme/template/mixins';
 @import '/node_modules/reveal.js/css/theme/template/settings';
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
@@ -36,8 +32,8 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: $childsafeBlue;
-$linkColorHover: color.scale($linkColor, $lightness: 15%);  // Use color.scale
-$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%); // Use color.scale
+$linkColorHover: adjust-color($linkColor, $lightness: 15%);
+$selectionBackgroundColor: adjust-color($linkColor, $lightness: 25%);
 $blockMargin: 0;
 $headingMargin: 0;
 

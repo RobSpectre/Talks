@@ -15,6 +15,24 @@ Reveal
       :data='totalUsers'
       :isLastColumnPercentChanged='true'
     )
+    TableSlide(
+      title='Organic By Content',
+      :headers="['Content', '2024', '2025', '% Change']"
+      :data='organicSearchUsersByContent'
+      :isLastColumnPercentChanged='true'
+    )
+    ChartSlide(
+      class='darkgray'
+      src='/oso-content-performance/data/organic_traffic_by_day.json'
+    )
+    ChartSlide(
+      class='darkgray'
+      src='/oso-content-performance/data/organic_traffic_by_week.json'
+    )
+    Slide(class='darkgray')
+      img(src='/oso-content-performance/page-weight.png')
+      h1 Chonky bois
+    VideoSlide(src='/oso-content-performance/beefcake.mp4')
 </template>
 
 <script>
@@ -27,6 +45,7 @@ import ChartSlide from '@/components/charts/ChartSlide.vue'
 import TableSlide from '@/components/data/TableSlide.vue'
 
 import totalUsers from '@/assets/data/oso-content-performance/total_users.json'
+import organicSearchUsersByContent from '@/assets/data/oso-content-performance/organic_users_by_content.json'
 
 export default {
   name: 'OsoContentPerformance',
@@ -41,7 +60,8 @@ export default {
   },
   data () {
     return {
-      totalUsers: totalUsers
+      totalUsers: totalUsers,
+      organicSearchUsersByContent: organicSearchUsersByContent
     }
   }
 }
