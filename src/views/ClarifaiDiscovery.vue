@@ -201,6 +201,7 @@ Reveal
         a.text-white.uppercase(href="https://featherless.ai/" target="_blank") Featherless AI
         a.text-white.uppercase(href="https://nebius.com/" target="_blank") Nebius
         a.text-white.uppercase(href="https://lightning.ai/" target="_blank") Lightning AI
+        a.text-white.uppercase(href="https://gmicloud.ai/" target="_blank") GMI Cloud
         a.text-white.uppercase(href="https://www.coreweave.com" target="_blank") Coreweave
         a.text-white.uppercase(href="https://www.nvidia.com/en-us/software/run-ai/" target="_blank") NVIDIA Run:ai
         a.text-white.uppercase(href="https://www.cerebras.ai" target="_blank") cerebras
