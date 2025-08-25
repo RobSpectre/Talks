@@ -29,6 +29,8 @@ Reveal
       class='darkgray'
       src='/oso-content-performance/data/organic_traffic_by_week.json'
     )
+    Slide(class='green')
+      .slide-headline Page Weight
     Slide(class='darkgray')
       img(src='/oso-content-performance/page-weight.png')
       h1 Chonky bois
