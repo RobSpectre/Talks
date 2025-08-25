@@ -54,7 +54,7 @@
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.21",
     "dexie": "^4.0.11",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^7.2.1",
