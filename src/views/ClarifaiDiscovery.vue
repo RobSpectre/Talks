@@ -202,6 +202,14 @@ Reveal
         a.text-white.uppercase(href="https://nebius.com/" target="_blank") Nebius
         a.text-white.uppercase(href="https://lightning.ai/" target="_blank") Lightning AI
         a.text-white.uppercase(href="https://gmicloud.ai/" target="_blank") GMI Cloud
+        a.text-white.uppercase(href="https://atlascloud.ai/" target="_blank") AtlasCloud
+        a.text-white.uppercase(href="https://fal.ai/" target="_blank") fal.ai
+        a.text-white.uppercase(href="https://www.kamiwaza.ai/" target="_blank") kamiwaza.ai
+        a.text-white.uppercase(href="https://www.hyperstack.cloud/" target="_blank") HyperStack
+        a.text-white.uppercase(href="https://www.datacrunch.io/" target="_blank") Datacrunch 
+        a.text-white.uppercase(href="https://www.sesterce.com/" target="_blank") Sesterce
+        a.text-white.uppercase(href="https://www.fluidstack.io/" target="_blank") FluidStack 
+        a.text-white.uppercase(href="https://www.cudocompute.com/" target="_blank") Cudo Compute
         a.text-white.uppercase(href="https://www.coreweave.com" target="_blank") Coreweave
         a.text-white.uppercase(href="https://www.nvidia.com/en-us/software/run-ai/" target="_blank") NVIDIA Run:ai
         a.text-white.uppercase(href="https://www.cerebras.ai" target="_blank") cerebras
