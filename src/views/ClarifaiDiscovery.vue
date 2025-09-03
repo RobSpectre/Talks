@@ -210,6 +210,7 @@ Reveal
         a.text-white.uppercase(href="https://www.sesterce.com/" target="_blank") Sesterce
         a.text-white.uppercase(href="https://www.fluidstack.io/" target="_blank") FluidStack 
         a.text-white.uppercase(href="https://www.cudocompute.com/" target="_blank") Cudo Compute
+        a.text-white.uppercase(href=" https://wandb.ai" target="_blank") Weights & Biases 
         a.text-white.uppercase(href="https://www.coreweave.com" target="_blank") Coreweave
         a.text-white.uppercase(href="https://www.nvidia.com/en-us/software/run-ai/" target="_blank") NVIDIA Run:ai
         a.text-white.uppercase(href="https://www.cerebras.ai" target="_blank") cerebras
