@@ -14,6 +14,7 @@ import OsoMessagingSurvey from '@/views/OsoMessagingSurvey.vue'
 import OsoContentPerformance from '@/views/OsoContentPerformance.vue'
 
 import ClarifaiDiscovery from '@/views/ClarifaiDiscovery.vue'
+import Backgrounds from '@/views/Backgrounds.vue'
 
 const routes = [
   {
@@ -88,6 +89,12 @@ const routes = [
     path: '/clarifai-discovery',
     name: 'Clarifai Discovery',
     component: ClarifaiDiscovery,
+    private: true
+  },
+  {
+    path: '/background',
+    name: 'Backgrounds',
+    component: Backgrounds,
     private: true
   }
 ]
