@@ -4,6 +4,7 @@ Reveal
     Slide(class='darkgray')
     VideoSlide(src='/clarifai/video/background.mp4')
     VideoSlide(src='/token_bowl/video/week_6_loop.mp4')
+    VideoSlide(src='/token_bowl/video/week_7_loop.mp4')
 </template>
 
 <script>
