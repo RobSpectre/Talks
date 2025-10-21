@@ -263,7 +263,7 @@ describe('ChartSlide', () => {
     wrapper = mount(ChartSlide, {
       props: { src: '/test-data.json' }
     })
-    
+
     // Mock a chart
     const mockChart = {
       setOption: vi.fn(),
@@ -271,14 +271,297 @@ describe('ChartSlide', () => {
       resize: vi.fn()
     }
     wrapper.vm.chart = mockChart
-    
+
     // Simulate the resize event handler logic
     mockChart.resize()
     mockChart.setOption({ textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize } })
-    
+
     expect(mockChart.resize).toHaveBeenCalled()
-    expect(mockChart.setOption).toHaveBeenCalledWith({ 
-      textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize } 
+    expect(mockChart.setOption).toHaveBeenCalledWith({
+      textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize }
+    })
+  })
+
+  describe('srcs prop', () => {
+    let mockChart
+
+    beforeEach(() => {
+      vi.useFakeTimers()
+
+      // Mock ECharts
+      mockChart = {
+        setOption: vi.fn(),
+        getOption: vi.fn(() => ({})),
+        resize: vi.fn()
+      }
+
+      vi.mock('echarts', () => ({
+        default: {
+          init: vi.fn(() => mockChart)
+        }
+      }))
+
+      // Mock DOM element
+      global.document.getElementById = vi.fn(() => ({
+        clientWidth: 100,
+        parentElement: {
+          style: { backgroundColor: 'rgb(0, 0, 0)' }
+        }
+      }))
+
+      global.window.getComputedStyle = vi.fn(() => ({
+        backgroundColor: 'rgb(0, 0, 0)'
+      }))
+    })
+
+    afterEach(() => {
+      vi.restoreAllMocks()
+      vi.useRealTimers()
+    })
+
+    it('accepts srcs prop with array of source objects', () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2 },
+        { src: '/data2.json', timeout: 3 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      expect(wrapper.vm.srcs).toEqual(sources)
+    })
+
+    it('currentSource returns first source from srcs array', () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2 },
+        { src: '/data2.json', timeout: 3 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      expect(wrapper.vm.currentSource).toEqual(sources[0])
+      expect(wrapper.vm.currentSource.src).toBe('/data1.json')
+      expect(wrapper.vm.currentSource.timeout).toBe(2)
+    })
+
+    it('currentSource returns src prop when srcs is not provided', () => {
+      wrapper = mount(ChartSlide, {
+        props: {
+          src: '/single-data.json'
+        }
+      })
+
+      expect(wrapper.vm.currentSource.src).toBe('/single-data.json')
+      expect(wrapper.vm.currentSource.timeout).toBeNull()
+    })
+
+    it('schedules next source when timeout is specified', () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2.5 },
+        { src: '/data2.json', timeout: 1 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      // Directly call scheduleNextSource
+      wrapper.vm.scheduleNextSource()
+
+      expect(wrapper.vm.timeoutId).not.toBeNull()
+    })
+
+    it('cycles to next source after timeout expires', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2 },
+        { src: '/data2.json', timeout: 3 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+      expect(wrapper.vm.currentSource.src).toBe('/data1.json')
+
+      // Schedule the timeout
+      wrapper.vm.scheduleNextSource()
+
+      // Fast-forward time by 2 seconds
+      await vi.advanceTimersByTimeAsync(2000)
+
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+      expect(wrapper.vm.currentSource.src).toBe('/data2.json')
+    })
+
+    it('loops back to first source after last source', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 },
+        { src: '/data2.json', timeout: 1 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Schedule first timeout
+      wrapper.vm.scheduleNextSource()
+
+      // First timeout - move to source 1
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+
+      // Schedule second timeout (loadNextSource calls renderChart which calls scheduleNextSource,
+      // but in tests we need to call it manually)
+      wrapper.vm.scheduleNextSource()
+
+      // Second timeout - should loop back to source 0
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+    })
+
+    it('does not schedule timeout when source has no timeout property', async () => {
+      const sources = [
+        { src: '/data1.json' }, // No timeout
+        { src: '/data2.json', timeout: 2 }
+      ]
+
+      const mockChartData = { title: { text: 'Test' } }
+      fetch.mockResolvedValue({
+        ok: true,
+        json: async () => mockChartData
+      })
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      await wrapper.vm.renderChart()
+
+      expect(wrapper.vm.timeoutId).toBeNull()
+    })
+
+    it('clears timeout when component is unmounted', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 5 },
+        { src: '/data2.json', timeout: 5 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      const initialIndex = wrapper.vm.currentSourceIndex
+
+      // Schedule timeout
+      wrapper.vm.scheduleNextSource()
+      expect(wrapper.vm.timeoutId).not.toBeNull()
+
+      wrapper.unmount()
+
+      // Fast-forward past timeout
+      await vi.advanceTimersByTimeAsync(10000)
+
+      // Should not have cycled because component was unmounted
+      expect(wrapper.vm.currentSourceIndex).toBe(initialIndex)
+    })
+
+    it('converts seconds to milliseconds correctly for timeout', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1.5 }, // 1.5 seconds = 1500ms
+        { src: '/data2.json', timeout: 2 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Schedule timeout
+      wrapper.vm.scheduleNextSource()
+
+      // Should not cycle at 1000ms
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Should cycle at 1500ms
+      await vi.advanceTimersByTimeAsync(500)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+    })
+
+    it('clears existing timeout before scheduling new one', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2 },
+        { src: '/data2.json', timeout: 3 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources
+        }
+      })
+
+      // Schedule first timeout
+      wrapper.vm.scheduleNextSource()
+      const firstTimeoutId = wrapper.vm.timeoutId
+
+      // Advance to trigger next source
+      await vi.advanceTimersByTimeAsync(2000)
+
+      // Schedule second timeout manually
+      wrapper.vm.scheduleNextSource()
+      const secondTimeoutId = wrapper.vm.timeoutId
+
+      // Timeout IDs should be different, confirming old one was cleared
+      expect(firstTimeoutId).not.toBeNull()
+      expect(secondTimeoutId).not.toBeNull()
+      expect(firstTimeoutId).not.toBe(secondTimeoutId)
+    })
+
+    it('handles empty srcs array gracefully', () => {
+      wrapper = mount(ChartSlide, {
+        props: {
+          src: '/fallback.json',
+          srcs: []
+        }
+      })
+
+      // Should fall back to src prop
+      expect(wrapper.vm.currentSource.src).toBe('/fallback.json')
+    })
+
+    it('uses src prop when srcs is null', () => {
+      wrapper = mount(ChartSlide, {
+        props: {
+          src: '/data.json',
+          srcs: null
+        }
+      })
+
+      expect(wrapper.vm.currentSource.src).toBe('/data.json')
+      expect(wrapper.vm.currentSource.timeout).toBeNull()
     })
   })
 })
