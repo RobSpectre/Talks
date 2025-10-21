@@ -564,4 +564,264 @@ describe('ChartSlide', () => {
       expect(wrapper.vm.currentSource.timeout).toBeNull()
     })
   })
+
+  describe('loop prop', () => {
+    beforeEach(() => {
+      vi.useFakeTimers()
+    })
+
+    afterEach(() => {
+      vi.restoreAllMocks()
+      vi.useRealTimers()
+    })
+
+    it('accepts loop prop as Boolean', () => {
+      wrapper = mount(ChartSlide, {
+        props: {
+          loop: true
+        }
+      })
+
+      expect(wrapper.vm.loop).toBe(true)
+    })
+
+    it('defaults loop to false', () => {
+      wrapper = mount(ChartSlide)
+
+      expect(wrapper.vm.loop).toBe(false)
+    })
+
+    it('accepts defaultTimeout prop', () => {
+      wrapper = mount(ChartSlide, {
+        props: {
+          defaultTimeout: 5
+        }
+      })
+
+      expect(wrapper.vm.defaultTimeout).toBe(5)
+    })
+
+    it('defaults defaultTimeout to 3 seconds', () => {
+      wrapper = mount(ChartSlide)
+
+      expect(wrapper.vm.defaultTimeout).toBe(3)
+    })
+
+    it('uses defaultTimeout for sources without timeout when loop is true', () => {
+      const sources = [
+        { src: '/data1.json' }, // No timeout
+        { src: '/data2.json', timeout: 2 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true,
+          defaultTimeout: 4
+        }
+      })
+
+      // Schedule timeout for first source (no explicit timeout)
+      wrapper.vm.scheduleNextSource()
+
+      expect(wrapper.vm.timeoutId).not.toBeNull()
+    })
+
+    it('cycles through sources continuously when loop is true', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 },
+        { src: '/data2.json', timeout: 1 },
+        { src: '/data3.json', timeout: 1 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Start cycling
+      wrapper.vm.scheduleNextSource()
+
+      // Cycle through all sources
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(2)
+
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(0) // Back to start
+    })
+
+    it('continues looping even when source has no timeout if loop is true', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 },
+        { src: '/data2.json' }, // No timeout
+        { src: '/data3.json', timeout: 1 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true,
+          defaultTimeout: 2
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // First source (has timeout)
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+
+      // Second source (no timeout, but loop is true so uses defaultTimeout)
+      wrapper.vm.scheduleNextSource()
+      expect(wrapper.vm.timeoutId).not.toBeNull()
+
+      await vi.advanceTimersByTimeAsync(2000) // defaultTimeout is 2 seconds
+      expect(wrapper.vm.currentSourceIndex).toBe(2)
+    })
+
+    it('does not cycle when loop is false and source has no timeout', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 },
+        { src: '/data2.json' } // No timeout
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: false
+        }
+      })
+
+      // First source
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+
+      // Second source has no timeout and loop is false
+      wrapper.vm.scheduleNextSource()
+      expect(wrapper.vm.timeoutId).toBeNull() // Should not schedule
+
+      await vi.advanceTimersByTimeAsync(5000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1) // Should stay at source 1
+    })
+
+    it('respects explicit timeout even when loop is true', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 2.5 },
+        { src: '/data2.json' }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true,
+          defaultTimeout: 1
+        }
+      })
+
+      // First source should use its explicit timeout (2.5s), not defaultTimeout
+      wrapper.vm.scheduleNextSource()
+
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(0) // Should not have cycled yet
+
+      await vi.advanceTimersByTimeAsync(1500) // Total 2.5s
+      expect(wrapper.vm.currentSourceIndex).toBe(1) // Now should cycle
+    })
+
+    it('works with single source when loop is true', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+
+      // Should loop back to itself
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+    })
+
+    it('uses custom defaultTimeout value when looping', async () => {
+      const sources = [
+        { src: '/data1.json' },
+        { src: '/data2.json' }
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true,
+          defaultTimeout: 0.5 // 500ms
+        }
+      })
+
+      wrapper.vm.scheduleNextSource()
+
+      // Should not cycle at 400ms
+      await vi.advanceTimersByTimeAsync(400)
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Should cycle at 500ms
+      await vi.advanceTimersByTimeAsync(100)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+    })
+
+    it('handles mix of sources with and without timeouts when looping', async () => {
+      const sources = [
+        { src: '/data1.json', timeout: 1 },
+        { src: '/data2.json' }, // Will use defaultTimeout
+        { src: '/data3.json', timeout: 2 },
+        { src: '/data4.json' } // Will use defaultTimeout
+      ]
+
+      wrapper = mount(ChartSlide, {
+        props: {
+          srcs: sources,
+          loop: true,
+          defaultTimeout: 1.5
+        }
+      })
+
+      expect(wrapper.vm.currentSourceIndex).toBe(0)
+
+      // Source 0: explicit timeout 1s
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(wrapper.vm.currentSourceIndex).toBe(1)
+
+      // Source 1: uses defaultTimeout 1.5s
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1500)
+      expect(wrapper.vm.currentSourceIndex).toBe(2)
+
+      // Source 2: explicit timeout 2s
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(2000)
+      expect(wrapper.vm.currentSourceIndex).toBe(3)
+
+      // Source 3: uses defaultTimeout 1.5s
+      wrapper.vm.scheduleNextSource()
+      await vi.advanceTimersByTimeAsync(1500)
+      expect(wrapper.vm.currentSourceIndex).toBe(0) // Back to start
+    })
+  })
 })

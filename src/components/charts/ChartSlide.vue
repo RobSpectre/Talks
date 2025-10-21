@@ -30,6 +30,14 @@ export default {
       type: Array,
       default: null
     },
+    loop: {
+      type: Boolean,
+      default: false
+    },
+    defaultTimeout: {
+      type: Number,
+      default: 3
+    },
     classes: {
       type: String,
       default: ''
@@ -159,12 +167,22 @@ export default {
       // Clear any existing timeout
       this.clearSourceTimeout()
 
-      // Only schedule if using srcs array and timeout is specified
-      if (this.srcs && this.srcs.length > 0 && this.currentSource.timeout) {
-        const ms = this.currentSource.timeout * 1000
-        this.timeoutId = setTimeout(() => {
-          this.loadNextSource()
-        }, ms)
+      // Only schedule if using srcs array
+      if (this.srcs && this.srcs.length > 0) {
+        let timeout = this.currentSource.timeout
+
+        // If no timeout specified but loop is enabled, use defaultTimeout
+        if (!timeout && this.loop) {
+          timeout = this.defaultTimeout
+        }
+
+        // Schedule if we have a timeout
+        if (timeout) {
+          const ms = timeout * 1000
+          this.timeoutId = setTimeout(() => {
+            this.loadNextSource()
+          }, ms)
+        }
       }
     },
     async loadNextSource () {
