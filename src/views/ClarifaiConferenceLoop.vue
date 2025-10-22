@@ -1,9 +1,22 @@
 <template lang="pug">
 Reveal
   .slides
-    Slide(class='darkgray')
-      .slide-headline Swipe or arrow right to play
-    VideoSlide(src='/clarifai/video/clarifai_conference_loop.mp4')
+    VideoSlide(
+      src="/clarifai/video/clarifai_artificial_analysis_performance_graph.mp4"
+      :timeout="30.01"
+    )
+    VideoSlide(
+      src="/clarifai/video/clarifai_animation_loop_dark_2k.mp4"
+      :timeout="210.30"
+    )
+    VideoSlide(
+      src="/clarifai/video/clarifai_flappy_bird_race.mp4"
+      :timeout="89.35"
+    )
+    VideoSlide(
+      src="/clarifai/video/clarifai_animation_loop_light.mp4"
+      :timeout="83.717"
+    )
 </template>
 
 <script>
