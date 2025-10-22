@@ -1,5 +1,5 @@
 <template lang="pug">
-Reveal
+Reveal(:loop="true")
   .slides
     VideoSlide(
       src="/clarifai/video/clarifai_artificial_analysis_performance_graph.mp4"
