@@ -70,7 +70,7 @@ export default {
         const ms = this.timeout * 1000
         this.timeoutId = setTimeout(() => {
           if (window.deck) {
-            window.deck.next()
+            window.deck.navigateNext()
           }
         }, ms)
       }
