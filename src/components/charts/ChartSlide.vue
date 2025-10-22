@@ -26,6 +26,18 @@ export default {
       type: String,
       default: ''
     },
+    srcs: {
+      type: Array,
+      default: null
+    },
+    loop: {
+      type: Boolean,
+      default: false
+    },
+    defaultTimeout: {
+      type: Number,
+      default: 3
+    },
     classes: {
       type: String,
       default: ''
@@ -38,12 +50,18 @@ export default {
       errorMessage: null,
       isLoading: false,
       chart: null,
+      currentSourceIndex: 0,
+      timeoutId: null,
+      resizeHandlerAdded: false
     }
   },
   mounted () {
     this.presentation = this.$refs.presentation
-    
+
     this.waitToRenderChart()
+  },
+  beforeUnmount () {
+    this.clearSourceTimeout()
   },
   computed: {
     currentBreakpoint () {
@@ -56,14 +74,19 @@ export default {
         { key: 'hd', breakpoint: 1920, fontSize: 28},
         { key: '4k', breakpoint: 3840, fontSize: 48},
         { key: '8k', breakpoint: 7680, fontSize: 72}
-      ] 
+      ]
 
       const foundBreakpoint = breakpoints.find(breakpoint => {
         return window.innerWidth <= breakpoint.breakpoint
       })
 
       return foundBreakpoint
-
+    },
+    currentSource () {
+      if (this.srcs && this.srcs.length > 0) {
+        return this.srcs[this.currentSourceIndex]
+      }
+      return { src: this.src, timeout: null }
     }
   },
   methods: {
@@ -79,7 +102,7 @@ export default {
       this.isLoading = true
 
       try {
-        const response = await fetch(this.src)
+        const response = await fetch(this.currentSource.src)
 
         if (!response.ok) {
           this.isLoading = false
@@ -88,7 +111,9 @@ export default {
         } else {
           this.options = await response.json()
 
-          this.chart = echarts.init(document.getElementById(this.uuid), 'dark')
+          if (!this.chart) {
+            this.chart = echarts.init(document.getElementById(this.uuid), 'dark')
+          }
 
           this.chart.setOption(this.options)
 
@@ -110,26 +135,71 @@ export default {
             this.chart.setOption({ calendar: { monthLabel: { fontSize: this.currentBreakpoint.fontSize } } } )
           }
 
-          window.addEventListener('resize', () => {
-            this.chart.resize()
+          if (!this.resizeHandlerAdded) {
+            window.addEventListener('resize', () => {
+              this.chart.resize()
 
-            this.chart.setOption({ textStyle: { fontSize: this.currentBreakpoint.fontSize } })
-            if (this.chart.getOption().yAxis) {
-              this.chart.setOption({ xAxis: { axisLabel: { fontSize: this.currentBreakpoint.fontSize } } })
-              this.chart.setOption({ yAxis: { axisLabel: { fontSize: this.currentBreakpoint.fontSize } } })
-            }
+              this.chart.setOption({ textStyle: { fontSize: this.currentBreakpoint.fontSize } })
+              if (this.chart.getOption().yAxis) {
+                this.chart.setOption({ xAxis: { axisLabel: { fontSize: this.currentBreakpoint.fontSize } } })
+                this.chart.setOption({ yAxis: { axisLabel: { fontSize: this.currentBreakpoint.fontSize } } })
+              }
 
-            if (this.chart.getOption().calendar) {
-              this.chart.setOption({ calendar: { cellSize:
-                this.currentBreakpoint.fontSize * 1.2 } } )
-              this.chart.setOption({ calendar: { monthLabel: { fontSize: this.currentBreakpoint.fontSize } } } )
-            }
-          })
+              if (this.chart.getOption().calendar) {
+                this.chart.setOption({ calendar: { cellSize:
+                  this.currentBreakpoint.fontSize * 1.2 } } )
+                this.chart.setOption({ calendar: { monthLabel: { fontSize: this.currentBreakpoint.fontSize } } } )
+              }
+            })
+            this.resizeHandlerAdded = true
+          }
+
+          // Schedule next source if timeout is specified
+          this.scheduleNextSource()
         }
       } catch (e) {
         this.errorMessage = `Error fetching chart data: ${e}`
       } finally {
         this.isLoading = false
+      }
+    },
+    scheduleNextSource () {
+      // Clear any existing timeout
+      this.clearSourceTimeout()
+
+      // Only schedule if using srcs array
+      if (this.srcs && this.srcs.length > 0) {
+        let timeout = this.currentSource.timeout
+
+        // If no timeout specified but loop is enabled, use defaultTimeout
+        if (!timeout && this.loop) {
+          timeout = this.defaultTimeout
+        }
+
+        // Schedule if we have a timeout
+        if (timeout) {
+          const ms = timeout * 1000
+          this.timeoutId = setTimeout(() => {
+            this.loadNextSource()
+          }, ms)
+        }
+      }
+    },
+    async loadNextSource () {
+      if (!this.srcs || this.srcs.length === 0) {
+        return
+      }
+
+      // Move to next source (loop back to start if at end)
+      this.currentSourceIndex = (this.currentSourceIndex + 1) % this.srcs.length
+
+      // Render the new source
+      await this.renderChart()
+    },
+    clearSourceTimeout () {
+      if (this.timeoutId !== null) {
+        clearTimeout(this.timeoutId)
+        this.timeoutId = null
       }
     }
   }
