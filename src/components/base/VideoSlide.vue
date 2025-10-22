@@ -33,18 +33,40 @@ export default {
   },
   data () {
     return {
-      timeoutId: null
+      timeoutId: null,
+      revealCheckInterval: null
     }
   },
   mounted () {
-    if (this.timeout !== null && window.deck) {
-      this.setupAutoAdvance()
+    if (this.timeout !== null) {
+      if (window.deck) {
+        this.setupAutoAdvance()
+      } else {
+        // Wait for Reveal to initialize
+        this.waitForReveal()
+      }
     }
   },
   beforeUnmount () {
     this.clearAutoAdvance()
+    if (this.revealCheckInterval !== null) {
+      clearInterval(this.revealCheckInterval)
+      this.revealCheckInterval = null
+    }
   },
   methods: {
+    waitForReveal () {
+      // Poll for window.deck to be available
+      const checkInterval = setInterval(() => {
+        if (window.deck) {
+          clearInterval(checkInterval)
+          this.setupAutoAdvance()
+        }
+      }, 100)
+
+      // Store interval ID for cleanup
+      this.revealCheckInterval = checkInterval
+    },
     setupAutoAdvance () {
       // Listen for when this slide becomes active
       window.deck.on('slidechanged', this.handleSlideChanged)

@@ -60,7 +60,7 @@ describe('VideoSlide', () => {
     beforeEach(() => {
       vi.useFakeTimers()
       mockDeck = {
-        next: vi.fn(),
+        navigateNext: vi.fn(),
         on: vi.fn(),
         getCurrentSlide: vi.fn()
       }
@@ -99,7 +99,7 @@ describe('VideoSlide', () => {
       wrapper.unmount()
     })
 
-    it('calls deck.next() after timeout expires when slide is active', () => {
+    it('calls deck.navigateNext() after timeout expires when slide is active', () => {
       const wrapper = mount(VideoSlide, {
         props: {
           src: '/test.mp4',
@@ -113,16 +113,16 @@ describe('VideoSlide', () => {
       // Trigger setupAutoAdvance
       wrapper.vm.setupAutoAdvance()
 
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
 
       // Fast-forward time by 2.5 seconds (2500ms)
       vi.advanceTimersByTime(2500)
 
-      expect(mockDeck.next).toHaveBeenCalledTimes(1)
+      expect(mockDeck.navigateNext).toHaveBeenCalledTimes(1)
       wrapper.unmount()
     })
 
-    it('does not call deck.next() if timeout has not expired', () => {
+    it('does not call deck.navigateNext() if timeout has not expired', () => {
       const wrapper = mount(VideoSlide, {
         props: {
           src: '/test.mp4',
@@ -136,7 +136,7 @@ describe('VideoSlide', () => {
       // Fast-forward time by 3 seconds (less than timeout)
       vi.advanceTimersByTime(3000)
 
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
       wrapper.unmount()
     })
 
@@ -157,8 +157,8 @@ describe('VideoSlide', () => {
       // Fast-forward past the timeout
       vi.advanceTimersByTime(5000)
 
-      // Should not call next() because timeout was cleared
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      // Should not call navigateNext() because timeout was cleared
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
     })
 
     it('clears timeout when slide changes', () => {
@@ -181,8 +181,8 @@ describe('VideoSlide', () => {
       // Fast-forward past the timeout
       vi.advanceTimersByTime(5000)
 
-      // Should not call next() for the original slide
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      // Should not call navigateNext() for the original slide
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
       wrapper.unmount()
     })
 
@@ -206,7 +206,7 @@ describe('VideoSlide', () => {
       // Fast-forward time
       vi.advanceTimersByTime(2000)
 
-      expect(mockDeck.next).toHaveBeenCalledTimes(1)
+      expect(mockDeck.navigateNext).toHaveBeenCalledTimes(1)
       wrapper.unmount()
     })
 
@@ -223,15 +223,15 @@ describe('VideoSlide', () => {
 
       // Should not trigger at 1000ms
       vi.advanceTimersByTime(1000)
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
 
       // Should trigger at 1500ms
       vi.advanceTimersByTime(500)
-      expect(mockDeck.next).toHaveBeenCalledTimes(1)
+      expect(mockDeck.navigateNext).toHaveBeenCalledTimes(1)
       wrapper.unmount()
     })
 
-    it('does not call deck.next() if window.deck becomes undefined', () => {
+    it('does not call deck.navigateNext() if window.deck becomes undefined', () => {
       const wrapper = mount(VideoSlide, {
         props: {
           src: '/test.mp4',
@@ -247,8 +247,8 @@ describe('VideoSlide', () => {
 
       vi.advanceTimersByTime(1000)
 
-      // Should not throw error and should not call next
-      expect(mockDeck.next).not.toHaveBeenCalled()
+      // Should not throw error and should not call navigateNext
+      expect(mockDeck.navigateNext).not.toHaveBeenCalled()
       wrapper.unmount()
     })
 
