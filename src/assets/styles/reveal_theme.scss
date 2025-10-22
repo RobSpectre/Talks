@@ -1,6 +1,7 @@
 // Import reveal.js template files
-@import '/node_modules/reveal.js/css/theme/template/mixins';
-@import '/node_modules/reveal.js/css/theme/template/settings';
+@use 'sass:color';
+@use '/node_modules/reveal.js/css/theme/template/mixins' as *;
+@use '/node_modules/reveal.js/css/theme/template/settings' as *;
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
@@ -32,8 +33,8 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: $childsafeBlue;
-$linkColorHover: adjust-color($linkColor, $lightness: 15%);
-$selectionBackgroundColor: adjust-color($linkColor, $lightness: 25%);
+$linkColorHover: color.adjust($linkColor, $lightness: 15%);
+$selectionBackgroundColor: color.adjust($linkColor, $lightness: 25%);
 $blockMargin: 0;
 $headingMargin: 0;
 
@@ -297,4 +298,4 @@ a:hover {
   }
 }
 
-@import '/node_modules/reveal.js/css/theme/template/theme';
+@use '/node_modules/reveal.js/css/theme/template/theme' as *;
