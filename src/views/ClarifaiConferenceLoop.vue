@@ -2,20 +2,42 @@
 Reveal(:loop="true")
   .slides
     VideoSlide(
-      src="/clarifai/video/clarifai_artificial_analysis_performance_graph.mp4"
-      :timeout="30.01"
-    )
-    VideoSlide(
       src="/clarifai/video/clarifai_animation_loop_dark_2k.mp4"
-      :timeout="210.30"
+      :timeout="60"
     )
+      .absolute.inset-0.grid.grid-rows-3.gap-4
+        .self-start.flex.flex-row.items-center.justify-center.gap-4
+          img.h-32(src='https://unpkg.com/@lobehub/icons-static-png@latest/dark/openai.png')
+          .slide-headline gpt-oss 120B
+        .row-start-3.self-end.flex.flex-col.items-center.justify-center
+          .slide-headline
+            span(style="color: #0EF0FF") 544
+            |  tokens per second
+          .slide-headline
+            span(style="color: #0EF0FF") $0.16
+            |  per M blended
     VideoSlide(
       src="/clarifai/video/clarifai_flappy_bird_race.mp4"
       :timeout="89.35"
     )
     VideoSlide(
       src="/clarifai/video/clarifai_animation_loop_light.mp4"
-      :timeout="83.717"
+      :timeout="60"
+    )
+      .absolute.inset-0.grid.grid-rows-3.gap-4
+        .self-start.flex.flex-row.items-center.justify-center.gap-4
+          img.h-32(src='https://unpkg.com/@lobehub/icons-static-png@latest/dark/openai.png')
+          .slide-headline gpt-oss 120B
+        .row-start-3.self-end.flex.flex-col.items-center.justify-center
+          .slide-headline
+            span(style="color: #0EF0FF") 544
+            |  tokens per second
+          .slide-headline
+            span(style="color: #0EF0FF") $0.16
+            |  per M blended
+    VideoSlide(
+      src="/clarifai/video/clarifai_flappy_bird_race.mp4"
+      :timeout="89.35"
     )
 </template>
 

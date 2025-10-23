@@ -1,7 +1,7 @@
 // Import reveal.js template files
 @use 'sass:color';
-@use '/node_modules/reveal.js/css/theme/template/mixins' as *;
-@use '/node_modules/reveal.js/css/theme/template/settings' as *;
+@import '/node_modules/reveal.js/css/theme/template/mixins';
+@import '/node_modules/reveal.js/css/theme/template/settings';
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&family=Cutive+Mono&family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
@@ -298,4 +298,4 @@ a:hover {
   }
 }
 
-@use '/node_modules/reveal.js/css/theme/template/theme' as *;
+@import '/node_modules/reveal.js/css/theme/template/theme';
