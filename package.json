@@ -40,7 +40,7 @@
     "pug-plain-loader": "^1.1.0",
     "radix-vue": "^1.9.17",
     "reveal.js": "^5.2.1",
-    "uuid": "^11.1.0",
+    "uuid": "^13.0.0",
     "vue": "^3.5.22",
     "vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/next",
     "vue-pug-plugin": "^2.0.3",
