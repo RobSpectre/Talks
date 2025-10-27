@@ -4,23 +4,23 @@ import Reveal from '@/components/base/Reveal.vue'
 
 // Additional mock for Reveal.js specific to this test
 vi.mock('reveal.js', () => {
-  const mockDeck = {
-    initialize: vi.fn(() => Promise.resolve()),
-    layout: vi.fn(),
-    removeKeyBinding: vi.fn(),
-    getCurrentSlide: vi.fn(() => ({
+  const MockReveal = vi.fn(function() {
+    this.initialize = vi.fn(() => Promise.resolve())
+    this.layout = vi.fn()
+    this.removeKeyBinding = vi.fn()
+    this.getCurrentSlide = vi.fn(() => ({
       getElementsByTagName: vi.fn((tag) => {
         if (tag === 'button') return []
         if (tag === 'a') return []
         if (tag === 'input') return []
         return []
       })
-    })),
-    on: vi.fn()
-  }
-  
+    }))
+    this.on = vi.fn()
+  })
+
   return {
-    default: vi.fn(() => mockDeck)
+    default: MockReveal
   }
 })
 
