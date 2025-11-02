@@ -45,7 +45,7 @@ The last place finisher is committed to participate in a llama costume.
 
 ## Outline
 
-- Intro
+- Intro (5 min)
   - Evals are all you need?
   - The benchmark dilemma - real world performance does not match leaderboards
   - The infinite combinations of model, context and inference delivery produce
@@ -70,12 +70,12 @@ The last place finisher is committed to participate in a llama costume.
     - Ten developers of different backgrounds and experience levels.
     - To our knowledge, the first AI-only fantasy football league.
   - Agenda
-    - The Rules
-    - The Tech
-    - The Season
-    - Worked / !Worked
-    - Conclusions
-- The Rules
+    - The Rules (7 min)
+    - The Tech (9 min)
+    - The Season (13 min)
+    - Worked / !Worked (8 min)
+    - Conclusions (3 min)
+- The Rules (7 min)
   - 1. Each player drafts a model to use for the entire season.
     - Reasoning and non-reasoning variants of a model can be used if they share
       base checkpoints (e.g. Claude Opus and Claude Sonnet 4.5 can be used in the
@@ -97,7 +97,7 @@ The last place finisher is committed to participate in a llama costume.
       developers in the league will be convened to determine if a player can
       switch to a different model.
     - The punishment for an early switch will be determined by the grand jury.
-- The Tech
+- The Tech (9 min)
   - The League
     - We used [Sleeper](https://sleeper.com)
     - Ten team league
@@ -115,14 +115,14 @@ The last place finisher is committed to participate in a llama costume.
     - Models were drafted in descending order of score (ish).
     - Some developers working for frontier labs rode the company line.
   - MCP Server
-    - To provide state of the game to the models, Greg developed an [MCP
+    - To provide state of the game to the models, one developer developed an [MCP
       server](https://github.com/GregBaugues/tokenbowl-mcp)
     - Likely the most sophisticated MCP server for fantasy sports at the time
       it was loaded with tools
       - Full implementation of the [Sleeper API](https://docs.sleeper.com/).
       - [Fantasy Nerds](https://www.fantasynerds.com/) news and data.
       - Search and fetch tools
-    - Greg's stated motive was to prey on the laziness of the rest of the
+    - His stated motive was to prey on the laziness of the rest of the
       league to get hooked on the MCP server and then introduce prompt
       injection during the playoffs.
   - Initial Rigs
@@ -135,7 +135,7 @@ The last place finisher is committed to participate in a llama costume.
     - DeepSeek used [Agno](https://www.agno.com/) with a RAG pipeline filled with [Fantasy Football for
       Dummies latest
       edition](https://www.amazon.com/Fantasy-Football-Dummies-Martin-Schulman/dp/1119883326).
-- The Season
+- The Season (13 min)
   - The Draft
     - Models drafted in ascending order of performance on Humanity's Last Exam
       **chart**
@@ -164,7 +164,7 @@ The last place finisher is committed to participate in a llama costume.
       - Kimi K2 got new checkpoints
       - DeepSeek 3.1 Terminus was released.
     - Agno eventually became unusuable. DeepSeek pivoted to [Pydantic AI](https://ai.pydantic.dev/)
-    - Greg made a podcast for the league called [The Slopup](https://tokenbowl.ai/slopup). It is occassionally
+    - One developer made a podcast for the league called [The Slopup](https://tokenbowl.ai/slopup). It is occassionally
       funny. **sample**
   - Context Pollution (Weeks 5-9)
     - Football requires significant human capital.
@@ -211,7 +211,7 @@ The last place finisher is committed to participate in a llama costume.
       - New releases **chart**
       - HLE increased **chart**
       - Capital deployed **chart**
-- Worked / !Worked
+- Worked / !Worked (8 min)
   - Worked
     - Fun factor was super high.
     - So much of AI in production is experiential - I think to the person our
@@ -241,9 +241,9 @@ The last place finisher is committed to participate in a llama costume.
       review the project - nothing but crickets.
     - Going with an auction format for draft and trades would introduce a
       budget element that would be fascinating to see how the models handle.
-- Conclusions
+- Conclusions (3 min)
   - Can LLMs play fantasy football? Maybe? Can anyone?
-  - Greg likes to say, "Fantasy football is a random number generator that
+  - One developer likes to say, "Fantasy football is a random number generator that
     creates great stories."
   - Superhuman performance is likely not possible for this game the way it is
     for chess or go as the injury RNG trumps strategy.
