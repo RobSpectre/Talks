@@ -35,7 +35,7 @@
     "mock-socket": "^9.3.1",
     "motion-v": "^1.7.4",
     "pinia": "^3.0.1",
-    "pinia-plugin-persistedstate": "^4.2.0",
+    "pinia-plugin-persistedstate": "^4.7.1",
     "pug": "^3.0.3",
     "pug-plain-loader": "^1.1.0",
     "radix-vue": "^1.9.17",
