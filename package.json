@@ -23,7 +23,7 @@
     "@heroicons/vue": "^2.2.0",
     "@iconify/utils": "^3.0.2",
     "@iconify/vue": "^5.0.0",
-    "@proj-airi/lobe-icons": "^1.0.13",
+    "@proj-airi/lobe-icons": "^1.0.14",
     "@radix-icons/vue": "^1.0.0",
     "animate.css": "^4.1.1",
     "axios": "^1.11.0",
