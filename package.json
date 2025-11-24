@@ -26,7 +26,7 @@
     "@proj-airi/lobe-icons": "^1.0.14",
     "@radix-icons/vue": "^1.0.0",
     "animate.css": "^4.1.1",
-    "axios": "^1.11.0",
+    "axios": "^1.13.2",
     "caniuse-lite": "^1.0.30001751",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
