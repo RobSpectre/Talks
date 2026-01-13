@@ -1,0 +1,54 @@
+{
+  "title": { "text": "Total Inference Cost (USD)", "subtext": "Sorted Cheapest to Most Expensive" },
+  "tooltip": { "trigger": "axis", "axisPointer": { "type": "shadow" } },
+  "legend": { "data": ["Input", "Output"], "top": "5%" },
+  "grid": { "left": "200", "right": "120", "containLabel": false },
+  "xAxis": { 
+    "type": "value", 
+    "name": "USD",
+    "splitLine": { "show": true, "lineStyle": { "type": "dashed" } } 
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "{Nebius| } Nebius",
+      "{Fireworks| } Fireworks",
+      "{Together| } Together",
+      "{Baseten| } Baseten",
+      "{Clarifai| } Clarifai",
+      "{Google| } Google"
+    ],
+    "axisLabel": {
+      "formatter": "{value}",
+      "rich": {
+        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
+        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
+        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
+        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
+        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
+        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+      }
+    }
+  },
+  "series": [
+    { 
+      "name": "Input", 
+      "type": "bar", 
+      "stack": "Cost", 
+      "itemStyle": { "color": "#5470c6" },
+      "data": [0.00638, 0.00651, 0.00629, 0.00452, 0.00377, 0.00377] 
+    },
+    { 
+      "name": "Output", 
+      "type": "bar", 
+      "stack": "Cost", 
+      "itemStyle": { "color": "#91cc75" },
+      "label": { 
+        "show": true, 
+        "position": "right", 
+        "formatter": "${@total}" 
+      }, 
+      "data": [0.28881, 0.28563, 0.22289, 0.22127, 0.20161, 0.18865] 
+    }
+  ]
+}
