@@ -1,0 +1,44 @@
+{
+  "title": { "text": "Time to Complete ifbench", "subtext": "gpt-oss 120b HH:MM:SS (Lower is Better)" },
+  "tooltip": { "trigger": "axis" },
+  "grid": { "left": "200", "right": "100", "bottom": "10%", "containLabel": false },
+  "xAxis": { 
+    "type": "value", 
+    "name": "Seconds",
+    "splitLine": { "show": true, "lineStyle": { "type": "dashed" } }
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "{Fireworks| } Fireworks",
+      "{Baseten| } Baseten",
+      "{Nebius| } Nebius",
+      "{Google| } Google",
+      "{Together| } Together",
+      "{Clarifai| } Clarifai"
+    ],
+    "axisLabel": {
+      "formatter": "{value}",
+      "rich": {
+        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
+        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
+        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
+        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
+        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
+        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+      }
+    }
+  },
+  "series": [{
+    "type": "bar",
+    "itemStyle": { "color": "#5470c6" },
+    "data": [
+      { "value": 4302, "label": { "show": true, "position": "right", "formatter": "01:11:42" } },
+      { "value": 1567, "label": { "show": true, "position": "right", "formatter": "00:26:07" } },
+      { "value": 472, "label": { "show": true, "position": "right", "formatter": "00:07:52" } },
+      { "value": 429, "label": { "show": true, "position": "right", "formatter": "00:07:09" } },
+      { "value": 263, "label": { "show": true, "position": "right", "formatter": "00:04:23" } },
+      { "value": 194, "label": { "show": true, "position": "right", "formatter": "00:03:14" } }
+    ]
+  }]
+}

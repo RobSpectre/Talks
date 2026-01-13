@@ -15,6 +15,7 @@ import OsoContentPerformance from '@/views/OsoContentPerformance.vue'
 
 import ClarifaiDiscovery from '@/views/ClarifaiDiscovery.vue'
 import ClarifaiConferenceLoop from '@/views/ClarifaiConferenceLoop.vue'
+import ClarifaiIfbenchSpeedRun from '@/views/ClarifaiIfbenchSpeedRun.vue'
 import Backgrounds from '@/views/Backgrounds.vue'
 
 const routes = [
@@ -90,6 +91,12 @@ const routes = [
     path: '/clarifai-discovery',
     name: 'Clarifai Discovery',
     component: ClarifaiDiscovery,
+    private: true
+  },
+  {
+    path: '/clarifai/ifbench',
+    name: 'Clarifai Ifbench Speed Run',
+    component: ClarifaiIfbenchSpeedRun,
     private: true
   },
   {
