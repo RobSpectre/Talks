@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
-    "@iconify/utils": "^3.0.2",
+    "@iconify/utils": "^3.1.0",
     "@iconify/vue": "^5.0.0",
     "@proj-airi/lobe-icons": "^1.0.14",
     "@radix-icons/vue": "^1.0.0",
