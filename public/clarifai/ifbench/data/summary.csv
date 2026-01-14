@@ -1,0 +1,7 @@
+model,total_time,total_tokens,input_tokens,output_tokens,cached_write_tokens,cached_read_tokens,avg_sample_duration_s,p95_sample_duration_s,p50_sample_duration_s,strict_instruction_accuracy,strict_instruction_stderr,strict_prompt_accuracy,strict_prompt_stderr,loose_instruction_accuracy,loose_instruction_stderr,loose_prompt_accuracy,loose_prompt_stderr,retries,input_unit_cost,output_unit_cost,total_cost
+openai-api/clarifai/https://clarifai.com/openai/chat-completion/models/gpt-oss-120b,0:03:14,601955,41918,560037,0,0,5.96,21.32,2.84,0.602,0.026,0.557,0.029,0.663,0.025,0.623,0.028,0,0.09,0.36,0.20538594
+fireworks/accounts/fireworks/models/gpt-oss-120b,1:11:42,519465,43418,476047,0,19563,72.4,206.37,23.04,0.616,0.026,0.58,0.028,0.689,0.025,0.657,0.027,0,0.15,0.6,0.2921409
+openai-api/google/openai/gpt-oss-120b-maas,0:07:09,565936,41918,524018,0,4672,14.23,41.08,10.15,0.616,0.026,0.577,0.029,0.654,0.026,0.617,0.028,0,0.09,0.36,0.1924191
+nebius/openai/gpt-oss-120b,0:07:52,523861,42518,481343,0,0,15.46,41.01,11.94,0.605,0.026,0.567,0.029,0.66,0.026,0.63,0.028,0,0.15,0.6,0.2951835
+together/openai/gpt-oss-120b,0:04:23,413402,41918,371484,0,0,8.53,15.75,8.46,0.506,0.027,0.507,0.029,0.547,0.027,0.55,0.029,1283,0.15,0.6,0.2291781
+baseten/openai/gpt-oss-120b,0:26:07,487766,45218,442548,0,0,41.79,112.95,16.08,0.567,0.027,0.55,0.029,0.628,0.026,0.617,0.028,0,0.1,0.5,0.221274

@@ -1,0 +1,32 @@
+{
+  "title": { "text": "IFBench Accuracy" },
+  "legend": { "data": ["Strict Instruction", "Loose Instruction"], "bottom": 0 },
+  "grid": { "left": "200", "right": "100", "bottom": "12%", "containLabel": false },
+  "xAxis": { "type": "value", "min": 0.5, "splitLine": { "show": true } },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "{Together| } Together",
+      "{Baseten| } Baseten",
+      "{Clarifai| } Clarifai",
+      "{Nebius| } Nebius",
+      "{Google| } Google",
+      "{Fireworks| } Fireworks"
+    ],
+    "axisLabel": {
+      "formatter": "{value}",
+      "rich": {
+        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
+        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
+        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
+        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
+        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
+        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+      }
+    }
+  },
+  "series": [
+    { "name": "Strict Instruction", "type": "bar", "label": { "show": true, "position": "right" }, "data": [0.506, 0.567, 0.602, 0.605, 0.616, 0.616] },
+    { "name": "Loose Instruction", "type": "bar", "label": { "show": true, "position": "right" }, "data": [0.547, 0.628, 0.66, 0.66, 0.654, 0.689] }
+  ]
+}
