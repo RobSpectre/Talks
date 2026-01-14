@@ -1,0 +1,33 @@
+{
+  "title": { "text": "Run Retries" },
+  "grid": { "left": "200", "right": "100", "containLabel": false },
+  "xAxis": { "type": "value", "splitLine": { "show": true } },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      "{Clarifai| } Clarifai",
+      "{Fireworks| } Fireworks",
+      "{Google| } Google",
+      "{Nebius| } Nebius",
+      "{Together| } Together",
+      "{Baseten| } Baseten"
+    ],
+    "axisLabel": {
+      "formatter": "{value}",
+      "rich": {
+        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
+        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
+        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
+        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
+        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } },
+        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } }
+      }
+    }
+  },
+  "series": [{ 
+    "type": "bar", 
+    "label": { "show": true, "position": "right" }, 
+    "itemStyle": { "color": "#ee6666" }, 
+    "data": [0, 0, 0, 0, 1427, 1283] 
+  }]
+}
