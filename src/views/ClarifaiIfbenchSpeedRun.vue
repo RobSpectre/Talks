@@ -13,10 +13,6 @@ Reveal
     )
     ChartSlide(
       class='darkgray'
-      src='/clarifai/ifbench/data/accuracy.json'
-    )
-    ChartSlide(
-      class='darkgray'
       src='/clarifai/ifbench/data/tokens.json'
     )
     ChartSlide(

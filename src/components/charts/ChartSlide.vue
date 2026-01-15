@@ -1,6 +1,6 @@
 <template lang="pug">
 section(:class='classes')
-  .h-full.w-full(class='flex flex-col items-center justify-center')
+  .h-full.w-full.flex.flex-col.items-center.justify-center
     div(class='w-11/12 h-5/6')
       .loading(v-if='isLoading')
       .error(v-else-if='errorMessage')
@@ -13,7 +13,7 @@ section(:class='classes')
 import Slide from '@/components/base/Slide.vue'
 
 import * as echarts from 'echarts'
-
+import theme from '@/lib/echarts-theme-dark'
 import { v4 as uuidv4 } from 'uuid'
 
 export default {
@@ -112,7 +112,31 @@ export default {
           this.options = await response.json()
 
           if (!this.chart) {
-            this.chart = echarts.init(document.getElementById(this.uuid), 'dark')
+            this.chart = echarts.init(document.getElementById(this.uuid), theme)
+          }
+
+          // Force white labels with no border on all series
+          if (this.options.series) {
+            this.options.series.forEach(series => {
+              if (series.label) {
+                series.label.color = '#FFFFFF'
+                series.label.textBorderWidth = 0
+                series.label.textBorderColor = 'transparent'
+                series.label.fontFamily = 'Figtree'
+                series.label.fontWeight = 600
+              }
+              if (series.data) {
+                series.data.forEach(item => {
+                  if (item.label) {
+                    item.label.color = '#FFFFFF'
+                    item.label.textBorderWidth = 0
+                    item.label.textBorderColor = 'transparent'
+                    item.label.fontFamily = 'Figtree'
+                    item.label.fontWeight = 600
+                  }
+                })
+              }
+            })
           }
 
           this.chart.setOption(this.options)

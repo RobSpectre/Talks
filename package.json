@@ -57,6 +57,7 @@
     "@vue/eslint-config-standard": "^9.0.1",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.9.14",
     "dexie": "^4.2.0",
     "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
