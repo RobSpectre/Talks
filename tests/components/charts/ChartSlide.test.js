@@ -5,9 +5,40 @@ import ChartSlide from '@/components/charts/ChartSlide.vue'
 // Mock fetch globally
 global.fetch = vi.fn()
 
+// Mock Chart Instance Methods
+const mockSetOption = vi.fn()
+const mockGetOption = vi.fn(() => ({}))
+const mockResize = vi.fn()
+const mockDispose = vi.fn()
+
+// Mock ECharts globally with all necessary methods
+vi.mock('echarts', () => {
+  return {
+    default: {
+      init: vi.fn(() => ({
+        setOption: mockSetOption,
+        getOption: mockGetOption,
+        resize: mockResize,
+        dispose: mockDispose
+      })),
+      registerTheme: vi.fn(),
+      use: vi.fn()
+    },
+    // Supporting named exports as well if needed
+    init: vi.fn(() => ({
+      setOption: mockSetOption,
+      getOption: mockGetOption,
+      resize: mockResize,
+      dispose: mockDispose
+    })),
+    registerTheme: vi.fn(),
+    use: vi.fn()
+  }
+})
+
 describe('ChartSlide', () => {
   let wrapper
-  
+
   beforeEach(() => {
     // Mock window dimensions
     Object.defineProperty(window, 'innerWidth', {
@@ -18,6 +49,15 @@ describe('ChartSlide', () => {
 
     // Reset fetch mock
     fetch.mockReset()
+
+    // Reset ECharts mocks
+    mockSetOption.mockClear()
+    mockGetOption.mockClear()
+    mockResize.mockClear()
+    mockDispose.mockClear()
+
+    // Default getOption behavior
+    mockGetOption.mockReturnValue({})
   })
 
   afterEach(() => {
@@ -28,7 +68,7 @@ describe('ChartSlide', () => {
 
   it('renders with default props', () => {
     wrapper = mount(ChartSlide)
-    
+
     expect(wrapper.find('section').exists()).toBe(true)
     expect(wrapper.find('.w-full.h-full').exists()).toBe(true)
   })
@@ -40,14 +80,14 @@ describe('ChartSlide', () => {
         classes: customClasses
       }
     })
-    
+
     expect(wrapper.find('section').classes()).toContain('custom-class')
     expect(wrapper.find('section').classes()).toContain('another-class')
   })
 
   it('generates unique UUID for chart container', () => {
     wrapper = mount(ChartSlide)
-    
+
     expect(wrapper.vm.uuid).toBeDefined()
     expect(typeof wrapper.vm.uuid).toBe('string')
     expect(wrapper.vm.uuid.length).toBeGreaterThan(0)
@@ -86,30 +126,30 @@ describe('ChartSlide', () => {
   it('calculates correct breakpoint for different window sizes', () => {
     // Test the logic with different window sizes
     wrapper = mount(ChartSlide)
-    
+
     // The computed property finds the first breakpoint that window fits into
     // For 1024, it should be 'lg' (1024)
     expect(wrapper.vm.currentBreakpoint.key).toBe('lg')
     expect(wrapper.vm.currentBreakpoint.fontSize).toBe(18)
-    
+
     // The computed property isn't reactive to dynamic window changes in tests
     // so we'll test the breakpoint logic by understanding how it works:
     // It finds the FIRST breakpoint where innerWidth <= breakpoint.breakpoint
     const breakpoints = [
-      { key: 'sm', breakpoint: 640, fontSize: 12},
-      { key: 'md', breakpoint: 768, fontSize: 14},
-      { key: 'lg', breakpoint: 1024, fontSize: 18},
-      { key: 'xl', breakpoint: 1280, fontSize: 20},
-      { key: '2xl', breakpoint: 1536, fontSize: 24},
-      { key: 'hd', breakpoint: 1920, fontSize: 28},
-      { key: '4k', breakpoint: 3840, fontSize: 48},
-      { key: '8k', breakpoint: 7680, fontSize: 72}
+      { key: 'sm', breakpoint: 640, fontSize: 12 },
+      { key: 'md', breakpoint: 768, fontSize: 14 },
+      { key: 'lg', breakpoint: 1024, fontSize: 18 },
+      { key: 'xl', breakpoint: 1280, fontSize: 20 },
+      { key: '2xl', breakpoint: 1536, fontSize: 24 },
+      { key: 'hd', breakpoint: 1920, fontSize: 28 },
+      { key: '4k', breakpoint: 3840, fontSize: 48 },
+      { key: '8k', breakpoint: 7680, fontSize: 72 }
     ]
-    
+
     // For width 640, should find 'sm'
     const bp640 = breakpoints.find(bp => 640 <= bp.breakpoint)
     expect(bp640.key).toBe('sm')
-    
+
     // For width 1920, should find 'hd' 
     const bp1920 = breakpoints.find(bp => 1920 <= bp.breakpoint)
     expect(bp1920.key).toBe('hd')
@@ -143,7 +183,7 @@ describe('ChartSlide', () => {
 
     // Reset any existing error message from mount
     wrapper.vm.errorMessage = null
-    
+
     // Mock a failed response
     fetch.mockResolvedValueOnce({
       ok: false,
@@ -172,34 +212,34 @@ describe('ChartSlide', () => {
 
   it('has correct component name', () => {
     wrapper = mount(ChartSlide)
-    
+
     expect(wrapper.vm.$options.name).toBe('ChartSlide')
   })
 
   it('handles retry logic when chart container width is not ready', () => {
     const mockSetTimeout = vi.fn()
     const mockRequestAnimationFrame = vi.fn((fn) => fn)
-    
+
     global.setTimeout = mockSetTimeout
     global.window.requestAnimationFrame = mockRequestAnimationFrame
-    
+
     // Mock document.getElementById to return element with no width
     const mockElement = { clientWidth: 0 }
     global.document.getElementById = vi.fn(() => mockElement)
-    
+
     wrapper = mount(ChartSlide, {
       props: { src: '/test-data.json' }
     })
-    
+
     const renderChartSpy = vi.spyOn(wrapper.vm, 'renderChart')
-    
+
     // Call waitToRenderChart when width is 0
     wrapper.vm.waitToRenderChart()
-    
+
     expect(mockSetTimeout).toHaveBeenCalledWith(wrapper.vm.waitToRenderChart, 500)
     expect(mockRequestAnimationFrame).toHaveBeenCalledWith(wrapper.vm.waitToRenderChart)
     expect(renderChartSpy).not.toHaveBeenCalled()
-    
+
     renderChartSpy.mockRestore()
   })
 
@@ -207,27 +247,37 @@ describe('ChartSlide', () => {
     wrapper = mount(ChartSlide, {
       props: { src: '/test-data.json' }
     })
-    
-    // Mock a chart with yAxis
-    const mockChart = {
-      setOption: vi.fn(),
-      getOption: vi.fn(() => ({ yAxis: [{}] })),
-      resize: vi.fn()
+
+    // Assign mockChart to wrapper.vm.chart manually to simulate initialization if needed,
+    // but renderChart should do it via the global mock.
+    // However, the test logic below heavily relies on interacting with the mock object.
+
+    // We can use the global mock variables to control behavior.
+    mockGetOption.mockReturnValue({ yAxis: [{}] })
+
+    // Since we're partially reimplementing logic that happens inside renderChart, we need to be careful.
+    // The original test manually set wrapper.vm.chart. Let's do that to be consistent with how the test was written,
+    // assuming 'chart' data property is accessible.
+
+    const localMockChart = {
+      setOption: mockSetOption,
+      getOption: mockGetOption,
+      resize: mockResize
     }
-    wrapper.vm.chart = mockChart
-    
+    wrapper.vm.chart = localMockChart
+
     // Test the conditional logic by calling the specific styling method directly
     // This covers the yAxis conditional branch
-    if (mockChart.getOption().yAxis) {
-      mockChart.setOption({ xAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
-      mockChart.setOption({ yAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
+    if (localMockChart.getOption().yAxis) {
+      localMockChart.setOption({ xAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
+      localMockChart.setOption({ yAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
     }
-    
-    expect(mockChart.setOption).toHaveBeenCalledWith({ 
-      xAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } 
+
+    expect(mockSetOption).toHaveBeenCalledWith({
+      xAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } }
     })
-    expect(mockChart.setOption).toHaveBeenCalledWith({ 
-      yAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } 
+    expect(mockSetOption).toHaveBeenCalledWith({
+      yAxis: { axisLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } }
     })
   })
 
@@ -235,27 +285,27 @@ describe('ChartSlide', () => {
     wrapper = mount(ChartSlide, {
       props: { src: '/test-data.json' }
     })
-    
-    // Mock a chart with calendar
-    const mockChart = {
-      setOption: vi.fn(),
-      getOption: vi.fn(() => ({ calendar: [{}] })),
-      resize: vi.fn()
+
+    mockGetOption.mockReturnValue({ calendar: [{}] })
+
+    const localMockChart = {
+      setOption: mockSetOption,
+      getOption: mockGetOption,
+      resize: mockResize
     }
-    wrapper.vm.chart = mockChart
-    
+    wrapper.vm.chart = localMockChart
+
     // Test the conditional logic by calling the specific styling method directly
-    // This covers the calendar conditional branch
-    if (mockChart.getOption().calendar) {
-      mockChart.setOption({ calendar: { cellSize: wrapper.vm.currentBreakpoint.fontSize * 1.2 } })
-      mockChart.setOption({ calendar: { monthLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
+    if (localMockChart.getOption().calendar) {
+      localMockChart.setOption({ calendar: { cellSize: wrapper.vm.currentBreakpoint.fontSize * 1.2 } })
+      localMockChart.setOption({ calendar: { monthLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } })
     }
-    
-    expect(mockChart.setOption).toHaveBeenCalledWith({ 
-      calendar: { cellSize: wrapper.vm.currentBreakpoint.fontSize * 1.2 } 
+
+    expect(mockSetOption).toHaveBeenCalledWith({
+      calendar: { cellSize: wrapper.vm.currentBreakpoint.fontSize * 1.2 }
     })
-    expect(mockChart.setOption).toHaveBeenCalledWith({ 
-      calendar: { monthLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } } 
+    expect(mockSetOption).toHaveBeenCalledWith({
+      calendar: { monthLabel: { fontSize: wrapper.vm.currentBreakpoint.fontSize } }
     })
   })
 
@@ -264,42 +314,32 @@ describe('ChartSlide', () => {
       props: { src: '/test-data.json' }
     })
 
-    // Mock a chart
-    const mockChart = {
-      setOption: vi.fn(),
-      getOption: vi.fn(() => ({ yAxis: [{}] })),
-      resize: vi.fn()
+    mockGetOption.mockReturnValue({ yAxis: [{}] })
+
+    const localMockChart = {
+      setOption: mockSetOption,
+      getOption: mockGetOption,
+      resize: mockResize
     }
-    wrapper.vm.chart = mockChart
+    wrapper.vm.chart = localMockChart
 
     // Simulate the resize event handler logic
-    mockChart.resize()
-    mockChart.setOption({ textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize } })
+    localMockChart.resize()
+    localMockChart.setOption({ textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize } })
 
-    expect(mockChart.resize).toHaveBeenCalled()
-    expect(mockChart.setOption).toHaveBeenCalledWith({
+    expect(mockResize).toHaveBeenCalled()
+    expect(mockSetOption).toHaveBeenCalledWith({
       textStyle: { fontSize: wrapper.vm.currentBreakpoint.fontSize }
     })
   })
 
   describe('srcs prop', () => {
-    let mockChart
-
     beforeEach(() => {
       vi.useFakeTimers()
 
-      // Mock ECharts
-      mockChart = {
-        setOption: vi.fn(),
-        getOption: vi.fn(() => ({})),
-        resize: vi.fn()
-      }
-
-      vi.mock('echarts', () => ({
-        default: {
-          init: vi.fn(() => mockChart)
-        }
-      }))
+      // Reset mocks for this block
+      mockSetOption.mockClear()
+      mockGetOption.mockClear()
 
       // Mock DOM element
       global.document.getElementById = vi.fn(() => ({
