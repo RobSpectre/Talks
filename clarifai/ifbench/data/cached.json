@@ -1,7 +1,18 @@
 {
-  "title": { "text": "Cached Read Tokens" },
-  "grid": { "left": "200", "right": "100", "containLabel": false },
-  "xAxis": { "type": "value", "splitLine": { "show": true } },
+  "title": {
+    "text": "Cached Read Tokens"
+  },
+  "grid": {
+    "left": "200",
+    "right": "100",
+    "containLabel": false
+  },
+  "xAxis": {
+    "type": "value",
+    "splitLine": {
+      "show": true
+    }
+  },
   "yAxis": {
     "type": "category",
     "data": [
@@ -9,25 +20,156 @@
       "{Nebius| } Nebius",
       "{Together| } Together",
       "{Baseten| } Baseten",
+      "{Groq| } Groq",
+      "{Novita| } Novita",
+      "{Deepinfra| } Deepinfra",
+      "{Atlascloud| } Atlascloud",
+      "{Siliconflow| } Siliconflow",
+      "{Gmicloud| } Gmicloud",
+      "{Phala| } Phala",
       "{Google| } Google",
+      "{Parasail| } Parasail",
+      "{WandB| } WandB",
       "{Fireworks| } Fireworks"
     ],
     "axisLabel": {
       "formatter": "{value}",
       "rich": {
-        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
-        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
-        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
-        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
-        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
-        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+        "Clarifai": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/clarifai.png"
+          }
+        },
+        "Together": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/together.png"
+          }
+        },
+        "Google": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/google.png"
+          }
+        },
+        "Nebius": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/nebius.png"
+          }
+        },
+        "Baseten": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/baseten.png"
+          }
+        },
+        "Fireworks": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/fireworks.png"
+          }
+        },
+        "Groq": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/groq.png"
+          }
+        },
+        "Novita": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/novita.png"
+          }
+        },
+        "Deepinfra": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/deepinfra.png"
+          }
+        },
+        "Atlascloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/atlascloud.png"
+          }
+        },
+        "Siliconflow": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/siliconflow.png"
+          }
+        },
+        "Gmicloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/gmicloud.png"
+          }
+        },
+        "Phala": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/phala.png"
+          }
+        },
+        "Parasail": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/parasail.png"
+          }
+        },
+        "WandB": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/wandb.png"
+          }
+        }
       }
     }
   },
-  "series": [{ 
-    "type": "bar", 
-    "label": { "show": true, "position": "right" }, 
-    "itemStyle": { "color": "#91cc75" }, 
-    "data": [0, 0, 0, 0, 4672, 19563] 
-  }]
+  "series": [
+    {
+      "type": "bar",
+      "label": {
+        "show": true,
+        "position": "right"
+      },
+      "itemStyle": {
+        "color": "#91cc75"
+      },
+      "data": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4672,
+        19200,
+        19200,
+        19563
+      ]
+    }
+  ]
 }

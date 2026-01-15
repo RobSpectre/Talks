@@ -1,32 +1,207 @@
 {
-  "title": { "text": "IFBench Accuracy" },
-  "legend": { "data": ["Strict Instruction", "Loose Instruction"], "bottom": 0 },
-  "grid": { "left": "200", "right": "100", "bottom": "12%", "containLabel": false },
-  "xAxis": { "type": "value", "min": 0.5, "splitLine": { "show": true } },
+  "title": {
+    "text": "IFBench Accuracy"
+  },
+  "legend": {
+    "data": [
+      "Strict Instruction",
+      "Loose Instruction"
+    ],
+    "bottom": 0
+  },
+  "grid": {
+    "left": "200",
+    "right": "100",
+    "bottom": "12%",
+    "containLabel": false
+  },
+  "xAxis": {
+    "type": "value",
+    "min": 0.5,
+    "splitLine": {
+      "show": true
+    }
+  },
   "yAxis": {
     "type": "category",
     "data": [
+      "{Groq| } Groq",
       "{Together| } Together",
       "{Baseten| } Baseten",
+      "{Atlascloud| } Atlascloud",
+      "{Siliconflow| } Siliconflow",
+      "{Deepinfra| } Deepinfra",
+      "{Parasail| } Parasail",
       "{Clarifai| } Clarifai",
       "{Nebius| } Nebius",
+      "{Phala| } Phala",
+      "{Novita| } Novita",
+      "{Fireworks| } Fireworks",
       "{Google| } Google",
-      "{Fireworks| } Fireworks"
+      "{WandB| } WandB",
+      "{Gmicloud| } Gmicloud"
     ],
     "axisLabel": {
       "formatter": "{value}",
       "rich": {
-        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
-        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
-        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
-        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
-        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
-        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+        "Clarifai": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/clarifai.png"
+          }
+        },
+        "Together": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/together.png"
+          }
+        },
+        "Google": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/google.png"
+          }
+        },
+        "Nebius": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/nebius.png"
+          }
+        },
+        "Baseten": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/baseten.png"
+          }
+        },
+        "Fireworks": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/fireworks.png"
+          }
+        },
+        "Groq": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/groq.png"
+          }
+        },
+        "Atlascloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/atlascloud.png"
+          }
+        },
+        "Siliconflow": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/siliconflow.png"
+          }
+        },
+        "Deepinfra": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/deepinfra.png"
+          }
+        },
+        "Parasail": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/parasail.png"
+          }
+        },
+        "Phala": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/phala.png"
+          }
+        },
+        "Novita": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/novita.png"
+          }
+        },
+        "WandB": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/wandb.png"
+          }
+        },
+        "Gmicloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/gmicloud.png"
+          }
+        }
       }
     }
   },
   "series": [
-    { "name": "Strict Instruction", "type": "bar", "label": { "show": true, "position": "right" }, "data": [0.506, 0.567, 0.602, 0.605, 0.616, 0.616] },
-    { "name": "Loose Instruction", "type": "bar", "label": { "show": true, "position": "right" }, "data": [0.547, 0.628, 0.66, 0.66, 0.654, 0.689] }
+    {
+      "name": "Strict Instruction",
+      "type": "bar",
+      "label": {
+        "show": true,
+        "position": "right"
+      },
+      "data": [
+        0.485,
+        0.506,
+        0.567,
+        0.59,
+        0.593,
+        0.596,
+        0.596,
+        0.602,
+        0.605,
+        0.608,
+        0.61,
+        0.616,
+        0.616,
+        0.616,
+        0.622
+      ]
+    },
+    {
+      "name": "Loose Instruction",
+      "type": "bar",
+      "label": {
+        "show": true,
+        "position": "right"
+      },
+      "data": [
+        0.535,
+        0.547,
+        0.628,
+        0.651,
+        0.669,
+        0.657,
+        0.666,
+        0.663,
+        0.66,
+        0.663,
+        0.66,
+        0.689,
+        0.654,
+        0.68,
+        0.68
+      ]
+    }
   ]
 }

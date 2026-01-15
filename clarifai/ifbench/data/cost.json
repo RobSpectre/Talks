@@ -1,54 +1,222 @@
 {
-  "title": { "text": "Total Inference Cost (USD)", "subtext": "Sorted Cheapest to Most Expensive" },
-  "tooltip": { "trigger": "axis", "axisPointer": { "type": "shadow" } },
-  "legend": { "data": ["Input", "Output"], "top": "5%" },
-  "grid": { "left": "200", "right": "120", "containLabel": false },
-  "xAxis": { 
-    "type": "value", 
+  "title": {
+    "text": "Total Inference Cost (USD)",
+    "subtext": "Sorted Cheapest to Most Expensive"
+  },
+  "tooltip": {
+    "trigger": "axis",
+    "axisPointer": {
+      "type": "shadow"
+    }
+  },
+  "legend": {
+    "data": [
+      "Input",
+      "Output"
+    ],
+    "bottom": 0
+  },
+  "grid": {
+    "left": "200",
+    "right": "120",
+    "bottom": "15%",
+    "containLabel": false
+  },
+  "xAxis": {
+    "type": "value",
     "name": "USD",
-    "splitLine": { "show": true, "lineStyle": { "type": "dashed" } } 
+    "splitLine": {
+      "show": true,
+      "lineStyle": {
+        "type": "dashed"
+      }
+    }
   },
   "yAxis": {
     "type": "category",
     "data": [
+      "{Parasail| } Parasail",
+      "{WandB| } WandB",
       "{Nebius| } Nebius",
       "{Fireworks| } Fireworks",
+      "{Phala| } Phala",
+      "{Siliconflow| } Siliconflow",
+      "{Groq| } Groq",
       "{Together| } Together",
       "{Baseten| } Baseten",
       "{Clarifai| } Clarifai",
-      "{Google| } Google"
+      "{Google| } Google",
+      "{Novita| } Novita",
+      "{Gmicloud| } Gmicloud",
+      "{Atlascloud| } Atlascloud",
+      "{Deepinfra| } Deepinfra"
     ],
     "axisLabel": {
       "formatter": "{value}",
       "rich": {
-        "Clarifai": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/clarifai.png" } },
-        "Together": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/together.png" } },
-        "Google": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/google.png" } },
-        "Nebius": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/nebius.png" } },
-        "Baseten": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/baseten.png" } },
-        "Fireworks": { "height": 24, "width": 24, "backgroundColor": { "image": "/images/icons/static-png/dark/fireworks.png" } }
+        "Clarifai": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/clarifai.png"
+          }
+        },
+        "Together": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/together.png"
+          }
+        },
+        "Google": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/google.png"
+          }
+        },
+        "Nebius": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/nebius.png"
+          }
+        },
+        "Baseten": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/baseten.png"
+          }
+        },
+        "Fireworks": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/fireworks.png"
+          }
+        },
+        "Groq": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/groq.png"
+          }
+        },
+        "Novita": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/novita.png"
+          }
+        },
+        "Deepinfra": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/deepinfra.png"
+          }
+        },
+        "Atlascloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/atlascloud.png"
+          }
+        },
+        "Siliconflow": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/siliconflow.png"
+          }
+        },
+        "Parasail": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/parasail.png"
+          }
+        },
+        "Gmicloud": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/gmicloud.png"
+          }
+        },
+        "Phala": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/phala.png"
+          }
+        },
+        "WandB": {
+          "height": 24,
+          "width": 24,
+          "backgroundColor": {
+            "image": "/images/icons/static-png/dark/wandb.png"
+          }
+        }
       }
     }
   },
   "series": [
-    { 
-      "name": "Input", 
-      "type": "bar", 
-      "stack": "Cost", 
-      "itemStyle": { "color": "#5470c6" },
-      "data": [0.00638, 0.00651, 0.00629, 0.00452, 0.00377, 0.00377] 
+    {
+      "name": "Input",
+      "type": "bar",
+      "stack": "Cost",
+      "itemStyle": {
+        "color": "#5470c6"
+      },
+      "data": [
+        0.00629,
+        0.00638,
+        0.00638,
+        0.00651,
+        0.00425,
+        0.0021,
+        0.00647,
+        0.00629,
+        0.00452,
+        0.00377,
+        0.00377,
+        0.00208,
+        0.0021,
+        0.00419,
+        0.00152
+      ]
     },
-    { 
-      "name": "Output", 
-      "type": "bar", 
-      "stack": "Cost", 
-      "itemStyle": { "color": "#91cc75" },
-      "label": { 
-        "show": true, 
-        "position": "right", 
-        "formatter": "${@total}" 
-      }, 
-      "data": [0.28881, 0.28563, 0.22289, 0.22127, 0.20161, 0.18865] 
+    {
+      "name": "Output",
+      "type": "bar",
+      "stack": "Cost",
+      "itemStyle": {
+        "color": "#91cc75"
+      },
+      "label": {
+        "show": true,
+        "position": "right",
+        "formatter": "${@total}"
+      },
+      "data": [
+        0.32999,
+        0.31537,
+        0.28881,
+        0.28563,
+        0.26382,
+        0.23596,
+        0.22348,
+        0.22289,
+        0.22127,
+        0.20161,
+        0.18865,
+        0.13028,
+        0.12494,
+        0.11399,
+        0.10453
+      ]
     }
   ]
 }
