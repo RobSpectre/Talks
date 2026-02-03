@@ -7,8 +7,9 @@ Reveal
           li IFBench Speed Run Data
           li Rob Spectre
           li rob.spectre@clarifai.com
-    ChartSlide(
+    SpeedRunChart(
       class='darkgray'
+      :duration='20'
       src='/clarifai/ifbench/data/total_time.json'
     )
     ChartSlide(
@@ -36,6 +37,7 @@ import Title from '@/components/base/Title.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ChartSlide from '@/components/charts/ChartSlide.vue'
+import SpeedRunChart from '@/components/charts/SpeedRunChart.vue'
 
 export default {
   name: 'ClarifaiDiscovery',
@@ -45,7 +47,8 @@ export default {
     Reveal,
     ImageSlide,
     VideoSlide,
-    ChartSlide
+    ChartSlide,
+    SpeedRunChart
   }
 }
 </script>
