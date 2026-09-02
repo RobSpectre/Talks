@@ -18,6 +18,8 @@ import ClarifaiConferenceLoop from '@/views/ClarifaiConferenceLoop.vue'
 import ClarifaiIfbenchSpeedRun from '@/views/ClarifaiIfbenchSpeedRun.vue'
 import Backgrounds from '@/views/Backgrounds.vue'
 
+import StorytellingForTechnicalAudiences from '@/views/StorytellingForTechnicalAudiences.vue'
+
 const routes = [
   {
     path: '/',
@@ -31,6 +33,13 @@ const routes = [
     description: 'A talk highlighting the difficulty in growing name ID in the current market and what to do about it.',
     component: FieldOfDreams,
     img: '/images/finding-your-audience-in-2024/search_graph.png'
+  },
+  {
+    path:'/storytelling-for-technical-audiences',
+    name: 'Storytelling for Technical Audiences',
+    description: 'A talk introducing the story as the most effective vehicle for technical ideas',
+    component: StorytellingForTechnicalAudiences,
+    img:'/storytelling-for-technical-audiences/images/intro.png'
   },
   {
     path: '/childsafe-ai-tech',
